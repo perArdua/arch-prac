@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="776" viewBox="0 0 760 776" role="img" aria-labelledby="t d">
+<title id="t">캐릭터 챗 장기기억 프로토타입 — 읽기 경로 · 쓰기 경로 · 세션 경계</title>
+<desc id="d">읽기 경로는 매 턴 LLM 호출 없이 SQLite에서 블록을 조립한다. 검색을 거치지 않고 매번 넣는 블록과 게이트를 통과한 턴에만 도는 네 단계 검색으로 나뉘고, 변경 빈도 순으로 배치한다. 쓰기 경로는 응답에 딸린 메타 정보를 FSM이 검증해 상태를 갱신하고, 사실과 사건은 정답지 또는 미구현 추출기에서 온다. 세션 경계에서만 로컬 LLM이 요약을 만든다.</desc>
+<style>
+  .t  { font: 400 13px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #1a1a1a; }
+  .th { font: 500 13px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #1a1a1a; }
+  .ts { font: 400 11px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #5c5c5c; }
+  .tl { font: 500 14px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #1a1a1a; }
+  .arr  { stroke: #8a8a8a; stroke-width: 1.5; fill: none; }
+  .dash { fill: none; stroke: #c4c4c4; stroke-width: .6; stroke-dasharray: 4 4; }
+  .blue  { fill: #E6F1FB; stroke: #9DC7EE; stroke-width: .6; }
+  .amber { fill: #FDF0DC; stroke: #F0C689; stroke-width: .6; }
+  .green { fill: #E7F4EA; stroke: #9CCFAA; stroke-width: .6; }
+  .gray  { fill: #F2F2F0; stroke: #D6D6D2; stroke-width: .6; }
+  .none  { fill: #FFFFFF; stroke: #B9B9B9; stroke-width: .8; stroke-dasharray: 3 3; }
+  .tb { fill: #0C447C; } .sb { fill: #2D6BA8; }
+  .ta { fill: #7A4405; } .sa { fill: #A8681F; }
+  .tg { fill: #1f5c2e; } .sg { fill: #3f7a4f; }
+  .tk { fill: #1a1a1a; } .sk { fill: #5c5c5c; }
+  .tn { fill: #6a6a6a; }
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#8a8a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<!-- ───────── 읽기 경로 ───────── -->
+<text class="tl" x="24" y="30">읽기 경로 — 매 턴 · LLM 호출 0 · SQLite만</text>
+
+<rect class="gray" x="290" y="44" width="180" height="34" rx="4"/>
+<text class="th tk" x="380" y="66" text-anchor="middle">유저 발화</text>
+<path class="arr" d="M380 78 V90 H176 V98" marker-end="url(#arrow)"/>
+<path class="arr" d="M380 78 V90 H560 V98" marker-end="url(#arrow)"/>
+
+<!-- 왼쪽: 매번 넣음 -->
+<rect class="dash" x="24" y="102" width="304" height="262" rx="8"/>
+<text class="th tk" x="38" y="122">검색을 거치지 않고 매번 넣음</text>
+<rect class="blue" x="38" y="132" width="276" height="40" rx="4"/>
+<text class="th tb" x="52" y="149">알고 있는 것</text><text class="ts sb" x="52" y="164">상시 술어 사실 전량 · 없으면 (아직 없음) 명시</text>
+<rect class="blue" x="38" y="180" width="276" height="40" rx="4"/>
+<text class="th tb" x="52" y="197">관계 · 씬</text><text class="ts sb" x="52" y="212">단계 · 호감도 · 호칭 / 장소 · 동석자 · 상황</text>
+<rect class="blue" x="38" y="228" width="276" height="40" rx="4"/>
+<text class="th tb" x="52" y="245">요약</text><text class="ts sb" x="52" y="260">전체기간 1 + 최신 세션 1 · 낡은 것은 제외</text>
+<rect class="blue" x="38" y="276" width="276" height="40" rx="4"/>
+<text class="th tb" x="52" y="293">최근 대화 · 미완 약속</text><text class="ts sb" x="52" y="308">발화 앞 9~18턴 · 10턴씩 밀어냄 · 기한 된 약속만</text>
+<text class="ts tn" x="38" y="346">상시 사실 블록과 약속 블록은 크기 상한 없음</text>
+
+<!-- 오른쪽: 검색 -->
+<rect class="dash" x="392" y="102" width="344" height="262" rx="8"/>
+<text class="th tk" x="406" y="122">필요한 턴에만 검색 (사건 테이블만 대상)</text>
+<rect class="amber" x="406" y="132" width="316" height="40" rx="4"/>
+<text class="th ta" x="420" y="149">1. 이번 턴에 검색이 필요한가 — 게이트</text><text class="ts sa" x="420" y="164">과거 참조 · 8자 미만 차단 · 사건 낱말 겹침 · 통과 21.8%</text>
+<path class="arr" d="M564 172 V180" marker-end="url(#arrow)"/>
+<rect class="amber" x="406" y="184" width="316" height="34" rx="4"/>
+<text class="th ta" x="420" y="199">2. 중요도 0.2 미만이면 뺌</text><text class="ts sa" x="420" y="213">중요도와 감정 무게 중 큰 값 · 하드 필터</text>
+<path class="arr" d="M564 218 V226" marker-end="url(#arrow)"/>
+<rect class="amber" x="406" y="230" width="316" height="34" rx="4"/>
+<text class="th ta" x="420" y="245">3. 관련도 0.05 미만이면 뺌</text><text class="ts sa" x="420" y="259">글자 두 개씩 겹치는 비율 · 남는 것 없으면 블록 생략</text>
+<path class="arr" d="M564 264 V272" marker-end="url(#arrow)"/>
+<rect class="amber" x="406" y="276" width="316" height="34" rx="4"/>
+<text class="th ta" x="420" y="291">4. 0.6 관련도 + 0.4 중요도로 정렬 · 상위 5개</text><text class="ts sa" x="420" y="305">동점이면 먼저 저장된 것 · 꺼낸 횟수 감점은 기본 경로에서 0</text>
+<text class="ts tn" x="406" y="346">합성 3,000행 전량 스캔 p95 약 20ms · 캐시가 데워지면 5ms</text>
+
+<path class="arr" d="M176 364 V392 H372"/>
+<path class="arr" d="M564 364 V392 H388"/>
+<path class="arr" d="M380 392 V404" marker-end="url(#arrow)"/>
+
+<rect class="gray" x="120" y="408" width="520" height="46" rx="4"/>
+<text class="th tk" x="380" y="428" text-anchor="middle">변경 빈도 순으로 배치 · 출처와 거부 사유를 함께 돌려줌</text>
+<text class="ts sk" x="380" y="444" text-anchor="middle">시스템 · 페르소나 → 알고 있는 것 → 관계 → 요약 → 씬 → 최근 대화 → 약속 → 검색 결과 → 발화</text>
+<path class="arr" d="M380 454 V470" marker-end="url(#arrow)"/>
+
+<rect class="none" x="120" y="474" width="520" height="40" rx="4"/>
+<text class="th tn" x="380" y="491" text-anchor="middle">응답 생성 + 메타 정보 출력 — 프로토타입에 없음</text>
+<text class="ts tn" x="380" y="506" text-anchor="middle">컨텍스트 조립에서 끝남 · 아래 쓰기 경로의 입력은 시험과 실험 코드가 만듦</text>
+
+<!-- ───────── 쓰기 경로 ───────── -->
+<text class="tl" x="24" y="552">쓰기 경로 — 턴이 끝났을 때 · LLM 호출 0</text>
+<path class="arr" d="M380 514 V530" marker-end="url(#arrow)"/>
+
+<rect class="green" x="24" y="562" width="230" height="64" rx="4"/>
+<text class="th tg" x="38" y="580">메타 정보 반영</text>
+<text class="ts sg" x="38" y="596">상태 변화 → 허용 컬럼 → FSM 검증</text>
+<text class="ts sg" x="38" y="611">씬 · 쓴 기억 · 새 약속</text>
+
+<rect class="green" x="266" y="562" width="230" height="64" rx="4"/>
+<text class="th tg" x="280" y="580">사실 저장</text>
+<text class="ts sg" x="280" y="596">같은 값 강화 · 단일값 충돌은 옛 행 닫음</text>
+<text class="ts sg" x="280" y="611">색인 사본도 제외 · 낮은 확신은 보류</text>
+
+<rect class="green" x="508" y="562" width="228" height="64" rx="4"/>
+<text class="th tg" x="522" y="580">사건 저장</text>
+<text class="ts sg" x="522" y="596">append · 20턴 구간 안 유사 사건은 병합</text>
+<text class="ts sg" x="522" y="611">검색 대상은 이 테이블뿐</text>
+
+<rect class="none" x="266" y="636" width="470" height="34" rx="4"/>
+<text class="th tn" x="501" y="651" text-anchor="middle">원문 → 사실 · 사건 추출기 — 설계만 있고 프로토타입에 없음</text>
+<text class="ts tn" x="501" y="665" text-anchor="middle">실험에서는 정답지를 그대로 넣음 (이상적 추출 가정)</text>
+<path class="arr" d="M380 636 V626" marker-end="url(#arrow)"/>
+<path class="arr" d="M622 636 V626" marker-end="url(#arrow)"/>
+
+<!-- ───────── 세션 경계 ───────── -->
+<text class="tl" x="24" y="704">세션 경계 — 유저가 기다리지 않는 구간 · 로컬 LLM 호출은 여기서만</text>
+<rect class="gray" x="24" y="714" width="712" height="52" rx="4"/>
+<text class="ts sk" x="380" y="729" text-anchor="middle">① 세션 요약 (지운 턴 가림 · 지운 항목이 다시 나오면 저장 거부) → ② 낡은 요약 재생성 (연속 2회 실패면 포기)</text>
+<text class="ts sk" x="380" y="744" text-anchor="middle">→ ③ 전체기간 요약 다시 씀 (세션 요약 최신 24개가 재료 · 옛 전체기간 요약은 안 읽음)</text>
+<text class="ts tn" x="380" y="759" text-anchor="middle">제품 스케줄러는 아직 없음 (시험이 부름)</text>
+</svg>

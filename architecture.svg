@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="552" viewBox="0 0 680 552" role="img" aria-labelledby="t d">
+<title id="t">캐릭터 챗 장기기억 읽기 경로</title>
+<desc id="d">유저 발화가 들어오면 검색을 거치지 않고 매번 넣는 블록과 필요한 턴에만 도는 검색 경로로 나뉜다. 검색 경로는 네 단계로 후보를 걸러내고, 두 갈래를 프롬프트에 배치할 때 자주 바뀌는 블록을 뒤로 놓아 캐시를 활용한다.</desc>
+<style>
+  .t  { font: 400 14px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #1a1a1a; }
+  .th { font: 500 14px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #1a1a1a; }
+  .ts { font: 400 12px system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; fill: #5c5c5c; }
+  .arr  { stroke: #8a8a8a; stroke-width: 1.5; fill: none; }
+  .dash { fill: none; stroke: #c4c4c4; stroke-width: .5; stroke-dasharray: 4 4; }
+  .blue  { fill: #E6F1FB; stroke: #9DC7EE; stroke-width: .5; }
+  .blue  + .th, .blue ~ .th { fill: #0C447C; }
+  .amber { fill: #FDF0DC; stroke: #F0C689; stroke-width: .5; }
+  .gray  { fill: #F2F2F0; stroke: #D6D6D2; stroke-width: .5; }
+  .tb { fill: #0C447C; } .sb { fill: #2D6BA8; }
+  .ta { fill: #7A4405; } .sa { fill: #A8681F; }
+  .tg { fill: #1a1a1a; } .sg { fill: #5c5c5c; }
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#8a8a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect class="gray" x="250" y="40" width="180" height="36" rx="4"/>
+<text class="th tg" x="340" y="63" text-anchor="middle">유저 발화</text>
+
+<path class="arr" d="M340 76 V88 H180 V96" marker-end="url(#arrow)"/>
+<path class="arr" d="M340 76 V88 H496 V96" marker-end="url(#arrow)"/>
+
+<rect class="dash" x="40" y="100" width="280" height="212" rx="8"/>
+<text class="th tg" x="54" y="120">검색을 거치지 않고 매번 넣음</text>
+<rect class="blue" x="54" y="132" width="252" height="46" rx="4"/>
+<text class="th tb" x="70" y="152">관계 상태 · 씬</text><text class="ts sb" x="70" y="168">사귐 헤어짐 호감도</text>
+<rect class="blue" x="54" y="190" width="252" height="46" rx="4"/>
+<text class="th tb" x="70" y="210">요약 · 해석</text><text class="ts sb" x="70" y="226">관계가 어떻게 변했나</text>
+<rect class="blue" x="54" y="248" width="252" height="46" rx="4"/>
+<text class="th tb" x="70" y="268">늘 참인 사실</text><text class="ts sb" x="70" y="284">이름 · 체질 · 가족</text>
+
+<rect class="dash" x="352" y="100" width="288" height="266" rx="8"/>
+<text class="th tg" x="366" y="120">필요한 턴에만 검색</text>
+<rect class="amber" x="366" y="132" width="260" height="42" rx="4"/>
+<text class="th ta" x="382" y="150">이번 턴에 검색이 필요한가</text><text class="ts sa" x="382" y="166">22%만 통과</text>
+<path class="arr" d="M496 174 V186" marker-end="url(#arrow)"/>
+<rect class="amber" x="366" y="190" width="260" height="42" rx="4"/>
+<text class="th ta" x="382" y="208">중요도가 낮으면 뺌</text><text class="ts sa" x="382" y="224">기준 0.2</text>
+<path class="arr" d="M496 232 V244" marker-end="url(#arrow)"/>
+<rect class="amber" x="366" y="248" width="260" height="42" rx="4"/>
+<text class="th ta" x="382" y="266">관련도가 낮으면 뺌</text><text class="ts sa" x="382" y="282">기준 0.05</text>
+<path class="arr" d="M496 290 V302" marker-end="url(#arrow)"/>
+<rect class="amber" x="366" y="306" width="260" height="42" rx="4"/>
+<text class="th ta" x="382" y="324">정렬해서 상위 몇 개만</text><text class="ts sa" x="382" y="340">관련도 0.6 + 중요도 0.4</text>
+
+<path class="arr" d="M180 312 V380 H336"/>
+<path class="arr" d="M496 366 V380 H344"/>
+<path class="arr" d="M340 380 V392" marker-end="url(#arrow)"/>
+
+<rect class="gray" x="136" y="396" width="408" height="52" rx="4"/>
+<text class="th tg" x="340" y="420" text-anchor="middle">프롬프트 배치</text>
+<text class="ts sg" x="340" y="436" text-anchor="middle">자주 바뀌는 블록일수록 뒤로 놓음으로써 캐시를 활용할 수 있게 함</text>
+<path class="arr" d="M340 448 V476" marker-end="url(#arrow)"/>
+<rect class="gray" x="136" y="480" width="408" height="52" rx="4"/>
+<text class="th tg" x="340" y="504" text-anchor="middle">생성</text>
+<text class="ts sg" x="340" y="520" text-anchor="middle">응답과 상태 변화를 한 번에 출력</text>
+</svg>
