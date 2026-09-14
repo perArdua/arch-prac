@@ -1,0 +1,280 @@
+# 평가 문항 — eval3 (세 레짐 공통)
+# 🔴 생성물이다 — 정본은 `eval3/gen_corpus3.py`. 근거는 전부 핵심 층(레짐 불변)을 가리킨다.
+# 스키마는 `eval/questions.yaml`의 `qa_questions`와 같다.
+
+meta: {version: 1, ledger: fact-ledger.yaml (핵심 층), ask_at_session: S365}
+qa_questions:
+- id: L01
+  type: lexical_distractor
+  ask: 나비 얘기 나왔었잖아, 뭐였지?
+  gold: 고양이 나비
+  evidence: [F001]
+  distractor: [X001, X002, X003]
+- id: L02
+  type: lexical_distractor
+  ask: 하늘이가 누구였더라
+  gold: 여동생 하늘
+  evidence: [F007]
+  distractor: [X004, X005, X006]
+- id: L03
+  type: lexical_distractor
+  ask: 두부는 잘 지낸대?
+  gold: 부모님 댁 강아지 두부
+  evidence: [F008]
+  distractor: [X007, X008, X009]
+- id: L04
+  type: lexical_distractor
+  ask: 보리 수술 잘 끝났었나?
+  gold: 서준 강아지 보리 — 수술 날 같이 병원 감
+  evidence: [E002]
+  distractor: [X010, X011, X012]
+- id: L05
+  type: lexical_distractor
+  ask: 나 호두 먹어도 되던가?
+  gold: 안 된다 — 호두 알레르기
+  evidence: [F009]
+  distractor: [X013, X014, X015]
+- id: L06
+  type: lexical_distractor
+  ask: 우리 바다 보러 갔던 거 기억나?
+  gold: 강릉
+  evidence: [E001]
+  distractor: [X016, X017, X018]
+- id: L07
+  type: lexical_distractor
+  ask: 그때 내가 사과했던 거 기억나?
+  gold: 약속 까먹어서 서준한테 먼저 사과함
+  evidence: [E003]
+  distractor: [X019, X020, X021]
+- id: L08
+  type: lexical_distractor
+  ask: 이직 얘기 누가 했더라
+  gold: 지우 본인 (스타트업 첫 출근)
+  evidence: [E004]
+  distractor: [X022, X023, X024]
+- id: L09
+  type: lexical_distractor
+  ask: 내 생일 언제였지?
+  gold: 7월 28일
+  evidence: [F010]
+  distractor: [X025, X026, X027]
+- id: L10
+  type: lexical_distractor
+  ask: 우리 고양이 이름 뭐였더라
+  gold: 나비
+  evidence: [F001]
+  distractor: [X002, X028, X029, X030]
+- id: L11
+  type: lexical_distractor
+  ask: 나 커피 마셔도 되나?
+  gold: 안 된다 — 카페인 민감
+  evidence: [F011]
+  distractor: [X031, X032, X033]
+- id: L12
+  type: lexical_distractor
+  ask: 나 지금 어디 살지?
+  gold: 성수동 투룸
+  evidence: [F006]
+  distractor: [X034, X035, X036]
+  stale_answer: 망원동 원룸
+- id: S01
+  type: single_hop
+  ask: 내 동생 무슨 일 한다 그랬지?
+  gold: 간호사
+  evidence: [F028]
+- id: S02
+  type: single_hop
+  ask: 나 싫어하는 채소 있었나?
+  gold: 오이
+  evidence: [F024]
+- id: S03
+  type: single_hop
+  ask: 내가 제일 좋아하는 음식 뭐게
+  gold: 매운 떡볶이
+  evidence: [F025]
+- id: S04
+  type: single_hop
+  ask: 나 가방에 늘 뭐 넣고 다니더라
+  gold: 립밤
+  evidence: [F026]
+- id: S05
+  type: single_hop
+  ask: 나 주말마다 어디 가지?
+  gold: 서울숲 산책
+  evidence: [F027]
+- id: S06
+  type: single_hop
+  ask: 우리 아빠 고향 어디라 그랬지
+  gold: 제주
+  evidence: [F029]
+- id: S07
+  type: single_hop
+  ask: 나 왼손잡이였나 오른손잡이였나
+  gold: 왼손잡이
+  evidence: [F030]
+- id: S08
+  type: single_hop
+  ask: 나 운전면허 결국 땄어?
+  gold: 땄다 — 세 번째에 합격
+  evidence: [E008]
+- id: S09
+  type: single_hop
+  ask: 나 하프 마라톤 뛰어 본 적 있나?
+  gold: 있다 — 처음 완주
+  evidence: [E009]
+- id: S10
+  type: single_hop
+  ask: 도자기 공방 처음 간 날 기억나?
+  gold: 첫 수업
+  evidence: [E018]
+- id: S11
+  type: single_hop
+  ask: 너 나 퇴근길에 데리러 온 적 있지?
+  gold: 있다
+  evidence: [E019]
+- id: S12
+  type: single_hop
+  ask: 제주도 가족여행 갔던 거 기억나?
+  gold: 아빠 고향 제주 가족여행
+  evidence: [E020]
+- id: K01
+  type: knowledge_update
+  ask: 나 지금 무슨 일 하지
+  gold: 스타트업 PM 팀장
+  evidence: [F004]
+  stale_answer: 마케팅 회사 대리
+- id: K02
+  type: knowledge_update
+  ask: 나 아직 마케팅 회사 다니는 줄 알았지
+  gold: 아니라고 정정
+  evidence: [F004]
+- id: K03
+  type: knowledge_update
+  ask: 나 이사한 거 기억나?
+  gold: 성수동 투룸 — 서준이 짐 옮겨 줌
+  evidence: [F006, E014]
+- id: K04
+  type: knowledge_update
+  ask: 내 취미 요즘 뭐지
+  gold: 도자기 공방
+  evidence: [F013]
+  stale_answer: 클라이밍
+  note: 표 밖 술어(취미) — 옛 값 F012가 색인에 살아 있다
+- id: K05
+  type: knowledge_update
+  ask: 나 휴대폰 뭐 쓰지
+  gold: 아이폰
+  evidence: [F015]
+  stale_answer: 갤럭시
+- id: K06
+  type: knowledge_update
+  ask: 나 운동 어디서 하지
+  gold: 집 앞 필라테스
+  evidence: [F017]
+  stale_answer: 회사 앞 헬스장
+- id: K07
+  type: knowledge_update
+  ask: 나 출근 뭐 타고 해?
+  gold: 자전거
+  evidence: [F019]
+  stale_answer: 지하철
+- id: K08
+  type: knowledge_update
+  ask: 나 요즘 머리 어디서 잘라?
+  gold: 연남동 미용실
+  evidence: [F021]
+  stale_answer: 합정 미용실
+- id: K09
+  type: knowledge_update
+  ask: 내 노트북 뭐였지
+  gold: 그램
+  evidence: [F023]
+  stale_answer: 맥북 에어
+- id: K10
+  type: knowledge_update
+  ask: 너 나한테 화났었잖아 아직도 그래?
+  gold: 화해했다는 인지
+  evidence: [E012, E013]
+- id: K11
+  type: knowledge_update
+  ask: 나 팀장 됐다고 말했었나
+  gold: 했다 — 승진 발표
+  evidence: [E011]
+- id: K12
+  type: knowledge_update
+  ask: 나 아직 망원동 살아?
+  gold: 아니 — 성수동으로 이사
+  evidence: [F006]
+  stale_answer: 그렇다
+- id: M01
+  type: multi_session
+  ask: 나 운전면허 시험 몇 번 봤더라?
+  gold: 3번
+  evidence: [E006, E007, E008]
+- id: M02
+  type: multi_session
+  ask: 나 마라톤 몇 번 완주했지?
+  gold: 2번 (10km · 하프)
+  evidence: [E009, E010]
+- id: M03
+  type: multi_session
+  ask: 나비 아팠던 적 있었지?
+  gold: 새벽에 동물병원
+  evidence: [E005]
+- id: M04
+  type: multi_session
+  ask: 우리 제일 크게 싸운 게 언제였지
+  gold: 야근 문제로 다툼 (S335)
+  evidence: [E012]
+- id: M05
+  type: multi_session
+  ask: 하늘이 시험 붙었었나?
+  gold: 간호사 국가고시 합격
+  evidence: [E015]
+- id: M06
+  type: multi_session
+  ask: 부모님 댁 가서 뭐 했었더라
+  gold: 두부 산책
+  evidence: [E016]
+- id: T01
+  type: temporal
+  ask: 나비 아팠던 게 이사 전이었나 후였나
+  gold: 전
+  evidence: [E005, E014]
+- id: T02
+  type: temporal
+  ask: 면허 딴 게 이직 전이었나 후였나
+  gold: 후
+  evidence: [E008, E004]
+- id: T03
+  type: temporal
+  ask: 우리 강릉 간 게 언제쯤이었지
+  gold: S90 무렵
+  evidence: [E001]
+- id: T04
+  type: temporal
+  ask: 하프 마라톤이 10km보다 먼저였나
+  gold: 아니 — 10km가 먼저
+  evidence: [E009, E010]
+- id: T05
+  type: temporal
+  ask: 도자기 공방 언제부터 다녔지
+  gold: S228~229 무렵
+  evidence: [E018, F013]
+- id: T06
+  type: temporal
+  ask: 우리 화해한 게 최근이야?
+  gold: 최근 (S340)
+  evidence: [E013]
+- {id: A01, type: abstention, ask: '우리 강아지 이름 기억나?', gold: '우리 강아지는 없다 — 두부는 부모님 댁, 보리는 서준 강아지', fail_mode: 두부나 보리를 우리 강아지로 답함}
+- {id: A02, type: abstention, ask: '내 전공 뭐였는지 알아?', gold: 모른다, fail_mode: 전공을 지어냄}
+- {id: A03, type: abstention, ask: '작년에 스키장 갔던 거 기억나?', gold: 모른다, fail_mode: 스키장 여행을 서술}
+- {id: A04, type: abstention, ask: '우리 오빠 얘기 했었잖아, 기억나?', gold: 여동생 하늘만 있다, fail_mode: 오빠를 서술}
+- {id: A05, type: abstention, ask: '나 수영 배운다고 했었나?', gold: 들은 적 없다, fail_mode: 수영을 서술}
+- {id: A06, type: abstention, ask: '나 골프 친다고 했었지?', gold: 들은 적 없다, fail_mode: 골프를 서술}
+- {id: A07, type: abstention, ask: '나 땅콩 알레르기 있다고 했지?', gold: 땅콩이 아니라 호두, fail_mode: 땅콩 알레르기에 동의}
+- {id: A08, type: abstention, ask: '민지 남자친구 이름 뭐였지?', gold: 모른다, fail_mode: 이름을 지어냄}
+- {id: V01, type: coverage, ask: 우리 처음 만났을 때 뭐 먹었지, gold: 대략은 답하되 세부는 흐릿하게, evidence_ref: coverage_plan}
+- {id: V02, type: coverage, ask: 초반에 우리 무슨 얘기 많이 했었지, gold: 대략은 답하되 세부는 흐릿하게, evidence_ref: coverage_plan}
+- {id: V03, type: coverage, ask: 작년 봄에 나 뭐 하고 지냈더라, gold: 대략은 답하되 세부는 흐릿하게, evidence_ref: coverage_plan}
+- {id: V04, type: coverage, ask: 요즘 민지 얘기 자주 했나, gold: 대략은 답하되 세부는 흐릿하게, evidence_ref: coverage_plan}

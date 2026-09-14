@@ -1,0 +1,329 @@
+# 사실 대장 (Fact Ledger) — **두 번째 코퍼스**
+#
+# 🔴 이 파일은 `eval/fact-ledger.yaml`의 사본이 아니다. **스키마만 같고 내용은
+#    의도적으로 다르다.** 무엇을 다르게 하고 무엇을 같게 뒀는지의 사전 등록은
+#    `eval2/README.md` §1·§2에 있다. 그 문서를 먼저 읽지 않으면 이 파일의
+#    선택들은 임의로 보인다.
+#
+# 스키마는 `eval/fact-ledger.yaml`과 같아야 한다 — 그래야 `soak.ingest`·
+# `scoring.survived_*`·`precision.key_index`가 **고치지 않고** 돈다.
+
+meta:
+  version: 1
+  language: ko
+  chat_id: eval2-chat-001
+  sessions: 6
+  span: 2026-09-01 ~ 2026-10-16   # 약 6주
+  target_turns: ~192              # 세션당 32턴
+  noise_ratio: 0.6                # 대장에 없는 잡담 비율
+
+  # ═══ 🔴 자가저작 선언 (실험 22의 선례) ═══
+  # 코퍼스 메타에 «누가 썼는가»를 박는다. 이 필드가 없으면 나중에 이 코퍼스가
+  # «사람이 쓴 것»으로 조용히 승격된다 — 실험 22가 프로브 집합에서 겪은 일이다.
+  authorship:
+    author: "Claude Opus 5 — 이 저장소의 executor 레인 하나"
+    author_count: 1
+    method: "규칙 기반 결정적 역방향 생성 (eval2/gen_corpus2.py, seed 20260910)"
+    llm_used: false
+    llm_checkpoint_compared: false   # LLM 미사용이므로 해당 없음
+    llm_stops: 0
+    note: |
+      대장·문항·노이즈 풀·배치를 전부 한 저자가 썼다. 어휘 다양성은 사람이 쓴
+      대화보다 낮다. **이 코퍼스도 합성이다.** «두 번째 코퍼스»가 «실제 사용»이
+      아니라는 뜻이고, 그 한계는 eval2/README.md §6에 적혀 있다.
+
+# 🔴 축 ① — 지우·서준이 **한 번도 나오지 않는다.**
+character:
+  id: rua
+  name: 루아
+  role: 팀 업무 어시스턴트
+  persona: |
+    사실만 짧게 보고하고 감정을 싣지 않는다. 모르면 모른다고 한다.
+  speech_rules:                    # 🔴 축 ③ — 존댓말 · 업무형
+    말투: 존댓말
+    1인칭: 저
+    어미: ["~습니다", "~요", "~겠습니다"]
+    금지: ["반말", "이모지", "감탄사"]
+
+user_persona:
+  name: 오하람
+  role: 플랫폼개발팀 PM
+  traits: ["일정이 밀리면 질문이 짧아지고 확인만 반복한다"]
+
+# ═══════════════════════════════════════════════════════════
+# 사실 (L5)
+#
+# 🔴 축 ④ — object에 버전(`v2.4`)·숫자(`40명`·`20250417`)·영문(`Kevin Park`)이
+#    실제로 들어간다. `Memory._roots`는 토큰 단계에서 `len(w) < 2`를 버리므로
+#    이 표기들이 어근으로 살아남는지가 프로브의 3절이다.
+# ═══════════════════════════════════════════════════════════
+facts:
+  - id: G001
+    text: 하람님 소속은 플랫폼개발팀입니다
+    predicate: 소속
+    object: 플랫폼개발팀
+    realm: real
+    at: {session: S01, turn: 4}
+    status: valid
+    importance: 0.6
+    tests: [single_hop]
+
+  - id: G002
+    text: 결제 API 운영 버전은 v2.4입니다
+    predicate: 운영_버전
+    object: v2.4
+    realm: real
+    at: {session: S01, turn: 9}
+    invalidated_at: {session: S05, turn: 7}
+    superseded_by: G012
+    importance: 0.7
+    tests: [knowledge_update]
+    # ⚠️ `운영_버전`은 `Memory.PREDICATE_CARDINALITY`의 8개 표에 **없다.**
+    #    `.get(..., "many")`로 떨어지므로 G012가 이것을 **덮지 못한다.**
+    #    이것은 대장의 결함이 아니라 **관측 대상**이다 (프로브 6절).
+
+  - id: G012
+    text: 결제 API 운영 버전이 v3.0으로 올라갔습니다
+    predicate: 운영_버전
+    object: v3.0
+    realm: real
+    at: {session: S05, turn: 7}
+    status: valid
+    importance: 0.9
+    tests: [knowledge_update, single_hop]
+
+  - id: G003
+    text: 보안 감사 담당자는 Kevin Park 매니저입니다
+    predicate: 담당자
+    object: Kevin Park
+    realm: real
+    at: {session: S02, turn: 6}
+    status: valid
+    importance: 0.6
+    tests: [single_hop]
+    note: "영문 이름 — `_roots`가 라틴 문자를 어떻게 자르는지의 표본"
+
+  - id: G004
+    text: 사내 교육 정원은 40명입니다
+    predicate: 정원
+    object: 40명
+    realm: real
+    at: {session: S03, turn: 11}
+    status: valid
+    importance: 0.5
+    tests: [single_hop]
+
+  - id: G005
+    text: 신규 사무실은 판교 2사옥 7층입니다
+    predicate: 이전지
+    object: 판교 2사옥 7층
+    realm: real
+    at: {session: S02, turn: 19}
+    status: valid
+    importance: 0.6
+    tests: [single_hop]
+
+  - id: G006
+    text: 하람님 사번은 20250417입니다
+    predicate: 사번
+    object: '20250417'
+    realm: real
+    at: {session: S01, turn: 22}
+    status: valid
+    importance: 0.4
+    tests: [single_hop]
+    note: "순수 숫자 object — 어근이 되는가"
+
+  # ─── 트랩 (eval의 F007_TRAP과 **같은 자리**의 항목, 다른 소재) ───
+  # 사소한 비품 사건을 아쉬움 어휘 근처에 심는다. 중요도 가중이 작동하면
+  # 뒤 세션의 장애·계약 장면에서 검색되지 않아야 한다.
+  - id: G007_TRAP
+    text: 3층 복합기 토너가 다 떨어져서 마지막 한 장이 아깝다고 하셨습니다
+    predicate: 비품_사소
+    object: 토너
+    realm: real
+    at: {session: S03, turn: 20}
+    status: valid
+    importance: 0.05              # ← 낮아야 정상
+    emotional_bait: ["아깝다", "마지막"]
+    tests: [misinjection]
+    must_not_appear_in: [S05, S06]
+
+  # ─── 어휘 방해물 ───────────────────────────────────────
+  - id: X001
+    text: 결제 API 문서 번역을 외부 업체에 맡겼습니다
+    predicate: 외주
+    object: 문서 번역
+    realm: real
+    at: {session: S03, turn: 26}
+    status: valid
+    importance: 0.1
+    tests: [lexical_distractor]
+    note: "'결제 API' 문자열이 겹치지만 버전 질문의 정답이 아니다"
+
+  - id: X002
+    text: Kevin 매니저 팀의 사내 교육 신청 인원은 12명입니다
+    predicate: 신청_인원
+    object: 12명
+    realm: real
+    at: {session: S04, turn: 29}
+    status: valid
+    importance: 0.15
+    tests: [lexical_distractor]
+    note: "'사내 교육' + 숫자 — G004(정원 40명)의 경쟁 후보"
+
+  - id: X003
+    text: 판교 1사옥 3층 회의실 예약이 취소됐습니다
+    predicate: 일정_사소
+    object: 판교 1사옥 3층
+    realm: real
+    at: {session: S05, turn: 3}
+    status: valid
+    importance: 0.1
+    tests: [lexical_distractor]
+    note: "'판교'·'층' 겹침 — G005(판교 2사옥 7층)의 경쟁 후보"
+
+  - id: X004
+    text: v2.4 기준 연동 문서가 위키에 그대로 남아 있습니다
+    predicate: 문서_상태
+    object: v2.4 위키 문서
+    realm: real
+    at: {session: S05, turn: 24}
+    status: valid
+    importance: 0.1
+    tests: [lexical_distractor]
+    note: "무효화된 G002와 같은 버전 문자열 — stale 답변 유도"
+
+  - id: X005
+    text: Kevin 매니저가 v3.0 릴리스 노트를 요청했습니다
+    predicate: 요청_사소
+    object: 릴리스 노트
+    realm: real
+    at: {session: S06, turn: 14}
+    status: valid
+    importance: 0.15
+    tests: [lexical_distractor]
+    note: "'Kevin' + 'v3.0' 둘 다 겹치는데 답은 아니다"
+
+# ═══════════════════════════════════════════════════════════
+# 사건 (L6)
+#
+# 🔴 축 ③ — 전부 존댓말 완결 문장이다 (eval은 `첫 번째 면접 — 탈락` 꼴의 명사구).
+# 🔴 축 ④ — 서수(`첫/두/세 번째`)가 그대로 있다. `survived_v3`의 서수 규칙이
+#    이 코퍼스에서도 도는지가 프로브 4절이다.
+# ⚠️ `emotional_weight`가 eval(0.5~0.95)보다 낮다. 업무 사건에 0.9를 붙이는
+#    쪽이 거짓이기 때문이고, τ 실험을 위해 낮춘 것이 **아니다** (README §1).
+# ═══════════════════════════════════════════════════════════
+events:
+  - id: E001
+    text: 첫 번째 PG사 미팅은 수수료 이견으로 보류됐습니다
+    at: {session: S01, turn: 27}
+    emotional_weight: 0.5
+    narrative_role: 갈등
+    tests: [multi_session, temporal]
+
+  - id: E002
+    text: 두 번째 PG사 미팅을 진행했습니다
+    at: {session: S02, turn: 25}
+    emotional_weight: 0.35
+    tests: [multi_session]
+
+  - id: E003
+    text: 세 번째 PG사 미팅에서 계약을 체결했습니다
+    at: {session: S04, turn: 14}
+    emotional_weight: 0.7
+    narrative_role: 해소
+    tests: [multi_session, temporal]
+
+  - id: E004
+    text: 보안 감사에서 지적 12건을 받았습니다
+    at: {session: S02, turn: 8}
+    emotional_weight: 0.65
+    narrative_role: 갈등
+    tests: [multi_session]
+
+  - id: E005
+    text: 서버 장애로 결제가 4시간 중단됐습니다
+    at: {session: S03, turn: 2}
+    emotional_weight: 0.8
+    narrative_role: 갈등
+    tests: [peak]
+    note: "G007_TRAP이 여기 근처에서 검색되면 misinjection"
+
+  - id: E006
+    text: 사무실 이전 일정이 10월 3주차로 확정됐습니다
+    at: {session: S04, turn: 22}
+    emotional_weight: 0.45
+    narrative_role: 전환점
+    tests: [temporal]
+
+  - id: E007
+    text: 채용 최종 면접을 2명 진행했습니다
+    at: {session: S05, turn: 18}
+    emotional_weight: 0.4
+    tests: [multi_session]
+
+  - id: E008
+    text: 사내 교육 1차 신청이 정원 미달로 마감됐습니다
+    at: {session: S06, turn: 6}
+    emotional_weight: 0.25
+    tests: [multi_session]
+
+# ═══════════════════════════════════════════════════════════
+# 서사 부채 (L9) — 업무 코퍼스에서는 «약속한 산출물»이다
+# ═══════════════════════════════════════════════════════════
+debts:
+  - id: P001
+    setup: {session: S02, turn: 28}
+    content: "감사 지적 사항 회신 기한을 다시 안내드리기로 함"
+    trigger: {kind: session_start, after: S02}
+    expected_payoff: {session: S03}
+    emotional_stake: 0.5
+    tests: [payoff]
+
+  - id: P002
+    setup: {session: S04, turn: 9}
+    content: "이전 확정되면 좌석 배치도를 공유하기로 함"
+    trigger: {kind: time, spec: 3d}
+    expected_payoff: {session: S05, turn: 3}
+    emotional_stake: 0.6
+    tests: [payoff, proactive_recall]
+
+  - id: P003_UNPAID
+    setup: {session: S01, turn: 16}
+    content: "사내 교육 강사 후보 목록을 정리해 드리기로 함"
+    trigger: {kind: semantic, spec: "교육 준비 얘기가 나오면"}
+    expected_payoff: null          # ← 의도적으로 회수 안 함
+    emotional_stake: 0.4
+    tests: [payoff_negative]
+
+# ═══════════════════════════════════════════════════════════
+# 형성해야 할 해석 (L8)
+# ═══════════════════════════════════════════════════════════
+expected_interpretations:
+  - id: J001
+    content: "하람님은 일정이 밀리면 질문이 짧아지고 확인만 반복한다"
+    evidence: [S03, S05]
+    formed_by: S05
+    tests: [interpretation]
+
+# ═══════════════════════════════════════════════════════════
+# Abstention 표적 — 한 번도 언급되지 않은 것
+# ═══════════════════════════════════════════════════════════
+never_mentioned:
+  items:
+    - {topic: 재택근무, question: "재택 정책 바뀐 거 정리해 주셨죠?"}
+    - {topic: 법인카드, question: "법인카드 한도 얘기 했었나요"}
+    - {topic: 주차등록, question: "주차 등록 어떻게 하는지 알려주셨잖아요"}
+    - {topic: 특허출원, question: "특허 출원 건 진행 상황 알려주세요"}
+  note: |
+    정답은 "그런 얘기는 없었습니다"이다. 구체적으로 서술하면 hallucination.
+
+# ═══════════════════════════════════════════════════════════
+# 커버리지 시나리오
+# ═══════════════════════════════════════════════════════════
+coverage_plan:
+  ranges:
+    - {range: S01-S02, resolution: digest, desc: "요약만 남김"}
+    - {range: S03-S04, resolution: event,  desc: "사건 단위로 남김"}
+    - {range: S05-S06, resolution: raw,    desc: "원문 보존"}
