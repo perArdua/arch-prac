@@ -1,0 +1,30 @@
+# Postgres 16 + pg_bigm — 엔진 라운드의 CJK 2-gram 대조군.
+#
+# 🔴 태그가 아니라 다이제스트로 고정한다(G11). 이 다이제스트는 PG 16.15 · Debian 13(trixie)이다.
+#
+# pg_bigm은 이 이미지에도, 이 이미지가 쓰는 PGDG apt 저장소(trixie-pgdg)에도 없다
+# (`apt-cache search bigm` → pg_bigm 없음 · README에 출력). 그래서 공식 저장소
+# github.com/pgbigm/pg_bigm 의 태그 소스를 받아 빌드하고, 빌드 도구는 최종 이미지에 남기지 않는다.
+ARG PG_BASE=postgres@sha256:f1c3376c26f2609ab9f29f71f824103fe2fcd8ee0346485cb6122a4f93df6f94
+
+FROM ${PG_BASE} AS build
+ARG PG_BIGM_TAG=v1.2-20250903
+# 소스 타르볼 36,292 바이트. 해시가 다르면 빌드가 멈춘다.
+ARG PG_BIGM_SHA256=4d4fb48161e3f9e99207851299379c83b3e5d1d3c1a07c35f6a3153d577b3142
+# libicu-dev: server-dev 헤더(pg_locale.h)가 unicode/ucol.h를 부른다 — 빼면 첫 시도처럼
+# `fatal error: unicode/ucol.h: No such file or directory`로 멈춘다.
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        build-essential "postgresql-server-dev-${PG_MAJOR}" libicu-dev curl ca-certificates; \
+    curl -fsSL -o /tmp/pg_bigm.tar.gz \
+        "https://github.com/pgbigm/pg_bigm/archive/refs/tags/${PG_BIGM_TAG}.tar.gz"; \
+    echo "${PG_BIGM_SHA256}  /tmp/pg_bigm.tar.gz" | sha256sum -c -; \
+    mkdir /src; tar xzf /tmp/pg_bigm.tar.gz -C /src --strip-components=1; \
+    cd /src; \
+    make USE_PGXS=1; \
+    make USE_PGXS=1 install DESTDIR=/out
+
+FROM ${PG_BASE}
+# 확장 파일(.so · .control · .sql)만 옮긴다.
+COPY --from=build /out/ /
