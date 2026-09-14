@@ -16,7 +16,7 @@ deletion_demo.py — 기억 하나를 지우면 어디까지 사라지는가. (A
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.stdout.reconfigure(encoding="utf-8")
 
 from memory import Memory   # noqa: E402

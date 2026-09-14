@@ -4,12 +4,12 @@
 > **표준 라이브러리만** (sqlite3, re, json). 설치할 게 없다.
 
 ```bash
-python prototype/demo.py            # 컨텍스트 조립 + provenance
-python prototype/fact_demo.py       # L5 bi-temporal 무효화
-python prototype/interpret_demo.py  # L8 해석 누적
+python prototype/demos/demo.py            # 컨텍스트 조립 + provenance
+python prototype/demos/fact_demo.py       # L5 bi-temporal 무효화
+python prototype/demos/interpret_demo.py  # L8 해석 누적
 python prototype/soak.py            # ⭐ 720턴 실제 코퍼스 소크 테스트
 python prototype/gate_sweep.py      # ⭐ 게이트 × θ 조합 격자 (~20초)
-python prototype/deletion_demo.py   # 🆕 삭제의 파생물 전파 (docs/16 §4)
+python prototype/demos/deletion_demo.py   # 🆕 삭제의 파생물 전파 (docs/16 §4)
 ```
 
 **`soak.py`만 `pyyaml`이 필요하다** (대장 파일을 읽는다). 나머지는 표준 라이브러리만.
@@ -40,7 +40,7 @@ python prototype/deletion_demo.py   # 🆕 삭제의 파생물 전파 (docs/16 �
 | 기능 | 무엇을 고치나 |
 |---|---|
 | `add_event` **중복 제거** | 사건에 중복 방어가 없었다. 시점 버킷 + 어근 겹침 |
-| `delete_item` **파생물 전파** | 사실을 지워도 요약에 남았다. `derivation`·`stale` |
+| `delete_item` **파생물 전파** | 사실을 지워도 요약에 남았다. `derivation`·`stale`. 🔄 2026-09-10 — **색인 복사본(`event`)은 `stale`이 아니라 즉시 제외**로 고쳤다. 그 전까지 전파는 요약에만 참이었고 검색·게이트에는 거짓이었다(ADR-011 결정표) |
 | `_safe` **계층별 실패 정책** | 사실 계층 실패만 "조용한 환각"을 만든다 |
 | `_migrate` **스키마 버전** | 필드만 있고 절차가 없었다 |
 
@@ -93,3 +93,9 @@ INJECT_KNOWN_FACTS = True             # 소크 발견 6 — 결정적 사실 주
 
 `Memory.PREDICATE_STANDING`은 **결정적 주입 대상 술어 집합**이다(소크 발견 8).
 여기 없는 술어(`일상_사소` 등)는 검색 경로로만 도달한다.
+
+## 폴더 구성 (2026-09-14 분할)
+- `prototype/` — 제품이 import하는 모듈 6(`memory` `summarize` `embedding` `llm` `fsm` `regen_job`)과 하니스 2(`soak` `gate_sweep` — 실험 23파일(시험·데모까지 32파일)이 직접 import해서 같은 층). `tests/` 단위 시험 20 · `demos/` 데모 4.
+  시험: `PYTHONIOENCODING=utf-8 python -B -m unittest discover -s prototype/tests -p "test_*.py"` (저장소 루트에서)
+- `experiments/` — 돌리는 코드만 평면(실험 · 측정 · 감사 4 · `run_all.py`). `tests/` 시험 35 · `data/` 결과·체크포인트·캐시·라벨·로그(`RESULTS.txt` 포함) · `engine_infra/` 컨테이너.
+  AI Hub 파생 파일(`aihub*.py` · `AIHUB_141_*.json`)은 평면에 그대로 — 사전 등록 셋은 기록 JSON의 sha256으로 얼어 있어 옮기지 않는다. 전부 `.gitignore`.

@@ -4,14 +4,14 @@ L5 사실 무효화 데모 — bi-temporal이 실제로 어떻게 도는가.
 스키마에 superseded_by를 넣어놓고 탐지 로직은 없었다.
 구현하려니 문서에 없던 결정 세 개가 필요했고, 그게 이 데모의 내용이다.
 
-실행: python prototype/fact_demo.py
+실행: python prototype/demos/fact_demo.py
 """
 
 import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from memory import Memory  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
