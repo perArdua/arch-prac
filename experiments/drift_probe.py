@@ -36,6 +36,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
 sys.stdout.reconfigure(encoding="utf-8")
 import yaml                                    # noqa: E402
 from quality_run import read_key, generate, ROOT   # noqa: E402
+from scoring import survived_frozen                # noqa: E402
 
 W = 78
 SESSION_TOK = "이번 세션 요약을 3문장 이내로 써라. 사실·사건·관계 변화만 남기고 잡담은 버려라."
@@ -59,16 +60,10 @@ def sessions_from(corpus, n_sessions):
     return [(k, by[k]) for k in keys]
 
 
-def survived(text, items):
-    """대장 항목 중 요약에 살아남은 것. 어근 겹침으로 본다(교착어)."""
-    from memory import Memory
-    tr = Memory._roots(text)
-    out = []
-    for it in items:
-        ir = Memory._roots(it)
-        if ir and len(tr & ir) / len(ir) >= 0.5:
-            out.append(it)
-    return out
+# 채점 구현은 `scoring.py`로 옮겼다 — 같은 규칙이 두 파일에 적혀 있어서
+# 한쪽만 고쳐지면 실험 19/20의 숫자가 조용히 비교 불가능해진다.
+# 여기서 쓰는 것은 **동결본**이다. 이 실험의 기존 숫자를 재현해야 하기 때문이다.
+survived = survived_frozen
 
 
 def main():
@@ -83,7 +78,7 @@ def main():
     with open(f"{ROOT}/eval/fact-ledger.yaml", encoding="utf-8") as f:
         ledger = yaml.safe_load(f)
 
-    ck = f"{ROOT}/experiments/DRIFT_RESULTS.json"
+    ck = f"{ROOT}/experiments/data/DRIFT_RESULTS.json"
     saved = json.load(open(ck, encoding="utf-8")) if os.path.exists(ck) else {}
 
     def gen(tag, prompt):

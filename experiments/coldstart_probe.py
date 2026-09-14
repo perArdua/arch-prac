@@ -98,7 +98,7 @@ def main():
     if not key:
         print("키가 없다."); return 1
     model = sys.argv[1] if len(sys.argv) > 1 else "gemini-3.1-flash-lite"
-    ck = f"{ROOT}/experiments/COLDSTART_RESULTS.json"
+    ck = f"{ROOT}/experiments/data/COLDSTART_RESULTS.json"
     saved = json.load(open(ck, encoding="utf-8")) if os.path.exists(ck) else {}
 
     print("=" * W)
@@ -150,7 +150,7 @@ def main():
     print("  → **환각은 표지 없는 평서문이다.** 키워드로는 못 잡는다.")
     print("     게다가 '기억 안 날 리가 있나'의 '기억 안'이 회피로 오인돼")
     print("     환각 판정을 취소했다 — 실험 13과 **같은 버그**다.")
-    print("\n  판정 근거: experiments/COLDSTART_ADJUDICATION.yaml")
+    print("\n  판정 근거: experiments/data/COLDSTART_ADJUDICATION.yaml")
 
     print("\n" + "-" * W)
     print("⭐ 수기 판정 — 네 단계가 각각 기여한다")

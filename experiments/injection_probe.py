@@ -185,7 +185,7 @@ def main():
         return 1
     model = sys.argv[1] if len(sys.argv) > 1 else "gemini-3.1-flash-lite"
 
-    ck = f"{ROOT}/experiments/INJECTION_RESULTS.json"
+    ck = f"{ROOT}/experiments/data/INJECTION_RESULTS.json"
     saved = json.load(open(ck, encoding="utf-8")) if os.path.exists(ck) else {}
 
     print("=" * W)
