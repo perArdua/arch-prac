@@ -1,0 +1,874 @@
+# 사실 대장 — **eval3 핵심 층** (레짐 불변)
+#
+# 🔴 이 파일은 레짐 셋이 **공유하는** 항목만 담는다 — 문항의 근거 · 어휘적 방해물 ·
+#    갱신 사슬 · 부채. 색인 3,000행짜리 전체 대장은 레짐마다
+#    `eval3/regimes/<레짐>/fact-ledger.yaml`이고, 그것은 이 파일 + 벌크(그 레짐의
+#    지수로 채운 행)다. 무엇을 같게/다르게 뒀는지의 사전 등록은 `eval3/README.md` §1.
+# 🔴 생성물이다 — 손으로 고치지 말 것. 정본은 `eval3/gen_corpus3.py`이고
+#    `--check`가 디스크와 바이트를 대조한다.
+# 스키마는 `eval/fact-ledger.yaml`과 같다(`facts`·`events`·`at.session`·`emotional_weight`).
+# 더한 키(`subject`·`lexical_role`)는 `soak.ingest`가 읽지 않는다.
+
+meta:
+  version: 1
+  language: ko
+  chat_id: eval3-chat-001
+  sessions: 365
+  span: 약 1년 — 하루 한 세션 (ADR-003의 «1년 후»)
+  target_turns: 10950
+  authorship: {author: Claude Opus 5 — 이 저장소의 executor 레인 하나, author_count: 1, method: 규칙 기반 결정적 역방향 생성 (eval3/gen_corpus3.py · 골격 seed 20260910 · 슬롯 seed 20260911 · 노이즈 seed 20260912) — 노이즈·배치는 experiments/gen_corpus.py의 함수 객체를 그대로 부름, llm_used: false, llm_checkpoint_compared: false, llm_stops: 0, note: 핵심 항목·문항·슬롯 풀·풀의 순위를 한 저자가 썼다. df 분포는 이 생성기가 정한다 — 그래서 레짐으로 선언했다(eval3/README.md §1). «실사용»이 아니다.}
+  layer: core — 레짐 불변 항목만. 레짐별 전체 대장은 regimes/<레짐>/fact-ledger.yaml
+  regimes:
+  - {dir: s0-flat, label: 고르게 s=0, zipf_s: 0.0, emulates: '화제와 등장인물이 날마다 바뀌는 긴 일상 대화 — 유저가 주변 사람·장소·물건 얘기를 고르게 해서, 어느 슬롯 값이든 다시 나올 확률이 같다.'}
+  - {dir: s1-zipf, label: 지프 s=1, zipf_s: 1.0, emulates: '자연어 낱말 빈도의 교과서 모양(지프 법칙 — 순위 r의 빈도가 1/r에 비례) — 몇몇 값이 자주, 대부분은 드물게 나온다.'}
+  - {dir: s2-dominant, label: 소수 지배 s=2, zipf_s: 2.0, emulates: 두 사람의 관계에 갇힌 롤플레이 — 기억 대부분에 같은 이름(지우·서준)과 같은 몇 가지 소재가 나온다. s=2는 사람 슬롯 1위(지우)의 몫 ≈ 62%가 eval에서 `지우`가 색인 21행 중 12행(57%)에 나온 것과 가장 가까운 정수 지수라서 골랐다.}
+character:
+  id: seojun
+  name: 강서준
+  relation: 대학 선배
+  speech_rules: {말투: 반말, 1인칭: 나}
+  note: eval과 같은 두 사람 — `scoring.UBIQUITOUS`가 작동하게 둔다
+user_persona: {name: 지우, job_initial: 마케팅 회사 대리}
+facts:
+- id: F001
+  text: 지우의 고양이 이름은 나비
+  predicate: 반려동물_이름
+  object: 나비
+  subject: 지우
+  realm: real
+  at: {session: S04, turn: 12}
+  status: valid
+  importance: 0.6
+  tests: [single_hop, lexical_distractor]
+  lexical_role: target
+- id: F002
+  text: 지우는 마케팅 회사 대리
+  predicate: 직업
+  object: 마케팅 회사 대리
+  subject: 지우
+  realm: real
+  at: {session: S02, turn: 5}
+  status: invalidated
+  importance: 0.7
+  tests: [knowledge_update]
+  invalidated_at: {session: S121, turn: 3}
+  superseded_by: F003
+- id: F003
+  text: 지우는 스타트업 PM으로 이직함
+  predicate: 직업
+  object: 스타트업 PM
+  subject: 지우
+  realm: real
+  at: {session: S121, turn: 4}
+  status: invalidated
+  importance: 0.7
+  tests: [knowledge_update]
+  invalidated_at: {session: S300, turn: 6}
+  superseded_by: F004
+  lexical_role: same
+- id: F004
+  text: 지우는 스타트업 PM 팀장으로 승진함
+  predicate: 직업
+  object: 스타트업 PM 팀장
+  subject: 지우
+  realm: real
+  at: {session: S300, turn: 7}
+  status: valid
+  importance: 0.75
+  tests: [knowledge_update]
+- id: F005
+  text: 지우는 망원동 원룸에 삶
+  predicate: 거주지
+  object: 망원동 원룸
+  subject: 지우
+  realm: real
+  at: {session: S03, turn: 8}
+  status: invalidated
+  importance: 0.6
+  tests: [knowledge_update]
+  invalidated_at: {session: S200, turn: 9}
+  superseded_by: F006
+- id: F006
+  text: 지우는 성수동 투룸으로 이사함
+  predicate: 거주지
+  object: 성수동 투룸
+  subject: 지우
+  realm: real
+  at: {session: S200, turn: 10}
+  status: valid
+  importance: 0.65
+  tests: [knowledge_update, lexical_distractor]
+  lexical_role: target
+- id: F007
+  text: 지우 여동생 이름은 하늘
+  predicate: 가족
+  object: 여동생 하늘
+  subject: 지우
+  realm: real
+  at: {session: S06, turn: 15}
+  status: valid
+  importance: 0.6
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: F008
+  text: 지우 부모님 댁 강아지 이름은 두부
+  predicate: 가족
+  object: 부모님 댁 강아지 두부
+  subject: 지우
+  realm: real
+  at: {session: S09, turn: 20}
+  status: valid
+  importance: 0.5
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: F009
+  text: 지우는 호두 알레르기가 있음
+  predicate: 알레르기
+  object: 호두
+  subject: 지우
+  realm: real
+  at: {session: S12, turn: 7}
+  status: valid
+  importance: 0.85
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: F010
+  text: 지우 생일은 7월 28일
+  predicate: 생일
+  object: 7월 28일
+  subject: 지우
+  realm: real
+  at: {session: S15, turn: 22}
+  status: valid
+  importance: 0.7
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: F011
+  text: 지우는 카페인에 민감해서 커피 못 마심
+  predicate: 신체_특성
+  object: 카페인 민감
+  subject: 지우
+  realm: real
+  at: {session: S18, turn: 11}
+  status: valid
+  importance: 0.7
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: F012
+  text: 지우 취미는 클라이밍
+  predicate: 취미
+  object: 클라이밍
+  subject: 지우
+  realm: real
+  at: {session: S10, turn: 14}
+  status: invalidated
+  importance: 0.5
+  tests: [knowledge_update]
+  invalidated_at: {session: S228, turn: 4}
+  superseded_by: F013
+- id: F013
+  text: 지우 취미가 도자기 공방으로 바뀜
+  predicate: 취미
+  object: 도자기 공방
+  subject: 지우
+  realm: real
+  at: {session: S228, turn: 5}
+  status: valid
+  importance: 0.5
+  tests: [knowledge_update, temporal]
+- id: F014
+  text: 지우 휴대폰은 갤럭시
+  predicate: 휴대폰_기종
+  object: 갤럭시
+  subject: 지우
+  realm: real
+  at: {session: S20, turn: 9}
+  status: invalidated
+  importance: 0.3
+  tests: [knowledge_update]
+  invalidated_at: {session: S180, turn: 16}
+  superseded_by: F015
+- id: F015
+  text: 지우가 휴대폰을 아이폰으로 바꿈
+  predicate: 휴대폰_기종
+  object: 아이폰
+  subject: 지우
+  realm: real
+  at: {session: S180, turn: 17}
+  status: valid
+  importance: 0.3
+  tests: [knowledge_update]
+- id: F016
+  text: 지우는 회사 앞 헬스장 다님
+  predicate: 다니는_헬스장
+  object: 회사 앞 헬스장
+  subject: 지우
+  realm: real
+  at: {session: S25, turn: 18}
+  status: invalidated
+  importance: 0.3
+  tests: [knowledge_update]
+  invalidated_at: {session: S240, turn: 12}
+  superseded_by: F017
+- id: F017
+  text: 지우가 헬스장 끊고 집 앞 필라테스로 옮김
+  predicate: 다니는_헬스장
+  object: 집 앞 필라테스
+  subject: 지우
+  realm: real
+  at: {session: S240, turn: 13}
+  status: valid
+  importance: 0.3
+  tests: [knowledge_update]
+- id: F018
+  text: 지우는 지하철로 출퇴근함
+  predicate: 출퇴근_수단
+  object: 지하철
+  subject: 지우
+  realm: real
+  at: {session: S30, turn: 6}
+  status: invalidated
+  importance: 0.3
+  tests: [knowledge_update]
+  invalidated_at: {session: S210, turn: 20}
+  superseded_by: F019
+- id: F019
+  text: 지우가 자전거로 출퇴근하기 시작함
+  predicate: 출퇴근_수단
+  object: 자전거
+  subject: 지우
+  realm: real
+  at: {session: S210, turn: 21}
+  status: valid
+  importance: 0.35
+  tests: [knowledge_update]
+- id: F020
+  text: 지우 단골 미용실은 합정에 있음
+  predicate: 다니는_미용실
+  object: 합정 미용실
+  subject: 지우
+  realm: real
+  at: {session: S35, turn: 10}
+  status: invalidated
+  importance: 0.2
+  tests: [knowledge_update]
+  invalidated_at: {session: S205, turn: 2}
+  superseded_by: F021
+- id: F021
+  text: 지우가 연남동 미용실로 단골을 옮김
+  predicate: 다니는_미용실
+  object: 연남동 미용실
+  subject: 지우
+  realm: real
+  at: {session: S205, turn: 3}
+  status: valid
+  importance: 0.2
+  tests: [knowledge_update]
+- id: F022
+  text: 지우 노트북은 맥북 에어
+  predicate: 쓰는_노트북
+  object: 맥북 에어
+  subject: 지우
+  realm: real
+  at: {session: S40, turn: 25}
+  status: invalidated
+  importance: 0.25
+  tests: [knowledge_update]
+  invalidated_at: {session: S125, turn: 14}
+  superseded_by: F023
+- id: F023
+  text: 지우가 회사에서 새 노트북으로 그램을 받음
+  predicate: 쓰는_노트북
+  object: 그램
+  subject: 지우
+  realm: real
+  at: {session: S125, turn: 15}
+  status: valid
+  importance: 0.25
+  tests: [knowledge_update]
+- id: F024
+  text: 지우는 오이 싫어함
+  predicate: 싫어하는_것
+  object: 오이
+  subject: 지우
+  realm: real
+  at: {session: S45, turn: 3}
+  status: valid
+  importance: 0.4
+  tests: [single_hop]
+- id: F025
+  text: 지우는 매운 떡볶이 좋아함
+  predicate: 선호
+  object: 매운 떡볶이
+  subject: 지우
+  realm: real
+  at: {session: S50, turn: 8}
+  status: valid
+  importance: 0.4
+  tests: [single_hop]
+- id: F026
+  text: 지우 가방엔 항상 립밤이 있음
+  predicate: 소지품
+  object: 립밤
+  subject: 지우
+  realm: real
+  at: {session: S55, turn: 19}
+  status: valid
+  importance: 0.2
+  tests: [single_hop]
+- id: F027
+  text: 지우는 주말마다 서울숲 산책함
+  predicate: 자주_가는_곳
+  object: 서울숲
+  subject: 지우
+  realm: real
+  at: {session: S60, turn: 12}
+  status: valid
+  importance: 0.35
+  tests: [single_hop]
+- id: F028
+  text: 지우 여동생 하늘은 간호사
+  predicate: 가족
+  object: 여동생 하늘 간호사
+  subject: 지우
+  realm: real
+  at: {session: S65, turn: 7}
+  status: valid
+  importance: 0.5
+  tests: [single_hop]
+  lexical_role: same
+- id: F029
+  text: 지우 아빠는 제주 출신
+  predicate: 가족
+  object: 아빠 제주 출신
+  subject: 지우
+  realm: real
+  at: {session: S70, turn: 21}
+  status: valid
+  importance: 0.4
+  tests: [single_hop]
+- id: F030
+  text: 지우는 왼손잡이
+  predicate: 신체_특성
+  object: 왼손잡이
+  subject: 지우
+  realm: real
+  at: {session: S75, turn: 4}
+  status: valid
+  importance: 0.3
+  tests: [single_hop]
+- id: F031
+  text: 지우가 편의점에서 마지막 크림빵을 놓쳐서 아쉬웠다고 함
+  predicate: 일상_사소
+  object: 크림빵
+  subject: 지우
+  realm: real
+  at: {session: S85, turn: 16}
+  status: valid
+  importance: 0.05
+  tests: [misinjection]
+  note: eval F007_TRAP과 같은 자리 — 낮아야 정상
+- id: X001
+  text: 지우가 한강 공원에서 흰 나비를 봤다고 함
+  predicate: 일상_사소
+  object: 나비(곤충)
+  subject: 지우
+  realm: real
+  at: {session: S95, turn: 14}
+  status: valid
+  importance: 0.1
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X002
+  text: 민지네 고양이 이름도 나비
+  predicate: 지인_반려동물
+  object: 나비
+  subject: 민지
+  realm: real
+  at: {session: S100, turn: 9}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+  note: 다른 사람의 고양이 — 이름까지 같다
+- id: X003
+  text: 지우가 결혼식 가려고 나비넥타이를 빌림
+  predicate: 일상_사소
+  object: 나비넥타이
+  subject: 지우
+  realm: real
+  at: {session: S105, turn: 22}
+  status: valid
+  importance: 0.15
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X004
+  text: 퇴근길에 본 하늘이 예뻐서 지우가 사진을 찍었다고 함
+  predicate: 일상_사소
+  object: 하늘(풍경)
+  subject: 지우
+  realm: real
+  at: {session: S110, turn: 5}
+  status: valid
+  importance: 0.05
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X005
+  text: 서준 회사 후배 이름이 하늘
+  predicate: 지인_관계
+  object: 후배 하늘
+  subject: 하늘(서준 후배)
+  realm: real
+  at: {session: S115, turn: 18}
+  status: valid
+  importance: 0.25
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X007
+  text: 지우가 마트에서 두부 한 모를 샀음
+  predicate: 일상_사소
+  object: 두부(식품)
+  subject: 지우
+  realm: real
+  at: {session: S135, turn: 6}
+  status: valid
+  importance: 0.05
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X008
+  text: 지안네 강아지 이름도 두부
+  predicate: 지인_반려동물
+  object: 두부
+  subject: 지안
+  realm: real
+  at: {session: S140, turn: 23}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X010
+  text: 지우가 보리차를 끓여 마심
+  predicate: 일상_사소
+  object: 보리차
+  subject: 지우
+  realm: real
+  at: {session: S150, turn: 27}
+  status: valid
+  importance: 0.05
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X011
+  text: 민지네 햄스터 이름은 보리
+  predicate: 지인_반려동물
+  object: 보리
+  subject: 민지
+  realm: real
+  at: {session: S155, turn: 8}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X013
+  text: 지안네 햄스터 이름은 호두
+  predicate: 지인_반려동물
+  object: 호두
+  subject: 지안
+  realm: real
+  at: {session: S165, turn: 17}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X015
+  text: 서준이 호두나무 원목 책상을 삼
+  predicate: 일상_사소
+  object: 호두나무 책상
+  subject: 서준
+  realm: real
+  at: {session: S175, turn: 2}
+  status: valid
+  importance: 0.15
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X016
+  text: 지우 회사 동료 이름이 바다
+  predicate: 지인_관계
+  object: 동료 바다
+  subject: 바다(지우 동료)
+  realm: real
+  at: {session: S185, turn: 19}
+  status: valid
+  importance: 0.25
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X017
+  text: 지우가 휴대폰 배경화면을 바다 사진으로 바꿈
+  predicate: 일상_사소
+  object: 바다 사진
+  subject: 지우
+  realm: real
+  at: {session: S190, turn: 7}
+  status: valid
+  importance: 0.05
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X023
+  text: 서준 선배가 스타트업으로 이직함
+  predicate: 지인_직업
+  object: 스타트업
+  subject: 서준 선배
+  realm: real
+  at: {session: S245, turn: 21}
+  status: valid
+  importance: 0.15
+  tests: [lexical_distractor]
+  lexical_role: distractor
+  note: eval X005와 같은 모양 — 같은 어휘, 다른 주어
+- id: X024
+  text: 지안은 이직을 두 번 한 디자이너
+  predicate: 지인_직업
+  object: 디자이너
+  subject: 지안
+  realm: real
+  at: {session: S250, turn: 5}
+  status: valid
+  importance: 0.25
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X025
+  text: 민지 생일은 7월 2일
+  predicate: 지인_생일
+  object: 7월 2일
+  subject: 민지
+  realm: real
+  at: {session: S255, turn: 16}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X026
+  text: 서준 생일은 11월 28일
+  predicate: 지인_생일
+  object: 11월 28일
+  subject: 서준
+  realm: real
+  at: {session: S260, turn: 22}
+  status: valid
+  importance: 0.5
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X027
+  text: 지안 생일은 7월 18일
+  predicate: 지인_생일
+  object: 7월 18일
+  subject: 지안
+  realm: real
+  at: {session: S265, turn: 10}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X028
+  text: 민지네 고양이 코코는 겁이 많음
+  predicate: 지인_반려동물
+  object: 코코
+  subject: 민지
+  realm: real
+  at: {session: S270, turn: 13}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X030
+  text: 지안이 고양이 카페를 차림
+  predicate: 지인_직업
+  object: 고양이 카페 사장
+  subject: 지안
+  realm: real
+  at: {session: S280, turn: 18}
+  status: valid
+  importance: 0.25
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X031
+  text: 민지는 하루에 커피를 세 잔 마심
+  predicate: 지인_선호
+  object: 커피
+  subject: 민지
+  realm: real
+  at: {session: S285, turn: 12}
+  status: valid
+  importance: 0.2
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X032
+  text: 서준이 커피 머신을 새로 삼
+  predicate: 일상_사소
+  object: 커피 머신
+  subject: 서준
+  realm: real
+  at: {session: S290, turn: 23}
+  status: valid
+  importance: 0.15
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X034
+  text: 민지는 성수동에 삶
+  predicate: 지인_거주지
+  object: 성수동
+  subject: 민지
+  realm: real
+  at: {session: S305, turn: 17}
+  status: valid
+  importance: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X035
+  text: 서준 회사는 성수역 근처에 있음
+  predicate: 지인_직장
+  object: 성수역
+  subject: 서준
+  realm: real
+  at: {session: S310, turn: 4}
+  status: valid
+  importance: 0.35
+  tests: [lexical_distractor]
+  lexical_role: distractor
+events:
+- id: E001
+  text: 지우가 서준이랑 처음 바다 보러 강릉에 감
+  at: {session: S90, turn: 18}
+  emotional_weight: 0.9
+  narrative_role: 전환점
+  tests: [lexical_distractor, temporal]
+  lexical_role: target
+- id: E002
+  text: 서준 강아지 보리가 수술받는 날 지우가 병원에 같이 감
+  at: {session: S158, turn: 22}
+  emotional_weight: 0.85
+  narrative_role: 전환점
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: E003
+  text: 지우가 약속을 까먹어서 서준한테 먼저 사과함
+  at: {session: S262, turn: 25}
+  emotional_weight: 0.8
+  narrative_role: 갈등
+  tests: [lexical_distractor]
+  lexical_role: target
+- id: E004
+  text: 지우가 스타트업 첫 출근 — 이직 확정
+  at: {session: S122, turn: 5}
+  emotional_weight: 0.8
+  narrative_role: 전환점
+  tests: [lexical_distractor, temporal]
+  lexical_role: target
+- id: E005
+  text: 나비가 갑자기 아파서 새벽에 동물병원에 감
+  at: {session: S150, turn: 3}
+  emotional_weight: 0.95
+  narrative_role: 갈등
+  tests: [multi_session, temporal]
+  lexical_role: same
+- id: E006
+  text: 첫 번째 운전면허 시험 — 탈락
+  at: {session: S126, turn: 9}
+  emotional_weight: 0.6
+  tests: [multi_session]
+- id: E007
+  text: 두 번째 운전면허 시험도 탈락
+  at: {session: S133, turn: 10}
+  emotional_weight: 0.6
+  tests: [multi_session]
+- id: E008
+  text: 세 번째 운전면허 시험 합격
+  at: {session: S140, turn: 11}
+  emotional_weight: 0.8
+  narrative_role: 해소
+  tests: [multi_session, single_hop, temporal]
+- id: E009
+  text: 지우가 하프 마라톤을 처음 완주함
+  at: {session: S250, turn: 20}
+  emotional_weight: 0.8
+  narrative_role: 해소
+  tests: [multi_session, single_hop, temporal]
+- id: E010
+  text: 지우가 10km 마라톤을 완주함
+  at: {session: S180, turn: 5}
+  emotional_weight: 0.6
+  tests: [multi_session, temporal]
+- id: E011
+  text: 지우가 팀장 승진 발표를 들음
+  at: {session: S299, turn: 15}
+  emotional_weight: 0.85
+  narrative_role: 전환점
+  tests: [knowledge_update]
+- id: E012
+  text: 야근 문제로 서준이랑 크게 다툼
+  at: {session: S335, turn: 12}
+  emotional_weight: 0.9
+  narrative_role: 갈등
+  tests: [multi_session, knowledge_update]
+- id: E013
+  text: 화해 — 서준이 먼저 연락함
+  at: {session: S340, turn: 3}
+  emotional_weight: 0.85
+  narrative_role: 해소
+  tests: [knowledge_update, temporal]
+- id: E014
+  text: 성수동으로 이사하는 날 서준이 짐을 옮겨 줌
+  at: {session: S200, turn: 12}
+  emotional_weight: 0.8
+  narrative_role: 전환점
+  tests: [knowledge_update, temporal]
+  lexical_role: same
+- id: E015
+  text: 여동생 하늘이 간호사 국가고시에 합격함
+  at: {session: S64, turn: 11}
+  emotional_weight: 0.7
+  tests: [multi_session]
+  lexical_role: same
+- id: E016
+  text: 부모님 댁에 가서 두부를 산책시킴
+  at: {session: S230, turn: 16}
+  emotional_weight: 0.4
+  tests: [multi_session]
+  lexical_role: same
+- id: E017
+  text: 나비 예방접종을 맞힘
+  at: {session: S60, turn: 22}
+  emotional_weight: 0.4
+  tests: [single_hop]
+  lexical_role: same
+- id: E018
+  text: 지우가 도자기 공방 첫 수업을 들음
+  at: {session: S229, turn: 8}
+  emotional_weight: 0.5
+  tests: [single_hop, temporal]
+- id: E019
+  text: 서준이 퇴근길에 지우를 데리러 옴
+  at: {session: S110, turn: 25}
+  emotional_weight: 0.7
+  narrative_role: 전환점
+  tests: [single_hop]
+- id: E020
+  text: 아빠 고향 제주로 가족여행을 감
+  at: {session: S272, turn: 9}
+  emotional_weight: 0.75
+  tests: [single_hop]
+- id: X006
+  text: 민지랑 하늘공원에 억새 보러 감
+  at: {session: S130, turn: 20}
+  emotional_weight: 0.35
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X009
+  text: 회사 앞 순두부찌개 집이 문을 닫음
+  at: {session: S145, turn: 11}
+  emotional_weight: 0.2
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X012
+  text: 할머니 댁 앞 보리밭 사진을 가족 단톡방에서 봄
+  at: {session: S160, turn: 13}
+  emotional_weight: 0.2
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X014
+  text: 호두과자를 사 들고 부모님 댁에 감
+  at: {session: S170, turn: 24}
+  emotional_weight: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X018
+  text: 민지가 바다 건너 오사카로 이사를 감
+  at: {session: S195, turn: 15}
+  emotional_weight: 0.4
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X019
+  text: 부모님이 사과 한 박스를 보내 줌
+  at: {session: S215, turn: 11}
+  emotional_weight: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X020
+  text: 민지가 팀장한테 사과를 받았다고 함
+  at: {session: S220, turn: 26}
+  emotional_weight: 0.3
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X021
+  text: 지우가 사과파이를 처음 구워 봄
+  at: {session: S225, turn: 9}
+  emotional_weight: 0.25
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X022
+  text: 민지도 이직 준비를 시작했다고 함
+  at: {session: S235, turn: 14}
+  emotional_weight: 0.35
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X029
+  text: 지우가 회사 앞 길고양이한테 밥을 줌
+  at: {session: S275, turn: 6}
+  emotional_weight: 0.2
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X033
+  text: 지우가 카페에서 커피 대신 자몽주스를 시킴
+  at: {session: S295, turn: 8}
+  emotional_weight: 0.1
+  tests: [lexical_distractor]
+  lexical_role: distractor
+- id: X036
+  text: 지우가 성수 팝업스토어 구경을 감
+  at: {session: S315, turn: 20}
+  emotional_weight: 0.2
+  tests: [lexical_distractor]
+  lexical_role: distractor
+debts:
+- id: D001
+  setup: {session: S52, turn: 20}
+  content: 다음에 동해 가서 일출 보기로 약속
+  trigger: {kind: session_start, after: S53}
+  expected_payoff: {session: S90}
+  emotional_stake: 0.6
+  tests: [payoff]
+- id: D002
+  setup: {session: S128, turn: 12}
+  content: 면허 시험 결과 나오면 바로 말해주기로 함
+  trigger: {kind: time, spec: 3d}
+  expected_payoff: {session: S140}
+  emotional_stake: 0.7
+  tests: [payoff, proactive_recall]
+- id: D003
+  setup: {session: S199, turn: 25}
+  content: 새 집 집들이 때 서준이 요리해 주기로 함
+  trigger: {kind: session_start, after: S200}
+  expected_payoff: {session: S205}
+  emotional_stake: 0.6
+  tests: [payoff]
+- id: D004
+  setup: {session: S248, turn: 8}
+  content: 하프 마라톤 끝나면 같이 고기 먹기로 함
+  trigger: {kind: semantic, spec: 마라톤 완주 얘기가 나오면}
+  expected_payoff: {session: S251}
+  emotional_stake: 0.5
+  tests: [payoff]
+- id: D005
+  setup: {session: S301, turn: 18}
+  content: 팀장 첫 달 끝나면 회고 같이 하기로 함
+  trigger: {kind: time, spec: 30d}
+  expected_payoff: {session: S330}
+  emotional_stake: 0.5
+  tests: [payoff]
+- id: D006_UNPAID
+  setup: {session: S80, turn: 9}
+  content: 서준이 자기 대학 시절 얘기 나중에 해주기로 함
+  trigger: {kind: semantic, spec: 서준의 과거 얘기가 나오면}
+  expected_payoff: null
+  emotional_stake: 0.6
+  tests: [payoff_negative]
+  note: 의도적으로 회수 안 함 — eval D004_UNPAID와 같은 자리
