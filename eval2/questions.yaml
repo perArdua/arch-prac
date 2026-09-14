@@ -1,0 +1,119 @@
+# 평가 문항 세트 — **두 번째 코퍼스**
+#
+# `eval2/fact-ledger.yaml`에서 파생. 대장 ID를 참조하므로 대장이 바뀌면 여기도 바뀐다.
+#
+# 🔴 스키마는 `eval/questions.yaml`과 같다 (`qa_questions[*].id`·`type`·`ask`·
+#    `gold`·`evidence`) — 그래야 `precision.partition`·`precision.key_index`가
+#    **고치지 않고** 돈다. 다른 것은 **문체(축 ③)와 화제(축 ②)**뿐이다.
+#
+# 🔴 이 문항들이 θ 모집단의 한 축이다:
+#    REL := { coverage(bigrams(q.ask), bigrams(s)) : q ∈ 채점문항, s ∈ event 색인 }
+#    eval에서 이 모집단은 18문항 × 21행 = 378쌍이었다. 여기서는 프로브가 찍는다.
+
+meta:
+  version: 1
+  ledger: fact-ledger.yaml
+  ask_at_session: S06
+
+qa_questions:
+
+  # ─── single_hop ───────────────────────────────────────
+  - id: R01
+    type: single_hop
+    ask: "결제 API 운영 버전이 지금 뭐죠"
+    gold: v3.0
+    evidence: [G012]
+    distractor: "v2.4 (X004 — 위키에 남은 구 문서)"
+
+  - id: R02
+    type: single_hop
+    ask: "보안 감사 담당자분 성함이 어떻게 되죠"
+    gold: Kevin Park
+    evidence: [G003]
+
+  - id: R03
+    type: single_hop
+    ask: "사내 교육 정원이 몇 명이었죠"
+    gold: 40명
+    evidence: [G004]
+    distractor: "12명 (X002 — Kevin 매니저 팀 신청 인원)"
+
+  - id: R04
+    type: single_hop
+    ask: "새 사무실 위치 알려주세요"
+    gold: 판교 2사옥 7층
+    evidence: [G005]
+    distractor: "판교 1사옥 3층 (X003 — 취소된 회의실)"
+
+  - id: R05
+    type: single_hop
+    ask: "제 사번이 뭐였죠"
+    gold: '20250417'
+    evidence: [G006]
+
+  - id: R06
+    type: single_hop
+    ask: "제가 어느 팀 소속인지 아세요"
+    gold: 플랫폼개발팀
+    evidence: [G001]
+
+  # ─── multi_session · temporal ─────────────────────────
+  - id: R07
+    type: multi_session
+    ask: "PG사 미팅 지금까지 몇 번 했죠"
+    gold: 세 번
+    evidence: [E001, E002, E003]
+
+  - id: R08
+    type: temporal
+    ask: "세 번째 PG사 미팅에서 뭐가 정해졌는지 알려주세요"
+    gold: 계약 체결
+    evidence: [E003]
+    note: "서수가 질문에 있다 — survived_v3의 서수 규칙이 걸리는 자리"
+
+  - id: R09
+    type: multi_session
+    ask: "보안 감사 지적이 몇 건이었죠"
+    gold: 12건
+    evidence: [E004]
+
+  - id: R10
+    type: multi_session
+    ask: "지난번 서버 장애 얼마나 갔었죠"
+    gold: 4시간
+    evidence: [E005]
+
+  - id: R11
+    type: temporal
+    ask: "사무실 이전 언제로 확정됐나요"
+    gold: 10월 3주차
+    evidence: [E006]
+
+  - id: R12
+    type: multi_session
+    ask: "채용 최종 면접 몇 분 보셨죠"
+    gold: 2명
+    evidence: [E007]
+
+  # ─── knowledge_update ─────────────────────────────────
+  - id: R13
+    type: knowledge_update
+    ask: "결제 API 버전 올린 거 반영됐나요"
+    gold: v3.0으로 올라감
+    evidence: [G012]
+    distractor: "v2.4 (X004)"
+
+  # ─── 제외될 문항 (근거 키 없음) — `precision.partition`이 찍는다 ────
+  - id: R14
+    type: payoff
+    ask: "강사 후보 목록은 어떻게 됐나요"
+    gold: "아직 정리 안 됨 (P003_UNPAID)"
+    evidence: [P003_UNPAID]
+    note: "부채 id는 `precision.key_index`에 없다 — 채점에서 제외된다"
+
+  - id: R15
+    type: abstention
+    ask: "주차 등록 어떻게 하는지 알려주셨잖아요"
+    gold: "그런 얘기는 없었습니다"
+    evidence: []
+    note: "abstention — 근거가 없는 것이 정답"

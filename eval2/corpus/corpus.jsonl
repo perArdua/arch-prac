@@ -1,0 +1,192 @@
+{"seq": 1, "session": "S01", "turn": 1, "role": "user", "text": "오후에 시간 되세요", "planted_id": null, "kind": "noise"}
+{"seq": 2, "session": "S01", "turn": 2, "role": "user", "text": "버리기 아깝다고 하셔서 남겨뒀습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 3, "session": "S01", "turn": 3, "role": "user", "text": "확인 부탁", "planted_id": null, "kind": "noise"}
+{"seq": 4, "session": "S01", "turn": 4, "role": "user", "text": "하람님 소속은 플랫폼개발팀입니다. 이거 맞죠?", "planted_id": "G001", "kind": "fact"}
+{"seq": 5, "session": "S01", "turn": 5, "role": "user", "text": "오늘 일정 공유 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 6, "session": "S01", "turn": 6, "role": "user", "text": "비품 신청서 올렸습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 7, "session": "S01", "turn": 7, "role": "user", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 8, "session": "S01", "turn": 8, "role": "character", "text": "잠시만요", "planted_id": null, "kind": "noise"}
+{"seq": 9, "session": "S01", "turn": 9, "role": "user", "text": "결제 API 운영 버전은 v2.4입니다. 이거 맞죠?", "planted_id": "G002", "kind": "fact"}
+{"seq": 10, "session": "S01", "turn": 10, "role": "character", "text": "확인 중입니다", "planted_id": null, "kind": "noise"}
+{"seq": 11, "session": "S01", "turn": 11, "role": "user", "text": "버리기 아깝다고 하셔서 남겨뒀습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 12, "session": "S01", "turn": 12, "role": "character", "text": "권한이 없어 조회가 안 됩니다", "planted_id": null, "kind": "noise"}
+{"seq": 13, "session": "S01", "turn": 13, "role": "user", "text": "2차 검토는 다음 주입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 14, "session": "S01", "turn": 14, "role": "user", "text": "토너 재고 확인 부탁드립니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 15, "session": "S01", "turn": 15, "role": "user", "text": "Q3 목표 다시 볼까요", "planted_id": null, "kind": "noise"}
+{"seq": 16, "session": "S01", "turn": 16, "role": "character", "text": "사내 교육 강사 후보 목록을 정리해 드리기로 함. 기억해 두겠습니다", "planted_id": "P003_UNPAID", "kind": "debt_setup"}
+{"seq": 17, "session": "S01", "turn": 17, "role": "user", "text": "Q3 목표 다시 볼까요", "planted_id": null, "kind": "noise"}
+{"seq": 18, "session": "S01", "turn": 18, "role": "character", "text": "권한이 없어 조회가 안 됩니다", "planted_id": null, "kind": "noise"}
+{"seq": 19, "session": "S01", "turn": 19, "role": "user", "text": "요약 부탁드려요", "planted_id": null, "kind": "noise"}
+{"seq": 20, "session": "S01", "turn": 20, "role": "character", "text": "권한이 없어 조회가 안 됩니다", "planted_id": null, "kind": "noise"}
+{"seq": 21, "session": "S01", "turn": 21, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 22, "session": "S01", "turn": 22, "role": "user", "text": "하람님 사번은 20250417입니다. 이거 맞죠?", "planted_id": "G006", "kind": "fact"}
+{"seq": 23, "session": "S01", "turn": 23, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 24, "session": "S01", "turn": 24, "role": "character", "text": "해당 기록은 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 25, "session": "S01", "turn": 25, "role": "user", "text": "OK", "planted_id": null, "kind": "noise"}
+{"seq": 26, "session": "S01", "turn": 26, "role": "character", "text": "처리 완료했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 27, "session": "S01", "turn": 27, "role": "user", "text": "첫 번째 PG사 미팅은 수수료 이견으로 보류됐습니다", "planted_id": "E001", "kind": "event"}
+{"seq": 28, "session": "S01", "turn": 28, "role": "user", "text": "토너 재고 확인 부탁드립니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 29, "session": "S01", "turn": 29, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 30, "session": "S01", "turn": 30, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 31, "session": "S01", "turn": 31, "role": "user", "text": "링크 하나만 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 32, "session": "S01", "turn": 32, "role": "character", "text": "해당 기록은 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 33, "session": "S02", "turn": 1, "role": "user", "text": "오후에 시간 되세요", "planted_id": null, "kind": "noise"}
+{"seq": 34, "session": "S02", "turn": 2, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 35, "session": "S02", "turn": 3, "role": "user", "text": "수고하셨습니다", "planted_id": null, "kind": "noise"}
+{"seq": 36, "session": "S02", "turn": 4, "role": "character", "text": "권한이 없어 조회가 안 됩니다", "planted_id": null, "kind": "noise"}
+{"seq": 37, "session": "S02", "turn": 5, "role": "user", "text": "링크 하나만 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 38, "session": "S02", "turn": 6, "role": "user", "text": "보안 감사 담당자는 Kevin Park 매니저입니다. 이거 맞죠?", "planted_id": "G003", "kind": "fact"}
+{"seq": 39, "session": "S02", "turn": 7, "role": "user", "text": "그 건은 보류하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 40, "session": "S02", "turn": 8, "role": "user", "text": "보안 감사에서 지적 12건을 받았습니다", "planted_id": "E004", "kind": "event"}
+{"seq": 41, "session": "S02", "turn": 9, "role": "user", "text": "요약 부탁드려요", "planted_id": null, "kind": "noise"}
+{"seq": 42, "session": "S02", "turn": 10, "role": "character", "text": "확인 중입니다", "planted_id": null, "kind": "noise"}
+{"seq": 43, "session": "S02", "turn": 11, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 44, "session": "S02", "turn": 12, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 45, "session": "S02", "turn": 13, "role": "user", "text": "첫 번째 항목만 반영했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 46, "session": "S02", "turn": 14, "role": "character", "text": "아직 회신이 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 47, "session": "S02", "turn": 15, "role": "user", "text": "회의실 예약됐나요", "planted_id": null, "kind": "noise"}
+{"seq": 48, "session": "S02", "turn": 16, "role": "character", "text": "담당자에게 전달했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 49, "session": "S02", "turn": 17, "role": "user", "text": "Q3 목표 다시 볼까요", "planted_id": null, "kind": "noise"}
+{"seq": 50, "session": "S02", "turn": 18, "role": "character", "text": "해당 기록은 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 51, "session": "S02", "turn": 19, "role": "user", "text": "신규 사무실은 판교 2사옥 7층입니다. 이거 맞죠?", "planted_id": "G005", "kind": "fact"}
+{"seq": 52, "session": "S02", "turn": 20, "role": "character", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 53, "session": "S02", "turn": 21, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 54, "session": "S02", "turn": 22, "role": "user", "text": "버전 v1.9로 롤백했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 55, "session": "S02", "turn": 23, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 56, "session": "S02", "turn": 24, "role": "character", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 57, "session": "S02", "turn": 25, "role": "user", "text": "두 번째 PG사 미팅을 진행했습니다", "planted_id": "E002", "kind": "event"}
+{"seq": 58, "session": "S02", "turn": 26, "role": "character", "text": "일정에 등록했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 59, "session": "S02", "turn": 27, "role": "user", "text": "토너 재고 확인 부탁드립니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 60, "session": "S02", "turn": 28, "role": "character", "text": "감사 지적 사항 회신 기한을 다시 안내드리기로 함. 기억해 두겠습니다", "planted_id": "P001", "kind": "debt_setup"}
+{"seq": 61, "session": "S02", "turn": 29, "role": "user", "text": "버리기 아깝다고 하셔서 남겨뒀습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 62, "session": "S02", "turn": 30, "role": "character", "text": "담당자에게 전달했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 63, "session": "S02", "turn": 31, "role": "user", "text": "Q3 목표 다시 볼까요", "planted_id": null, "kind": "noise"}
+{"seq": 64, "session": "S02", "turn": 32, "role": "user", "text": "SLA는 99.5% 기준입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 65, "session": "S03", "turn": 1, "role": "user", "text": "오늘은 여기까지 하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 66, "session": "S03", "turn": 2, "role": "user", "text": "서버 장애로 결제가 4시간 중단됐습니다", "planted_id": "E005", "kind": "event"}
+{"seq": 67, "session": "S03", "turn": 3, "role": "user", "text": "링크 하나만 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 68, "session": "S03", "turn": 4, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 69, "session": "S03", "turn": 5, "role": "user", "text": "확인 부탁", "planted_id": null, "kind": "noise"}
+{"seq": 70, "session": "S03", "turn": 6, "role": "character", "text": "오후 3시로 잡았습니다", "planted_id": null, "kind": "noise"}
+{"seq": 71, "session": "S03", "turn": 7, "role": "user", "text": "AWS 비용이 12% 늘었습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 72, "session": "S03", "turn": 8, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 73, "session": "S03", "turn": 9, "role": "user", "text": "오늘 일정 공유 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 74, "session": "S03", "turn": 10, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 75, "session": "S03", "turn": 11, "role": "user", "text": "사내 교육 정원은 40명입니다. 이거 맞죠?", "planted_id": "G004", "kind": "fact"}
+{"seq": 76, "session": "S03", "turn": 12, "role": "user", "text": "토너 재고 확인 부탁드립니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 77, "session": "S03", "turn": 13, "role": "user", "text": "버리기 아깝다고 하셔서 남겨뒀습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 78, "session": "S03", "turn": 14, "role": "user", "text": "2차 검토는 다음 주입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 79, "session": "S03", "turn": 15, "role": "user", "text": "요약 부탁드려요", "planted_id": null, "kind": "noise"}
+{"seq": 80, "session": "S03", "turn": 16, "role": "user", "text": "버전 v1.9로 롤백했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 81, "session": "S03", "turn": 17, "role": "user", "text": "우선순위 조정이 필요해 보입니다", "planted_id": null, "kind": "noise"}
+{"seq": 82, "session": "S03", "turn": 18, "role": "character", "text": "해당 기록은 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 83, "session": "S03", "turn": 19, "role": "user", "text": "우선순위 조정이 필요해 보입니다", "planted_id": null, "kind": "noise"}
+{"seq": 84, "session": "S03", "turn": 20, "role": "user", "text": "3층 복합기 토너가 다 떨어져서 마지막 한 장이 아깝다고 하셨습니다. 이거 맞죠?", "planted_id": "G007_TRAP", "kind": "fact"}
+{"seq": 85, "session": "S03", "turn": 21, "role": "user", "text": "네 확인했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 86, "session": "S03", "turn": 22, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 87, "session": "S03", "turn": 23, "role": "user", "text": "우선순위 조정이 필요해 보입니다", "planted_id": null, "kind": "noise"}
+{"seq": 88, "session": "S03", "turn": 24, "role": "character", "text": "일정에 등록했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 89, "session": "S03", "turn": 25, "role": "user", "text": "오늘 일정 공유 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 90, "session": "S03", "turn": 26, "role": "user", "text": "결제 API 문서 번역을 외부 업체에 맡겼습니다. 이거 맞죠?", "planted_id": "X001", "kind": "fact"}
+{"seq": 91, "session": "S03", "turn": 27, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 92, "session": "S03", "turn": 28, "role": "character", "text": "잠시만요", "planted_id": null, "kind": "noise"}
+{"seq": 93, "session": "S03", "turn": 29, "role": "user", "text": "비품 신청서 올렸습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 94, "session": "S03", "turn": 30, "role": "character", "text": "확인 중입니다", "planted_id": null, "kind": "noise"}
+{"seq": 95, "session": "S03", "turn": 31, "role": "user", "text": "메일 회신 부탁드려요", "planted_id": null, "kind": "noise"}
+{"seq": 96, "session": "S03", "turn": 32, "role": "character", "text": "오후 3시로 잡았습니다", "planted_id": null, "kind": "noise"}
+{"seq": 97, "session": "S04", "turn": 1, "role": "user", "text": "우선순위 조정이 필요해 보입니다", "planted_id": null, "kind": "noise"}
+{"seq": 98, "session": "S04", "turn": 2, "role": "character", "text": "네, 반영했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 99, "session": "S04", "turn": 3, "role": "user", "text": "링크 하나만 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 100, "session": "S04", "turn": 4, "role": "character", "text": "네, 반영했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 101, "session": "S04", "turn": 5, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 102, "session": "S04", "turn": 6, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 103, "session": "S04", "turn": 7, "role": "user", "text": "마지막 한 장까지 다 썼네요", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 104, "session": "S04", "turn": 8, "role": "character", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 105, "session": "S04", "turn": 9, "role": "character", "text": "이전 확정되면 좌석 배치도를 공유하기로 함. 기억해 두겠습니다", "planted_id": "P002", "kind": "debt_setup"}
+{"seq": 106, "session": "S04", "turn": 10, "role": "character", "text": "확인 중입니다", "planted_id": null, "kind": "noise"}
+{"seq": 107, "session": "S04", "turn": 11, "role": "user", "text": "PR #391 머지했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 108, "session": "S04", "turn": 12, "role": "character", "text": "네, 반영했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 109, "session": "S04", "turn": 13, "role": "user", "text": "OK", "planted_id": null, "kind": "noise"}
+{"seq": 110, "session": "S04", "turn": 14, "role": "user", "text": "세 번째 PG사 미팅에서 계약을 체결했습니다", "planted_id": "E003", "kind": "event"}
+{"seq": 111, "session": "S04", "turn": 15, "role": "user", "text": "확인 부탁", "planted_id": null, "kind": "noise"}
+{"seq": 112, "session": "S04", "turn": 16, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 113, "session": "S04", "turn": 17, "role": "user", "text": "AWS 비용이 12% 늘었습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 114, "session": "S04", "turn": 18, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 115, "session": "S04", "turn": 19, "role": "user", "text": "10분 뒤에 다시 보겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 116, "session": "S04", "turn": 20, "role": "character", "text": "확인 중입니다", "planted_id": null, "kind": "noise"}
+{"seq": 117, "session": "S04", "turn": 21, "role": "user", "text": "오늘은 여기까지 하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 118, "session": "S04", "turn": 22, "role": "user", "text": "사무실 이전 일정이 10월 3주차로 확정됐습니다", "planted_id": "E006", "kind": "event"}
+{"seq": 119, "session": "S04", "turn": 23, "role": "user", "text": "슬랙 DM으로 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 120, "session": "S04", "turn": 24, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 121, "session": "S04", "turn": 25, "role": "user", "text": "OK", "planted_id": null, "kind": "noise"}
+{"seq": 122, "session": "S04", "turn": 26, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 123, "session": "S04", "turn": 27, "role": "user", "text": "첫 번째 항목만 반영했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 124, "session": "S04", "turn": 28, "role": "character", "text": "담당자에게 전달했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 125, "session": "S04", "turn": 29, "role": "user", "text": "Kevin 매니저 팀의 사내 교육 신청 인원은 12명입니다. 이거 맞죠?", "planted_id": "X002", "kind": "fact"}
+{"seq": 126, "session": "S04", "turn": 30, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 127, "session": "S04", "turn": 31, "role": "user", "text": "오늘 일정 공유 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 128, "session": "S04", "turn": 32, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 129, "session": "S05", "turn": 1, "role": "user", "text": "오늘은 여기까지 하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 130, "session": "S05", "turn": 2, "role": "character", "text": "잠시만요", "planted_id": null, "kind": "noise"}
+{"seq": 131, "session": "S05", "turn": 3, "role": "user", "text": "판교 1사옥 3층 회의실 예약이 취소됐습니다. 이거 맞죠?", "planted_id": "X003", "kind": "fact"}
+{"seq": 132, "session": "S05", "turn": 4, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 133, "session": "S05", "turn": 5, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 134, "session": "S05", "turn": 6, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 135, "session": "S05", "turn": 7, "role": "user", "text": "정정드립니다. [결제 API 운영 버전은 v2.4입니다]는 더 이상 유효하지 않습니다", "planted_id": "G002_INV", "kind": "invalidation"}
+{"seq": 136, "session": "S05", "turn": 8, "role": "user", "text": "결제 API 운영 버전이 v3.0으로 올라갔습니다. 이거 맞죠?", "planted_id": "G012", "kind": "fact"}
+{"seq": 137, "session": "S05", "turn": 9, "role": "user", "text": "결재 라인 확인 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 138, "session": "S05", "turn": 10, "role": "character", "text": "오후 3시로 잡았습니다", "planted_id": null, "kind": "noise"}
+{"seq": 139, "session": "S05", "turn": 11, "role": "user", "text": "그 건은 보류하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 140, "session": "S05", "turn": 12, "role": "user", "text": "3층 복합기 용지가 다 떨어졌습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 141, "session": "S05", "turn": 13, "role": "user", "text": "슬랙 DM으로 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 142, "session": "S05", "turn": 14, "role": "user", "text": "네 번째 줄이 잘못됐습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 143, "session": "S05", "turn": 15, "role": "user", "text": "OK", "planted_id": null, "kind": "noise"}
+{"seq": 144, "session": "S05", "turn": 16, "role": "user", "text": "3층 복합기 용지가 다 떨어졌습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 145, "session": "S05", "turn": 17, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 146, "session": "S05", "turn": 18, "role": "user", "text": "채용 최종 면접을 2명 진행했습니다", "planted_id": "E007", "kind": "event"}
+{"seq": 147, "session": "S05", "turn": 19, "role": "user", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 148, "session": "S05", "turn": 20, "role": "character", "text": "해당 기록은 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 149, "session": "S05", "turn": 21, "role": "user", "text": "OK", "planted_id": null, "kind": "noise"}
+{"seq": 150, "session": "S05", "turn": 22, "role": "character", "text": "일정에 등록했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 151, "session": "S05", "turn": 23, "role": "user", "text": "비품 신청서 올렸습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 152, "session": "S05", "turn": 24, "role": "user", "text": "v2.4 기준 연동 문서가 위키에 그대로 남아 있습니다. 이거 맞죠?", "planted_id": "X004", "kind": "fact"}
+{"seq": 153, "session": "S05", "turn": 25, "role": "user", "text": "확인 부탁", "planted_id": null, "kind": "noise"}
+{"seq": 154, "session": "S05", "turn": 26, "role": "user", "text": "3층 복합기 용지가 다 떨어졌습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 155, "session": "S05", "turn": 27, "role": "user", "text": "네 확인했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 156, "session": "S05", "turn": 28, "role": "character", "text": "아직 회신이 없습니다", "planted_id": null, "kind": "noise"}
+{"seq": 157, "session": "S05", "turn": 29, "role": "user", "text": "오후에 시간 되세요", "planted_id": null, "kind": "noise"}
+{"seq": 158, "session": "S05", "turn": 30, "role": "user", "text": "2차 검토는 다음 주입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 159, "session": "S05", "turn": 31, "role": "user", "text": "네 확인했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 160, "session": "S05", "turn": 32, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 161, "session": "S06", "turn": 1, "role": "user", "text": "회의실 예약됐나요", "planted_id": null, "kind": "noise"}
+{"seq": 162, "session": "S06", "turn": 2, "role": "character", "text": "5분 내로 정리해서 드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 163, "session": "S06", "turn": 3, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 164, "session": "S06", "turn": 4, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 165, "session": "S06", "turn": 5, "role": "user", "text": "우선순위 조정이 필요해 보입니다", "planted_id": null, "kind": "noise"}
+{"seq": 166, "session": "S06", "turn": 6, "role": "user", "text": "사내 교육 1차 신청이 정원 미달로 마감됐습니다", "planted_id": "E008", "kind": "event"}
+{"seq": 167, "session": "S06", "turn": 7, "role": "user", "text": "10분 뒤에 다시 보겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 168, "session": "S06", "turn": 8, "role": "user", "text": "3층 복합기 용지가 다 떨어졌습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 169, "session": "S06", "turn": 9, "role": "user", "text": "그 건은 보류하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 170, "session": "S06", "turn": 10, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 171, "session": "S06", "turn": 11, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 172, "session": "S06", "turn": 12, "role": "character", "text": "담당자에게 전달했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 173, "session": "S06", "turn": 13, "role": "user", "text": "PR 리뷰 부탁드립니다", "planted_id": null, "kind": "noise"}
+{"seq": 174, "session": "S06", "turn": 14, "role": "user", "text": "Kevin 매니저가 v3.0 릴리스 노트를 요청했습니다. 이거 맞죠?", "planted_id": "X005", "kind": "fact"}
+{"seq": 175, "session": "S06", "turn": 15, "role": "user", "text": "수고하셨습니다", "planted_id": null, "kind": "noise"}
+{"seq": 176, "session": "S06", "turn": 16, "role": "user", "text": "첫 번째 항목만 반영했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 177, "session": "S06", "turn": 17, "role": "user", "text": "그 건은 보류하겠습니다", "planted_id": null, "kind": "noise"}
+{"seq": 178, "session": "S06", "turn": 18, "role": "user", "text": "A4 용지 2박스 주문했습니다", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 179, "session": "S06", "turn": 19, "role": "user", "text": "2차 검토는 다음 주입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 180, "session": "S06", "turn": 20, "role": "user", "text": "마지막 한 장까지 다 썼네요", "planted_id": null, "kind": "hard_neg_supply"}
+{"seq": 181, "session": "S06", "turn": 21, "role": "user", "text": "SLA는 99.5% 기준입니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 182, "session": "S06", "turn": 22, "role": "character", "text": "일정에 등록했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 183, "session": "S06", "turn": 23, "role": "user", "text": "Q3 목표 다시 볼까요", "planted_id": null, "kind": "noise"}
+{"seq": 184, "session": "S06", "turn": 24, "role": "character", "text": "네, 반영했습니다", "planted_id": null, "kind": "noise"}
+{"seq": 185, "session": "S06", "turn": 25, "role": "user", "text": "오후에 시간 되세요", "planted_id": null, "kind": "noise"}
+{"seq": 186, "session": "S06", "turn": 26, "role": "character", "text": "네", "planted_id": null, "kind": "noise"}
+{"seq": 187, "session": "S06", "turn": 27, "role": "user", "text": "슬랙 DM으로 주세요", "planted_id": null, "kind": "noise"}
+{"seq": 188, "session": "S06", "turn": 28, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 189, "session": "S06", "turn": 29, "role": "user", "text": "지금 자리 비웁니다", "planted_id": null, "kind": "noise"}
+{"seq": 190, "session": "S06", "turn": 30, "role": "character", "text": "관련 문서 링크입니다", "planted_id": null, "kind": "noise"}
+{"seq": 191, "session": "S06", "turn": 31, "role": "user", "text": "버전 v1.9로 롤백했습니다", "planted_id": null, "kind": "hard_neg_num"}
+{"seq": 192, "session": "S06", "turn": 32, "role": "character", "text": "확인해서 알려드리겠습니다", "planted_id": null, "kind": "noise"}
