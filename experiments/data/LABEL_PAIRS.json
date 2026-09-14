@@ -1,0 +1,197 @@
+{
+  "preregistration": {
+    "rule": "사전 등록 — 쌍 선택 규칙 (실행 전에 정했고, 결과를 보고 고치지 않는다)\n  모집단   대장 `events` 10개 × 24세션 요약 = 240쌍. `eval/`은 **읽기만** (A8)\n  ① 자연 양성 후보 10   각 사건 × **그 사건의 `at.session`에 해당하는 요약**\n                        🔴 «후보»는 **자리**이지 라벨이 아니다 — 담겼는지는 사람이 정한다\n  ② 경계 후보     10    각 사건 × **자기 세션이 아닌 요약 중 코사인 최댓값**\n                        🔴 **위양성이 사는 자리**이고 θ가 갈라야 하는 곳이다\n                        (오늘 `E010`이 어근 겹침으로 통과한 그 자리 — digest_budget.py 3절 ②)\n  ③ 먼 대조        4    남은 쌍을 코사인으로 세워 **하위 25% 안에서 무작위**\n                        (`SEED_PAIR`=20260910) — θ가 아무것도 안 자르는 극단이\n                        아님을 보이는 자리다\n  중복    같은 (사건, 세션) 쌍은 **한 번만**. ①→②→③ 순으로 먼저 잡은 쪽이 이긴다\n  합계    n = 10 + 10 + 4 = **24** (요구는 n ≥ 24)\n  순서    `SEED_PAIR`로 **섞은 뒤** `P01…`을 붙인다 — 종류가 id에도 위치에도 안 실린다",
+    "seed_pair": 20260910,
+    "population": "대장 events 10 × 세션 요약 24 = 240쌍",
+    "u4_trigger": "🔴 사전 등록된 U4 방아쇠는 **당겨지지 않았다.** U4는 «U1이 열리고, 라벨 집합이 eval/ 밖에서 n≥20으로 생기는 순간»이고, U1(«재료 밖 위양성 > 재료 안 생존»)은 오늘 1건 vs 3건으로 **안 열렸다** (experiments/digest_budget.py 3절이 매 실행 그 세 열을 찍는다). 이 라벨 집합은 방아쇠가 아니라 **오케스트레이터의 제품 결정**으로 만들어졌다.",
+    "theta": "🔴 θ는 이 레인이 정하지 않는다 (G12). 다음 레인이 돌아온 라벨을 받아 «모집단·n·자르는 비율»과 함께 유도한다. 이 파일에도 워크시트에도 문턱 후보값은 한 개도 없다.",
+    "self_authorship": "🔴 자기저작 편향 — 제거하지 못했고, 출력에 찍는다 (실험 22 §H의 형식)\n  1. **라벨은 자기저작이 아니다** — 사람이 붙인다. 이 레인이 K를 여는 이유가 그것이다.\n  2. 🔴 **그러나 모집단은 자기저작이다.** 경계 후보를 «임베딩이 가장 높다고 한 것»\n     으로 골랐으므로, 이 집합은 임베딩이 **자신 있어 하는 자리**에 치우친다.\n     임베딩이 낮게 보는데 사람은 «담겼다»고 할 자리(위음성)는 **자연 양성 후보에\n     우연히 들어온 만큼만** 있다. 이 집합으로 잰 정밀도와 재현율은 비대칭이다.\n  3. **사건 10개는 `eval/` 대장의 것**이고 그것을 쓴 사람과 이 코퍼스를 만든 사람이\n     같다 — `eval/`은 읽기만 했지만(A8) 그 사실이 편향을 없애지는 않는다."
+  },
+  "meta": {
+    "model": "qwen3:8b",
+    "ollama": "0.33.3",
+    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "expect_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "digest_source": "LLM_CHECKPOINT.json",
+    "temperature": 0,
+    "seed": 20260908,
+    "num_ctx": 8192,
+    "u4_trigger_pulled": false,
+    "u4_note": "U1(재료 밖 위양성 > 재료 안 생존)이 1건 vs 3건으로 안 열렸다. 방아쇠가 아니라 제품 결정으로 열었다."
+  },
+  "read_order": "🔴 이 파일은 워크시트와 **분리 보관**한다. 라벨이 돌아오기 전에 `sim`을 보면 그 수가 라벨을 정박시키고, 그 라벨로 유도한 θ는 순환이 된다 (F38 — 공유된 결함을 통과한 독립 측정).",
+  "embedding": {
+    "model": "bge-m3",
+    "host": "http://127.0.0.1:11434"
+  },
+  "pairs": [
+    {
+      "event_id": "E007",
+      "session": "S10",
+      "kind": "boundary",
+      "sim": 0.463585,
+      "pair_id": "P01"
+    },
+    {
+      "event_id": "E001",
+      "session": "S01",
+      "kind": "boundary",
+      "sim": 0.576619,
+      "pair_id": "P02"
+    },
+    {
+      "event_id": "E005",
+      "session": "S16",
+      "kind": "natural_positive",
+      "sim": 0.529452,
+      "pair_id": "P03"
+    },
+    {
+      "event_id": "E008",
+      "session": "S20",
+      "kind": "natural_positive",
+      "sim": 0.596593,
+      "pair_id": "P04"
+    },
+    {
+      "event_id": "E003",
+      "session": "S05",
+      "kind": "boundary",
+      "sim": 0.559277,
+      "pair_id": "P05"
+    },
+    {
+      "event_id": "E002",
+      "session": "S03",
+      "kind": "far_control",
+      "sim": 0.294863,
+      "pair_id": "P06"
+    },
+    {
+      "event_id": "E010",
+      "session": "S22",
+      "kind": "natural_positive",
+      "sim": 0.496286,
+      "pair_id": "P07"
+    },
+    {
+      "event_id": "E002",
+      "session": "S11",
+      "kind": "natural_positive",
+      "sim": 0.55024,
+      "pair_id": "P08"
+    },
+    {
+      "event_id": "E002",
+      "session": "S06",
+      "kind": "far_control",
+      "sim": 0.293001,
+      "pair_id": "P09"
+    },
+    {
+      "event_id": "E008",
+      "session": "S11",
+      "kind": "boundary",
+      "sim": 0.583161,
+      "pair_id": "P10"
+    },
+    {
+      "event_id": "E007",
+      "session": "S19",
+      "kind": "natural_positive",
+      "sim": 0.61405,
+      "pair_id": "P11"
+    },
+    {
+      "event_id": "E004",
+      "session": "S16",
+      "kind": "boundary",
+      "sim": 0.525227,
+      "pair_id": "P12"
+    },
+    {
+      "event_id": "E009",
+      "session": "S14",
+      "kind": "boundary",
+      "sim": 0.380555,
+      "pair_id": "P13"
+    },
+    {
+      "event_id": "E005",
+      "session": "S18",
+      "kind": "boundary",
+      "sim": 0.520038,
+      "pair_id": "P14"
+    },
+    {
+      "event_id": "E006",
+      "session": "S16",
+      "kind": "boundary",
+      "sim": 0.558662,
+      "pair_id": "P15"
+    },
+    {
+      "event_id": "E007",
+      "session": "S18",
+      "kind": "far_control",
+      "sim": 0.312067,
+      "pair_id": "P16"
+    },
+    {
+      "event_id": "E001",
+      "session": "S05",
+      "kind": "natural_positive",
+      "sim": 0.705345,
+      "pair_id": "P17"
+    },
+    {
+      "event_id": "E002",
+      "session": "S14",
+      "kind": "far_control",
+      "sim": 0.286624,
+      "pair_id": "P18"
+    },
+    {
+      "event_id": "E010",
+      "session": "S11",
+      "kind": "boundary",
+      "sim": 0.516472,
+      "pair_id": "P19"
+    },
+    {
+      "event_id": "E002",
+      "session": "S01",
+      "kind": "boundary",
+      "sim": 0.493504,
+      "pair_id": "P20"
+    },
+    {
+      "event_id": "E006",
+      "session": "S18",
+      "kind": "natural_positive",
+      "sim": 0.587099,
+      "pair_id": "P21"
+    },
+    {
+      "event_id": "E003",
+      "session": "S12",
+      "kind": "natural_positive",
+      "sim": 0.597128,
+      "pair_id": "P22"
+    },
+    {
+      "event_id": "E009",
+      "session": "S21",
+      "kind": "natural_positive",
+      "sim": 0.406522,
+      "pair_id": "P23"
+    },
+    {
+      "event_id": "E004",
+      "session": "S14",
+      "kind": "natural_positive",
+      "sim": 0.582399,
+      "pair_id": "P24"
+    }
+  ]
+}

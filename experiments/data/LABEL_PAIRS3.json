@@ -1,0 +1,132 @@
+{
+  "preregistration": {
+    "rest_from_24": 12,
+    "random_fresh": 8,
+    "total_new": 20,
+    "grand_total": 32,
+    "split": "sha1(pair_id) 마지막 비트 — 라벨과 유사도를 안 본다",
+    "seed": 20260912
+  },
+  "pairs": [
+    {
+      "pair_id": "P01",
+      "event_id": "E007",
+      "session": "S10",
+      "kind": "boundary"
+    },
+    {
+      "pair_id": "P02",
+      "event_id": "E001",
+      "session": "S01",
+      "kind": "boundary"
+    },
+    {
+      "pair_id": "P04",
+      "event_id": "E008",
+      "session": "S20",
+      "kind": "natural_positive"
+    },
+    {
+      "pair_id": "P07",
+      "event_id": "E010",
+      "session": "S22",
+      "kind": "natural_positive"
+    },
+    {
+      "pair_id": "P09",
+      "event_id": "E002",
+      "session": "S06",
+      "kind": "far_control"
+    },
+    {
+      "pair_id": "P11",
+      "event_id": "E007",
+      "session": "S19",
+      "kind": "natural_positive"
+    },
+    {
+      "pair_id": "P12",
+      "event_id": "E004",
+      "session": "S16",
+      "kind": "boundary"
+    },
+    {
+      "pair_id": "P13",
+      "event_id": "E009",
+      "session": "S14",
+      "kind": "boundary"
+    },
+    {
+      "pair_id": "P15",
+      "event_id": "E006",
+      "session": "S16",
+      "kind": "boundary"
+    },
+    {
+      "pair_id": "P18",
+      "event_id": "E002",
+      "session": "S14",
+      "kind": "far_control"
+    },
+    {
+      "pair_id": "P21",
+      "event_id": "E006",
+      "session": "S18",
+      "kind": "natural_positive"
+    },
+    {
+      "pair_id": "P23",
+      "event_id": "E009",
+      "session": "S21",
+      "kind": "natural_positive"
+    },
+    {
+      "pair_id": "P25",
+      "event_id": "E001",
+      "session": "S18",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P26",
+      "event_id": "E009",
+      "session": "S03",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P27",
+      "event_id": "E006",
+      "session": "S04",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P28",
+      "event_id": "E003",
+      "session": "S16",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P29",
+      "event_id": "E002",
+      "session": "S13",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P30",
+      "event_id": "E001",
+      "session": "S10",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P31",
+      "event_id": "E008",
+      "session": "S10",
+      "kind": "random"
+    },
+    {
+      "pair_id": "P32",
+      "event_id": "E009",
+      "session": "S08",
+      "kind": "random"
+    }
+  ]
+}
