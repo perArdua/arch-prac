@@ -10,10 +10,10 @@
 **한 번에 전부 돌리기 (권장)**
 ```bash
 pip install pyyaml
-python experiments/run_all.py       # → experiments/RESULTS.txt
+python experiments/run_all.py       # → experiments/data/RESULTS.txt
 ```
 
-**[RESULTS.txt](RESULTS.txt)가 모든 수치의 단일 출처다.**
+**[RESULTS.txt](data/RESULTS.txt)가 모든 수치의 단일 출처다.**
 문서 여러 곳에 숫자를 옮겨 적으면 어긋난다 — 실제로 3곳이 어긋나 있었고, 이 파일을 만든 이유가 그것이다.
 문서의 수치가 의심되면 여기와 대조한다.
 
@@ -60,6 +60,63 @@ python experiments/hybrid_sim.py       # 실험 5: BM25 vs Dense vs 하이브리
 | `cache_sim.py` | 컨텍스트 블록의 변경 주기·공유 스코프를 모델링해 캐시 적중률·비용 계산 |
 | `retrieval_sim.py` | BM25(순수 Python). 토큰화 비교, 쓰기 정책 비교, importance 결합 방식 비교 |
 | `arms_sim.py` | arm 9종 비교 + 참조 깊이별 교정 |
+| `scorer_eval.py` | **실험 26 — 채점기 검증.** 사람 라벨 32개 · **사전 등록된 홀드아웃** (아래 §라벨 집합) |
+| `summary_prototype.py` | **실험 27 — 요약 채점.** M1 형식 · M2 사건 · M3 순서 · M4 누출. [ADR-016](../docs/adr/ADR-016-summary-layer.md) §결과의 «비운 자리»를 채운다. 🔴 **혼합집합 비교 규칙을 종료 코드로 집행한다** — 항목 집합 이름 없는 열은 만들 수 없고, 기준선 화살표는 «같은 항목 집합» 열에만 붙는다. 로컬 `qwen3:8b`로 lifetime **1건**을 만들고(체크포인트가 있으면 0건), 없으면 **종료 77(SKIP)** |
+| `gate_saturation.py` | **실험 29 — 게이트 포화.** 저장 어휘가 자라면 발화율이 어디까지 오르는가. 🔴 순차 곡선의 평평함이 **휴리스틱의 성질인지 «오늘 무엇이 저장되는가»의 성질인지** 가른다. **ollama도 키도 안 부른다** |
+| `hardcoding_audit.py` | **실험 30 — 박힌 상수 감사.** 상수 **31개**를 «코퍼스 고유 / 언어 고유 / 도메인 무관»으로 가르고, `UBIQUITOUS`를 여섯 대체 집합으로 갈아 끼워 실험 19·20·26·27이 얼마나 움직이는지 다시 잰다. 🔴 재료가 전부 **캐시된 생성물**이라 라이브 호출 0회이고, **체크포인트가 지워지면 «의존성이 살아나는» 것이 아니라 «못 돈다»** — 그때 종료 1이 옳다 |
+| `corpus2_probe.py` | **실험 31 — 두 번째 코퍼스.** `eval2/`(존댓말·업무·다화제 · 6세션 192턴)를 **계측기 무변경으로** 통과시킨다. 🔴 **두 코퍼스를 나란히 놓되 화살표를 그리지 않는다** — 모집단이 다르고(user턴 436과 131) 축은 사전 등록이라 «다른 것»이 전제다. 그 규약을 `NoArrows` 검사가 지킨다. LLM 미사용 |
+| `transition_regen_probe.py` | **wave2 T1 — 실험 아님.** 관계 단계 전이가 민 다이제스트를 다시 만들면 바이트가 같은가(사전 등록 판정). 세션 **본문 0/24 동일 · 프롬프트 24/24 동일** → 전파 유지, 다른 자리는 생성기(서버 캐시 적중 길이). 기록(`TRANSITION_REGEN.json` · 추적 안 됨)이 있으면 ollama 0회, 없으면 로컬 `qwen3:8b` 50회, 그것도 없으면 **77(SKIP)** · [docs/11 wave2 부록](../docs/11-experiment-results.md) |
+| `cache_state_repro.py` | **wave3 — 실험 아님 · F39 재현기.** 같은 프롬프트·같은 옵션을 콜드(언로드 직후)·웜(직전이 같은 요청)·덮음 조건에서 보내 본문 sha를 찍는다. 콜드↔웜이 갈리고 `prompt_eval_count`는 못 본다 · 콜드 고정은 재현된다(≈2.7초/생성). 기록(`CACHE_STATE_REPRO.json`)이 있으면 ollama 0회로 판정을 **다시 계산**하고 본문 sha를 다시 뽑아 어긋나면 종료 1. 🔄 위 `transition_regen_probe.py` 행의 «전파 유지»는 wave2의 판정이다 — 그 사전 등록은 F39 때문에 발화할 수 없었고, wave3가 관측 가능한 기준(«프롬프트가 같으면 새 정보 0»)으로 다시 판정해 **전파를 뺐다**(같은 스크립트가 재판정을 찍는다 · 재측정 기록 `TRANSITION_REGEN_W3.json`은 `--record`로) |
+| `meta_arm.py` | **wave2 T2 — 실험 아님 · 🔴 모의 `<meta>`(자가저작).** `apply_meta`를 턴마다 태우는 추가 팔. `soak.replay`를 앵커로 재현하고(436턴 토큰 전부 같음) 네 채널이 무엇을 채우고 무엇을 비워 두는지 찍는다. LLM 0회 · 종료 1 = 앵커 불일치·빈 채널·`surfaced_count` 합 ≠ 선언 · 🔄 **wave4:** 넷째 팔 A2(세션마다 `digest_session` 경계 행 — 부채 백오프가 그 행을 센다) · 부채 절을 A1/A2 나란히 · `paid` 열 · 강등 기록 · 씬 한도 40/60 후보 길이(두 코퍼스 · 절 5-b) · 사전 등록 전제를 A0에서 센다 · 종료 1에 «A2 선언 > 0인데 `paid` 0»과 «경계 카운터 강등 기록 A1 > 0 · A2 = 0 위반»을 더했다 |
+| `engine_arms.py` | **돌지 않은 채 보존된 941줄 — 실험 아님 · 번호 없음.** 현행 검색을 OpenSearch(nori)·Postgres(pg_bigm)와 «분석기 · 랭킹식 · 색인/구현» 요인별로 가르는 하니스. 파일 머리의 «실험 32»는 부여되지 않은 번호이고, 체크포인트(`ENGINE_ARMS.json`)도 docs/11의 절도 없다. 🔴 **미룬 근거:** 이 코퍼스에서 IDF가 순위를 움직일 수 있는 문항이 **3/18**이라 «차이 없음»이 아무것도 가르지 못한다(IDF의 상대 가중 몫 — 팔 사이 불일치의 상한은 아니다) — [docs/17](../docs/17-gap-disposition.md) §9 · [ADR-015](../docs/adr/ADR-015-retrieval-modes.md) «미해결». `run_all`에 없다(컨테이너 필요) 🔄 **(w7engines · 2026-09-11) 이 행은 과거다 — 다시 써서 실험 32로 돌렸다.** 팔 일곱(A0 · A1 · B1 · B2 · B3 · C1 · C2 — 분석기 → 식 → 구현 한 칸씩) × 두 보기(V1 순위만 · V2 파이프라인) × 코퍼스 다섯 열 · 홀드아웃 부호검정. 구현(엔진) 요인은 순위를 한 자리도 안 바꿨고 현행을 넘는 구성은 검출되지 않았다([docs/11](../docs/11-experiment-results.md) 끝 절). `run_all`에 올렸다(`needs_extra=True` · 컨테이너 없으면 77) |
+| `theta_position.py` | **축 라운드 (레인 A) — 실험 아님 · 번호 없음(실험 21의 후속).** `memory.py` 끝 절의 스위치 `THETA_ON_SCORE`·`W_REC`(기본 끔)를 켜고 끄며 격자 2단의 주입 집합을 비교한다. 🔴 사전 등록 ② **가중치 축 False 0/36 · True 18/36** · 페널티 축 판정 불가(`surfaced_count` 0) · 켜는 것은 판정 안 함(재유도 θ로도 네 구성 모두 회상↓·오주입↑). 종료 1 = 스위치 기본값의 기준칸 ≠ `BASE_EXPECT` 또는 자기 대조 실패 · 격자 캐시 미스면 77 · `run_all`에 있다 · [docs/11 축 라운드 부록](../docs/11-experiment-results.md) §A·§B |
+| `eval_controls_audit.py` | **축 라운드 (레인 B) — 실험 아님.** ADR-009 통제 조건 여덟 칸(baseline 5종 · Random-K · 예산 · temperature · seed · 최근 턴 · 반복 · κ)을 코드와 조립 출력(26문항 × arm 6)으로 찍는다 — 위반 다섯 · 참/충족 셋 · 글자수 비 2.78배. LLM 0회 · `KNOWN`과 다르면 종료 1(새 위반도, 고쳐진 위반도) · `run_all`에 있다 · [docs/17](../docs/17-gap-disposition.md) ❔3–❔5 |
+| `predicate_vocab_cost.py` | **축 라운드 (레인 B) — 실험 아님.** 술어 어휘 «코드 8·9 대 docs/14 25»의 대가 ⓐ 병존 · ⓑ 상시 주입 누락 · ⓒ `superseded_by` 공란을 두 코퍼스에서 센다. 25종 합집합으로 넓혀도 Δ 0 — 대가는 표 밖 술어의 기본값에서 나온다. LLM 0회 · 늘 종료 0(재현기) · `run_all`에 있다 · [ADR-004](../docs/adr/ADR-004-write-path.md) «미해결» |
+| `vecdim_ppr_probe.py` | **축 라운드 (레인 B) — 실험 아님.** «1024차원»은 모델 출력의 성질(캐시 86/86)이고 코드는 차원을 검사하지 않는다(`_cosine([1,0,0],[1,0])` → 1.0) · PPR 축 태깅은 `prototype/`에 0. ollama 0회 · 늘 종료 0 · `run_all`에 있다 · [docs/17](../docs/17-gap-disposition.md) ❔1·❔2 · 축-2 |
+| `retrieve_scaling.py` | **축 라운드 (레인 B) — 실험 아님 · 🔴 `run_all`에 없다.** 21행 틀을 되풀이한 N행 합성 색인에서 `retrieve`·게이트의 p50·p95(n=130/N). p95 > 20 ms 교차 ≈ 3,000행 — [ADR-003](../docs/adr/ADR-003-storage-engine.md) «우리 규모» 안. 지연은 기계·부하의 함수라 **같은 실행 안에서만** 비교하고, 같은 코드의 두 실행에서 교차의 «첫 N»이 뒤집히므로 러너의 단일 출처에 두지 않는다(논리는 `test_retrieve_scaling.py`가 돈다) · ≈ 2분 |
+
+---
+
+## 🧪 두 번째 코퍼스 — `eval2/`
+
+> **재현:** `PYTHONIOENCODING=utf-8 python -B experiments/corpus2_probe.py` (종료 0) · **재생성:** `PYTHONIOENCODING=utf-8 python -B eval2/gen_corpus2.py` (seed 20260910 · 바이트 동일)
+> **읽는 법:** [docs/11 실험 31](../docs/11-experiment-results.md) · 경계는 [docs/12 «이 프로토타입의 경계»](../docs/12-objections.md)
+
+`eval/`은 **한국어 반말 롤플레이 단일 줄거리** 하나다. *"대화 종류가 다양해져도 일반적으로 동작하는가"*를 그 안에서는 물을 수 없어서 두 번째를 만들었다.
+
+🔴 **사전 등록한 «다르게 한 축 넷»** (정본은 `eval2/README.md` §1·§2 · **코퍼스를 쓰기 전에** 박았다): ① 이름(지우/서준 **0회**) · ② 화제(갈래 여섯) · ③ 문체(존댓말·업무형) · ④ 표기(`v2.4`·`PR #391`·`SLA 99.5%`). 각 축이 **겨누는 코드**를 함께 적은 것이 이 등록의 요점이다.
+
+**같게 둔 것:** JSONL 일곱 키 · `role` 값역 · 세션/턴 표기 · 대장 스키마 · 심은 항목의 화자 배치 · 하드 네거티브 문턱 · 노이즈 화자 교대 · 생성의 결정성. **이 목록이 «기존 계측기가 그대로 돈다»의 정의다.**
+
+⚠️ **같게 두려 했으나 못 둔 것:** 심은 항목 밀도(eval **27/720 = 3.75%** · eval2 **25/192 = 13.0%**). 그래서 vocab 곡선을 턴 축이 아니라 **색인 행 수 축**으로 찍는다.
+
+🔴 **자가저작이고 저자가 하나다** — 대장의 `meta.authorship`에 선언했다(실험 22의 선례). LLM 미사용 · 규칙 기반 결정적 역방향 생성. **«합성 코퍼스 2개»이지 n=2가 아니다.**
+
+---
+
+## 🏷️ 라벨 집합 — **사람이 붙인 32개**와 이 저장소 최초의 홀드아웃
+
+> **재현:** `PYTHONIOENCODING=utf-8 python -B experiments/scorer_eval.py` — 종료 0 · **임베딩 라이브 호출 0회**(34개 텍스트가 `EMBED_CACHE.json`에 있다). 캐시도 ollama도 없으면 **종료 77(SKIP)**: 통과가 아니라 미측정이다.
+> **읽는 법:** [docs/11 실험 26](../docs/11-experiment-results.md) · 결정 기록은 [ADR-016](../docs/adr/ADR-016-summary-layer.md) §결과.
+
+«이 사건이 이 요약에 담겼는가»의 정답 집합이 없어서 **결정 4 K(임베딩 기반 채점)가 여러 판 동안 보류**돼 있었다. 이 라벨 집합이 그것을 열었고, 답은 ⛔ **채점기를 바꾸지 않는다**였다.
+
+| 파일 | 무엇 |
+|---|---|
+| `LABELS_HUMAN2.json` · `LABELS_HUMAN3.json` | **사람이 붙인 라벨 12 + 20 = 32.** 재현기가 쓰는 것 |
+| `LABELS_HUMAN.json` | 🔴 **1판 24개 — 폐기.** 지우지 않는다(아래) |
+| `LABEL_WORKSHEET2.md` · `LABEL_WORKSHEET3.md` | 사람이 채운 워크시트. **수가 한 개도 없다** — 유사도를 옆에 찍으면 판단이 그 수에 정박하고 θ가 순환이 된다 |
+| `LABEL_WORKSHEET.md` | 1판 워크시트 — 폐기분의 짝 |
+| `LABEL_PAIRS.json` · `LABEL_PAIRS3.json` | 쌍 선택의 **사전 등록**(모집단 240쌍 · 후보 종류 · 시드)과 유사도 |
+| `LABEL_SPLIT.json` | 🔴 **사전 등록된 분할.** `sha1(pair_id)` 마지막 비트 — **라벨이 붙기 전에** 고정됐다 |
+| `LABEL_SIMS_ALL.json` | 32쌍의 `bge-m3` 코사인. 재현기가 다시 계산해 대조한다 (최대 편차 **4.96e-07**) |
+| `SUMMARY_S2.json` | 재료. 24세션 요약 (`summarize.session_digest` 산출 · 모델 다이제스트 대조됨) |
+
+**🔴 라벨은 자가저작이 아니다.** 붙인 것은 이 하니스가 아니라 **제품 소유자(사람)**다. 그것이 이 질문에 답할 수 있었던 유일한 이유다. **그리고 이것이 이 저장소 최초의 홀드아웃이다** — 앞선 25개 실험 중 «θ를 한 쪽에서 고르고 다른 쪽에서 한 번만 잰» 것은 없었다.
+
+**⚠️ 같은 무게로: n=32는 작다.** 홀드아웃 18쌍에서 **한 쌍이 5.6%p**다. 그리고 **모집단은 여전히 자가저작이다** — 경계 후보를 «임베딩이 가장 높다고 한 것»으로 골랐으므로 이 집합은 임베딩이 자신 있어 하는 자리에 치우친다. **여기서 잰 정밀도와 재현율은 비대칭이다.**
+
+**🔴 1판(24개)을 폐기한 이유, 그리고 파일을 남기는 이유.** 라벨러가 *"이해가 안 돼서 느낌으로 찍었다"*고 말했고, 검사에서 **먼 대조 4개가 전부 `Y`**로 나왔다(`P06`·`P09`·`P16`·`P18`) — 먼 대조는 «담겼을 리 없는» 자리이므로 방향이 뒤집혀 있다. 2판은 형식을 바꿨다: **요약별로 묶고**, 12행으로 줄이고, 질문을 *"이 요약이 아래 일을 말하고 있나요?"*로 고쳤다. **파일을 남기는 것은 2판이 무엇을 고쳤는지 말할 근거가 그것뿐이기 때문이고**, 폐기 사유를 산문으로만 적으면 다음 사람이 그 24개를 합치고 *"n=56이라 더 낫다"*고 적기 때문이다. → **재현기가 1판을 읽어 «먼 대조 4/4가 `Y`»를 매 실행 다시 센다.**
 
 ---
 
@@ -258,4 +315,43 @@ python experiments/consistency_audit.py   # 🔧 문서 숫자 정합성 (API �
 
 ⚠️ **16·17은 자동 판정이 크게 틀렸다.** 17은 정규식이 8%로 봤는데 실제는 83%다.
 *"모른다고 했나 vs 지어냈나"*는 어휘로 안 갈린다 — 수기 판정을
-[COLDSTART_ADJUDICATION.yaml](COLDSTART_ADJUDICATION.yaml)에 근거와 함께 남겼다.
+[COLDSTART_ADJUDICATION.yaml](data/COLDSTART_ADJUDICATION.yaml)에 근거와 함께 남겼다.
+
+---
+
+## 🧪 규모 코퍼스 — `eval3/` (실험 아님 · 🔴 `run_all`에 없다)
+
+> **재생성:** `PYTHONIOENCODING=utf-8 python -B eval3/gen_corpus3.py` (바이트 동일 · `--check`) · **조건:** `PYTHONIOENCODING=utf-8 python -B experiments/eval3_probe.py` (≈ 3분 · LLM 0회 · `%TEMP%` DB)
+> **읽는 법:** [eval3/README](../eval3/README.md) §1 사전 등록 · §2 말할 수 없는 것 · 값은 [docs/17](../docs/17-gap-disposition.md) §13
+
+| 파일 | 무엇 |
+|---|---|
+| `eval3_probe.py` | 색인 3,000행 × df 레짐 셋(지프 지수 s = 0 · 1 · 2)에서 **선행 조건만** 잰다 — 엔진 조건(«IDF가 순위를 움직일 수 있는 문항») · `retrieve` p50·p95 · 게이트 턴 종류별 · `UBIQUITOUS` · `_roots` · 세 채점기 순서 · θ 성질 · 표 밖 술어. 실험 31의 계측기(`corpus2_probe.py`)와 `retrieve_scaling.py`의 부품을 **import해서** 부른다. 종료 1 = 재생성 바이트 불일치 또는 eval 교정(3/18) 실패. 지연이 실행마다 흔들려 `run_all`에 없다 |
+| `test_eval3_probe.py` | 결정적인 부분 — 재생성 바이트 · 사전 등록 상수 · 골격 공유 · eval 교정 · 생성기 검사가 위반을 심으면 발화하는가. `unittest discover`로 돈다 |
+
+## 🆕 0911 라운드 — 새 스크립트 셋 (2026-09-11)
+
+> **읽는 법:** 값과 판정은 [docs/11](../docs/11-experiment-results.md) «실험 결과 (33)» · 끝 부록 · 처분은 [docs/17](../docs/17-gap-disposition.md) §15. 셋 다 LLM · 임베딩 서버를 부르지 않는다.
+
+| 파일 | 무엇 |
+|---|---|
+| `theta_grid.py` | **실험 33 — θ 격자.** 스위치 `THETA_ON_SCORE`를 설계대로 켜면 나아지는가를 θ 재유도(score 모집단) · 모의 `<meta>` 채널 · 규모 코퍼스(eval3)로, 값 보기 전에 박은 판정 규칙(홀드아웃 부호검정)으로 잰다. 🔴 현행 조합 «켬 나음» **0/5열**(두 경로) · eval3 세 레짐 «켬 나쁨» · 그리고 스위치를 끈 채로도 규모에서는 가중치 · recency 축이 움직인다(«죽은 두 축»은 21행 코퍼스의 성질). 실행마다 `prototype/`을 `%TEMP%`에 복사해 **사본만** 쓴다. 종료 1 = 사전 등록 자기 대조 위반 · ≈ 3분 · `run_all`에 있다(`needs_extra=False`). 시험 `test_theta_grid.py`(셋은 새 프로세스에서만 — `IsolatedRun`) |
+| `retrieve_memo.py` | **검색 · 게이트 내용 주소 메모의 전후 (0911 부록 §C · 실험 아님).** C1 동일성(메모 전 식과 반환 · 어휘 · 게이트 sha 다른 쌍 0/40)은 종료 코드로, 지연(웜 · 콜드 · 절벽)은 값으로만 찍는다. 🔴 `run_all`에 없다 — 콜드 칸이 실행마다 갈린다(`retrieve_scaling.py`와 같은 이유). 결정적인 부분은 `prototype/tests/test_retrieve_memo.py` · ≈ 3~4분 |
+| `predicate_default.py` | **표 밖 술어 기본값의 후보별 대가 (0911 부록 §D · 실험 아님 — `predicate_vocab_cost.py`의 후속).** 스위치 `UNKNOWN_PREDICATE_POLICY`(기본 `legacy`)의 후보 일곱 × 코퍼스 다섯 열 · 지배(D) · 전이(T) 판정 · 종료 1 = 기본값 G16 / 스위치 이전 참조 대조(L0) 위반. 🔴 `run_all`에 없다 — 결정적이지만 ≈ 6~7분. 기본값은 `prototype/tests/test_predicate_policy.py`가 지킨다 |
+
+## 🆕 실험 34 — 외부 인간 대화 (AI Hub 71630) · 🔴 외부 데이터 의존 · `run_all` 밖
+
+> **읽는 법:** 값 · 판정 · 등록 결함은 [docs/11](../docs/11-experiment-results.md) «실험 결과 (34)». 원문(AI Hub 약관 — 재배포 금지)은 **저장소 밖**이다 — 원문 경로 환경 변수 `MEMARCH_AIHUB_141`(받은 zip의 `01-1.정식개방데이터` 폴더 · 기본값은 내려받기 폴더) · 작업 파일 `MEMARCH_AIHUB_141_WORK`(nori 토큰 · 벡터 캐시 · M3 워크시트). 없으면 종료 77(SKIP — 통과 아님). 🔴 `run_all`에 없다 — 원문이 없는 환경에서 77이 기준선 SKIP 0을 깬다. 저장소에 쓰는 것은 집계 JSON 둘뿐이고 쓰기 직전 누출 검사(`leak_scan` · 원문 10글자 조각)에 걸리면 쓰지 않는다.
+
+| 파일 | 무엇 |
+|---|---|
+| `aihub141_prereg.py` | **사전 등록 + 공용 적재기**(값 보기 전 · 오케스트레이터가 썼다 · sha256 `c86096f0…` — 고치지 않는다). 단위 · 척도 · 문턱 · 표본 · 순위 규칙 · 누출 검사. 두 레인이 import한다 |
+| `aihub_multisession.py` | **w14a — 어휘 A0 · nori N1.** M1(θ ⑤ · Validation 전량) · M2(자기 짝 · P2 · P2′) · M3(워크시트 — 저장소 밖) · 존댓말 몫 · eval3 나란히 → `AIHUB_141_EXP34.json`. OpenSearch 컨테이너(`_analyze`만 · 색인 없음) 필요 · 캐시 적중 시 ≈ 46초 · 종료 0 기록 / 1 누출 또는 재생 불일치 / 77 데이터 없음. 🔴 **실행마다 `WORK_DIR`의 M3 워크시트를 다시 쓴다** — 사람 라벨을 채운 뒤에는 돌리기 전에 워크시트를 떼어 둘 것 |
+| `aihub_dense.py` | **w14b — bge-m3 코사인 D1**(로컬 ollama `/api/embed`만 · 생성 0회) · P3 · θ ② 전제 · 목록 해석 `sens_list`(정본 해석 — docs/11 «실험 결과 (34)» D②) · 등록 밖 `unregistered_A0_optimistic` → `AIHUB_141_DENSE.json`. 벡터 캐시 적중 시 ≈ 6분 · 콜드 첫 실행 ≈ 18분 · 종료 0 기록 / 1 누출 / 3 ollama 못 봄 / 77 데이터 없음 |
+| `test_aihub_multisession.py` · `test_aihub_dense.py` · `test_aihub_cross.py` | 데이터 없이 discover에서 돈다 — 순위 · 판정 · 누출 거부(합성 대화) · 기록 JSON 재생(계수 → 판정) · 두 JSON의 짝 · A0(목록 해석) · 하드 누락 · P2 산수 교차(`test_aihub_cross.py` — 마감 레인) |
+
+## 폴더 구성 (2026-09-14 분할)
+- `prototype/` — 제품이 import하는 모듈 6(`memory` `summarize` `embedding` `llm` `fsm` `regen_job`)과 하니스 2(`soak` `gate_sweep` — 실험 23파일(시험·데모까지 32파일)이 직접 import해서 같은 층). `tests/` 단위 시험 20 · `demos/` 데모 4.
+  시험: `PYTHONIOENCODING=utf-8 python -B -m unittest discover -s prototype/tests -p "test_*.py"` (저장소 루트에서)
+- `experiments/` — 돌리는 코드만 평면(실험 · 측정 · 감사 4 · `run_all.py`). `tests/` 시험 35 · `data/` 결과·체크포인트·캐시·라벨·로그(`RESULTS.txt` 포함) · `engine_infra/` 컨테이너.
+  AI Hub 파생 파일(`aihub*.py` · `AIHUB_141_*.json`)은 평면에 그대로 — 사전 등록 셋은 기록 JSON의 sha256으로 얼어 있어 옮기지 않는다. 전부 `.gitignore`.
