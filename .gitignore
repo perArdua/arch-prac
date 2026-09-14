@@ -1,0 +1,36 @@
+# 비밀 키와 로컬에서 생기는 파일
+.gemini_key
+*.db
+__pycache__/
+ho.html
+
+# 로컬 작업 폴더 (작업 메모, 계획서 초안)
+# 공개할 내용은 docs/decisions/, experiments/data/baseline/, tools/로 옮겨 두었습니다.
+.omc/
+
+# AI Hub 71630 「한국어 멀티세션 대화」 데이터로 만든 파일은 약관상 재배포할 수 없어서 올리지 않습니다.
+experiments/aihub141_prereg.py
+experiments/aihub141_m3_prereg.py
+experiments/aihub_multisession.py
+experiments/aihub_dense.py
+experiments/tests/test_aihub_multisession.py
+experiments/tests/test_aihub_dense.py
+experiments/tests/test_aihub_cross.py
+experiments/AIHUB_141_EXP34.json
+experiments/AIHUB_141_DENSE.json
+experiments/aihub_tie_probe.py
+experiments/tests/test_aihub_tie_probe.py
+experiments/AIHUB_141_TIE.json
+experiments/aihub_m3_recall.py
+experiments/tests/test_aihub_m3_recall.py
+experiments/AIHUB_141_M3.json
+experiments/aihub_dense_product.py
+experiments/tests/test_aihub_dense_product.py
+experiments/AIHUB_141_DENSE_PRODUCT.json
+experiments/aihub_gate_probe.py
+experiments/tests/test_aihub_gate_probe.py
+experiments/AIHUB_141_GATE.json
+experiments/aihub141_gate_prereg.py
+
+# 참고: experiments/data/EMBED_CACHE_SWEEP.json은 일부러 올립니다.
+# 이 파일이 없으면 새로 받은 저장소에서 실험 26 테스트 2개가 실패합니다.
