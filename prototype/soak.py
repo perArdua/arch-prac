@@ -301,8 +301,16 @@ def main():
     saved_theta = M.THETA_RELEVANCE
     saved_gate = Memory.gate
 
-    def _legacy_gate(self, u):
-        """발견 당시의 게이트 — 과거 참조 표현만 본다 (내용어 접점 없음)."""
+    def _legacy_gate(self, u, chat_id=None):
+        """
+        발견 당시의 게이트 — 과거 참조 표현만 본다 (내용어 접점 없음).
+
+        🔄 `chat_id=None`은 wave2가 더했다. 게이트에 방 인자가 붙은 뒤로
+        `build_context`가 `self.gate(u, chat_id)`로 부르는데, 여기 꽂히는 이
+        대역만 서명을 안 따라가 **5절에서 `TypeError`로 죽었다**(G2 위반).
+        `gate_sweep.g_*` 넷은 같은 날 고쳐졌고 이 하나가 남았다 — 이 파일은
+        `run_all`에 없어서 회귀가 못 봤다. 인자는 받기만 하고 안 쓴다(발견 당시 그대로).
+        """
         if re.search(r"(기억|그때|저번|예전|아까|전에|했잖아|말했|뭐였|언제)", u):
             return True, "과거 참조 표현"
         if len(u) < 8:
