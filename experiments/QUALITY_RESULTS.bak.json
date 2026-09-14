@@ -1,0 +1,1418 @@
+{
+  "A1 Oracle (상한)": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 머리 어디다 두고 다니냐. 정신 차려.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": true,
+      "why": "내용어 전부 일치",
+      "ans": "너 카페인에 민감하잖아. 괜히 마시고 밤새 뒤척이지 말고 다른 거 마셔.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 말한 적 있다. 왜 갑자기 그걸 묻냐.",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": null,
+      "why": "내용어 33% 일치 — **확인 필요**",
+      "ans": "스타트업 이직했다며. 벌써 까먹었냐, 정신 안 차리냐.",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": true,
+      "why": "'3번' 포함",
+      "ans": "벌써 까먹었냐. 세 번 봤잖아. 정신 똑바로 차려라.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "그야 당연히 저번 주지. 너 이직 문제로 나랑 싸우고 나비까지 아파서 응급실 갔을 때. 그때 생각하면 아직도 머리 아프다.",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "무슨 소리냐. 너 원래부터 생각 많고 예민했어. 갑자기 왜 그러냐.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "뭐가 어떻게 됐다는 건데. 툭하면 쓸데없는 생각 좀 하지 마라.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "벌써 까먹었냐. 학교에서 처음 본 지 3년은 넘었다.",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "나비 아픈 게 먼저였다. 정신없어서 헷갈린 거냐.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "저번 주에 말했잖아. 기억력 진짜 어떡하냐.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그걸 왜 나한테 묻냐. 며칠 안 된 거 다 알면서.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 33% 일치 — **확인 필요**",
+      "ans": "스타트업인지 뭔지 가서 얼굴 보기 힘들다. 밥은 제대로 먹고 다니는 거냐.",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "사귀는 사이인 거 뻔히 알면서 왜 묻냐. 머리 어디 부딪혔냐?",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그거야 당연히 너 거기 계속 다니는 줄 알았지. 언제 이직했냐.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "언제 적 일을 이제 와서 묻냐. 화는 무슨, 다 풀린 지가 언젠데.",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 왜 나한테 물어봐. 당연히 알지, 초코잖아. 너는 그것도 기억 못 하냐?",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "무슨 오빠. 또 뜬금없는 소리 하네. 기억 안 난다.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "기억 안 날 리가 있냐. 그때 네가 비행기 놓칠 뻔해서 공항에서 아주 난리였지.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "너 그거 경영학과잖아. 맨날 과제 때문에 징징대던 거 기억 안 나냐?",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 40% 일치 — **확인 필요**",
+      "ans": "나비? 네 고양이 이름 말하는 거잖아. 방금 전까지 잘 얘기해놓고 왜 묻냐.",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 머리 좀 써라, 맨날 까먹고.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "네가 했잖아. 정신 어디다 두고 다니냐.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 25% 일치 — **확인 필요**",
+      "ans": "너 카페인 민감해서 커피 못 마시잖아. 아까 회사 근처에서 마신 건 라떼지, 커피 아니야.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 내가 어떻게 기억하냐. 그냥 평범한 옷이었겠지.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 맨날 과제랑 전공 수업 얘기만 했잖아. 기억 안 나냐.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "C  제안안 (프로토타입)": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 너 진짜 정신 어디다 두고 다니냐. 나비 밥은 챙겼냐?",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "서준: 너 카페인에 예민하잖아. 또 잠 못 자서 고생하려고 그러냐. 그냥 차 마셔.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "응, 말했었잖아. 여동생 있다고. 갑자기 그건 왜 묻냐.",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": true,
+      "why": "'스타트업 프로덕트 매니저' 포함",
+      "ans": "스타트업 프로덕트 매니저잖아. 일에 치여서 정신 나갔냐.",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 두 번 봤잖아. 벌써 다 잊어버린 거냐. 머리 좀 식혀라.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "나비 응급실 갔을 때 아니냐. 그때 너 반쯤 혼 나가서 내가 얼마나 식겁했는지 기억 안 나냐.",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "갑자기 왜 그러냐. 원래 네가 어떤 사람이든 지금 내 옆에 있는 게 너인데.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 4월에 다시 연락 닿았을 때부터였겠지. 왜, 갑자기 새삼스럽게.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 4월에 다시 연락했으니까 반년 좀 넘었나. 굳이 그런 걸 왜 세고 있냐.",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": true,
+      "why": "'전' 포함",
+      "ans": "합격 전이었잖아. 정신없어서 기억도 안 나냐.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "저번 주인가. 너 카페인 때문에 커피도 못 마시면서 왜 자꾸 가자고 하는 거냐.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 8월에 이직 문제로 싸웠잖아. 벌써 한 달도 더 지났다. 기억력이 왜 그러냐.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "지우: 요즘 회사 어때\n서준: 저번처럼 또 새벽에 연락할 일은 없는 거지? 적당히 해라, 몸 상한다.",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "갑자기 무슨 뜬금없는 소리냐. 우리 사귄 지가 언젠데 그런 걸 묻고 그래.",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 너 스타트업으로 이직한 지가 언젠데 아직도 정신 못 차리냐. 바보냐.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "서준: 화는 무슨, 뒤끝 있게. 일하느라 바쁜 거 아는데 적당히 좀 해라.",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 너 고양이 키우잖아. 나비 말고 또 누가 있다고 그러냐.",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 너 여동생밖에 없지 않냐. 무슨 오빠 얘기야.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 당연하지. 그때 네가 카페인 때문에 커피 못 마셔서 고생했던 거 다 기억난다.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 당연히 알지. 너 디자인 전공했잖아. 왜 갑자기 그걸 묻냐.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 20% 일치 — **확인 필요**",
+      "ans": "나비 저번에 응급실 갔던 거 말하는 거냐. 이제는 괜찮은 거지?",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 정신 어디다 두고 다니냐.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "너 아니냐. 이직하고 나서 맨날 그 얘기만 하던 게 누군데.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 25% 일치 — **확인 필요**",
+      "ans": "너 카페인 민감하잖아. 기억 안 나냐? 멍청하게 또 마시려고.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 내가 어떻게 기억하냐. 그냥 평범한 티셔츠였던 것 같은데.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 나비 얘기랑 네 동생 얘기밖에 더 했냐. 별 시답지 않은 거 물어보네.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "G1 현행 재현(추정)": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 정신 어디다 두고 다니냐.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": true,
+      "why": "내용어 전부 일치",
+      "ans": "너 카페인에 민감해서 못 마신다고 했잖아. 그냥 주스 마셔.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "안 했어. 처음 듣는 소리네.",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "너 지금 회사 다니는 거 아니냐. 한 달 됐다고 벌써 까먹었어?",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "벌써 몇 번 봤냐. 기억이 잘 안 나는데, 네가 다 말해주지 않았냐.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "나비 응급실 갔을 때 아니냐. 그때 너 반쯤 혼 나가 있었던 거 기억 안 나.",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "무슨 소리냐. 원래부터 징징거리는 거 잘 알았다.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "뭐가. 4월부터 연락하고 7월부터 사귀었잖아. 기억 안 나냐.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "4월에 다시 연락했으니까 반년 좀 넘었지. 벌써 까먹었냐.",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": true,
+      "why": "'전' 포함",
+      "ans": "합격 전이었잖아. 정신없어서 기억도 안 나냐.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 기억 안 나냐. 저번에 말했던 곳 말이다. 이번 주말에 가기로 했으니까 잊지 마라.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 8월에 이직 문제로 다퉜던 게 마지막이다. 벌써 한 달도 더 지났는데 기억이 안 나냐.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 말도 마라. 프로젝트 때문에 사람 미치게 만든다. 너는 어떠냐, 거기도 여전히 정신없냐?",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 33% 일치 — **확인 필요**",
+      "ans": "연애한 지가 언젠데 이제 와서 그걸 묻냐. 당연히 연인이지. 헛소리 말고 잠이나 더 자라.",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그만둔 거 아니었냐. 그 회사에서 하도 깨져서 울고불고 난리 치더니.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 언제 적 일을 아직도 그러고 있냐. 뒤끝 있네.",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 나비 말하는 거냐. 그건 고양이잖아. 멍청하긴.",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "무슨 얘기? 기억이 잘 안 나는데. 다시 말해 봐.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "기억 안 난다. 너랑 갔었나? 하도 오래돼서 가물가물하네.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 너 마케팅 회사 다니는 거 보면 당연히 경영이나 광고 쪽 아니냐. 기억 안 나면 어쩔 건데.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 20% 일치 — **확인 필요**",
+      "ans": "나비가 갑자기 아파서 응급실 갔던 거 말하는 거냐. 아니면 봄나들이 갔을 때 봤다던 거? 기억이 잘 안 나네.",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "나비잖아. 정신 어디다 두고 다니냐.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 내가 했었지. 너도 거기로 이직한 거 기억 안 나냐.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 12% 일치 — **확인 필요**",
+      "ans": "지우: 나 커피 마신 적 있었나?\n서준: 무슨 소리냐. 너 카페인 안 받아서 늘 주스만 마시잖아. 헛소리 말고 밥이나 챙겨 먹어.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 내가 어떻게 다 기억하냐. 기억이 잘 안 나네.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 대학 때 얘기나 회사 일 같은 거 했지. 기억이 잘 안 나네.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "A2 최근 30턴": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 우리가 무슨 고양이를 키워. 헛소리하지 마라.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "감기 걸렸다며. 몸 상태 생각해서 따뜻한 거 마셔.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그런 말 들은 적 없다. 처음 듣는 소리인데.",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "네가 지금 뭘 하는지 내가 어떻게 아냐. 나한테 묻지 말고 알아서 해라.",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그걸 나한테 물어보면 어떡하냐. 네가 본 걸 내가 어떻게 다 기억해.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그런 걸 왜 묻냐. 기억도 잘 안 나는데.",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "무슨 소리냐. 원래 그랬어.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "무슨 소리냐. 갑자기 왜 이래.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "지우: 우리 알게 된 지 얼마나 됐지\n\n서준: 그걸 나한테 왜 묻냐. 기억 안 난다.",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "기억이 잘 안 난다. 그런 걸 왜 나한테 묻냐.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "그게 언제였더라. 기억이 잘 안 나네.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 기억이 잘 안 난다. 그런 거 일일이 세고 사냐.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "지우: 요즘 회사 어때\n\n서준: 똑같지 뭐. 다를 게 있냐. 넌 일 적당히 해라.",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 33% 일치 — **확인 필요**",
+      "ans": "연인 사이다. 아까부터 왜 뻔한 걸 묻냐.",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그게 무슨 소리냐. 너 거기 그만둔 지 꽤 됐잖아.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "화난 적 없다. 혼자 멋대로 생각하지 마라.",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 왜 나한테 묻냐. 기억이 잘 안 난다.",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "무슨 오빠 얘기. 기억이 잘 안 나는데.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 기억이 잘 안 난다. 별로 재미없었나 보지.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 왜 나한테 물어보냐. 너 전공도 기억 안 할 정도로 내가 관심 없는 줄 아나 보지.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "그런 얘기 한 적 없다. 기억이 잘 안 나네.",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그런 걸 왜 나한테 물어보냐. 기억이 잘 안 난다.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 그게 갑자기 왜 궁금하냐. 기억이 잘 안 나.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 너 저번에 주스 마신다며. 기억 안 나냐.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "기억이 잘 안 난다. 그런 걸 다 어떻게 기억하고 있냐.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "기억이 잘 안 난다. 별 시답잖은 얘기나 했겠지.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "A0 기억없음 (바닥)": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 야, 너 머리에 뭐가 들었냐? 밥 먹고 돌아서면 까먹지 아주. 뻔히 거실에서 자고 있는 놈 이름을 왜 나한테 물어. 뭉치잖아, 뭉치. 내가 어제 사료도 새로 사다 놨는데 그것도 벌써 까먹은 건 아니지? 정신 좀 차리고 살아라.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "어제도 밤새 잠 못 자고 뒤척이더니, 또 커피를 마시겠다고? 몸 생각 좀 해라. 됐으니까 그냥 따뜻한 물이나 마셔. 카페인 들어가면 오늘 밤에도 잠 설치고 겔겔거릴 게 뻔한데, 그 꼴을 내가 어떻게 보냐. \n\n이거 마셔. 아까 오면서 네 생각나서 사 온 거니까. 커피 대신 이거 마시고 잠이나 좀 더 자.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 갑자기 무슨 소리냐. 없다고 하지 않았냐? 너 형제 관계 물어본 적도 없긴 한데, 외동인 줄 알았다. 갑자기 웬 동생 타령이야. 걔가 뭐 사고라도 쳤냐?",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 멍하니 있지 말고 밥이나 먹어라. 넌 무슨 밥 먹는 것도 까먹냐? 아까부터 보니까 계속 넋 놓고 있길래. 여기, 아까 사 온 거니까 얼른 먹어. 식으면 맛없다.",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": true,
+      "why": "'3번' 포함",
+      "ans": "서준: 세 번. 세 번 봤잖아. 너 어제 면접 다녀와서 녹초가 된 채로 거실에 뻗어있던 거 다 까먹었냐? 기억력도 참, 하여간. \n\n(네 머리를 헝클어뜨리며 툭 던지듯 말한다) \n\n그렇게 정신없이 굴 거면 면접 날짜라도 다이어리에 적어두든가. 칠칠치 못하게. 그래도 이번 면접은 저번보다 대답 잘했다며. 괜히 헛물 켜지 말고, 일단 밥이나 먹어. 너 면접 준비하느라 굶은 거 다 아니까.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "갑자기 무슨 감상에 젖어서 그런 걸 묻냐. 사람 피곤하게.\n\n굳이 따지자면 우리 처음 사귀고 나서 한동안이었겠지. 내가 너한테 마음은 있는데 표현은 서툴고, 너는 내 눈치 보느라 전전긍긍하던 때. 그때 내가 너 좀 덜 챙기고 툭툭 내뱉어서 너 혼자 울고 그랬잖아. \n\n그때 생각하면 지금도 좀 짜증 나네. 내가 왜 그랬나 싶기도 하고. 근데 뭐, 지금은 너도 나 다루는 법 다 알잖아. \n\n됐고, 밥은 먹었냐. 또 굶고 딴생각 하는 거 아니지. 배고프면 말해. 뭐라도 사 오든가 할 테니까.",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 갑자기 또 무슨 헛소리냐. 원래 어떤 사람이었는데. \n\n(네 머리를 헝클어뜨리며 툴툴거린다) \n\n너 원래도 남들 신경 쓰느라 피곤하게 살던 건 똑같았어. 나 만나고 나서 좀 덜해진 거지. 그러니까 이상한 생각 하지 말고 밥이나 먹어. 네가 좋아하는 거 시켜놨으니까.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 갑자기 무슨 헛소리냐. 밥은 먹었냐고 물어보려던 참인데 분위기 잡지 마라. \n\n(네 얼굴을 빤히 바라보다가 툭 내뱉는다)\n\n뭐가 그렇게 불만인데. 내가 평소에 너 안 챙겨주냐? 아니면 뭐, 서운한 거라도 있냐. 말 안 하면 난 모른다. 그러니까 괜히 이상한 생각 하지 말고 이리 와서 앉아. 밥이나 먹자.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 갑자기 그걸 왜 묻냐. 3년 좀 넘었나. 처음엔 너 같은 애가 우리 과에 있는 줄도 몰랐는데. \n\n(귀찮다는 듯 턱을 괴며 널 빤히 쳐다본다)\n\n벌써 3년이나 지났는데, 아직도 나보다 모르는 게 많냐? 밥은 먹었어? 맨날 굶고 다닐 거면 그냥 내 옆에 붙어 있어라. 내가 다 챙길 테니까.",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": true,
+      "why": "'전' 포함",
+      "ans": "그걸 지금 기억하라고 묻는 거냐? 하여간 넌 중요한 건 꼭 까먹지. \n\n나비 병원 데려간 게 너 면접 보고 바로 다음 날이었어. 합격 연락 오기 전이라 네가 애 상태도 안 좋은데 면접 본다고 끙끙 앓던 거, 내가 데려다줬던 거 기억 안 나냐? \n\n머릿속에 뭐가 들어있는 건지. 약은 제때 챙겨 먹고 있는 거냐? 밥도 안 먹었을 것 같은데 이따가 뭐라도 좀 먹어라.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 한 달은 넘었지. 네가 가고 싶다고 노래를 부르길래 기억하고 있었는데, 정작 너는 다 까먹고 있었냐? 진짜 못 말린다, 너는. \n\n오늘 수업 일찍 끝나는 거 다 알아. 짐 챙겨서 정문 앞으로 나와. 거기 사람 많아서 웨이팅 길 거니까 빨리 움직여야 한다. 늦으면 나 먼저 들어가서 자리 잡고 있을 거니까 알아서 해라.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 그걸 지금 나한테 묻는 거냐? 어이가 없네. \n\n어제저녁에 네가 삐져서 입 꾹 다물고 밥도 안 먹고 들어간 게 벌써 까마득해? 아니면 그저께 내가 과제 도와준다고 밤샜던 건 다 잊었냐. \n\n기억력도 참, 하여간 챙겨주는 사람 없으면 어떻게 살려고 그러는지 모르겠다. 됐고, 밥이나 먹으러 가. 너 아까부터 배에서 소리 나더라.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 말도 마라. 팀장이 아침부터 서류 던지면서 소리 지르는데 진짜 때려칠까 고민했다. 너는, 너야말로 회사에서 안 털리고 잘 버티고 있냐? 밥은 제때 챙겨 먹고 다니는 거지. 얼굴 보니까 또 대충 때운 거 같은데.",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 갑자기 무슨 뚱딴지같은 소리냐. 우리가 남도 아니고, 지금 손잡고 있는 건 장식인가? \n\n(네 손을 꽉 쥐며 짐짓 귀찮다는 듯 눈을 흘긴다)\n\n너 요새 드라마 너무 많이 보는 거 아니냐? 뻔한 거 묻지 말고 밥이나 먹으러 가. 배고프다.",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "서준: 야, 그럼 내가 그걸 모르겠냐? 너 그만둔 지가 언젠데 아직도 거기 다니는 줄 알겠어. \n\n(네 머리를 헝클어뜨리며 툴툴거린다) \n\n퇴사하고 집에만 처박혀 있는 거 다 아니까 헛소리하지 마라. 그동안 스트레스받느라 고생한 건 아는데, 그렇다고 맨날 잠만 자고 굶는 건 아니지? 밥은 챙겨 먹었냐? 너 또 라면으로 때웠으면 진짜 혼난다.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "서준: 화는 무슨. 내가 언제까지 그러고 있을 줄 알았냐? \n\n(너를 힐끔 보더니 툭 내뱉으며 네 손에 들린 짐을 낚아챈다.)\n\n어제 그렇게 비 맞고 다니지 말라고 몇 번을 말하냐. 감기 걸리면 너만 고생이지. 짐 이리 줘, 무거우니까. 밥은 먹었냐? 안 먹었으면 닥치고 따라와. 근처에 괜찮은 식당 봐뒀으니까.",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: ...야, 사람을 뭘로 보고. 당연히 알지. 뭉치잖아. \n\n(네 머리를 헝클어뜨리며 혀를 쯧 찬다)\n\n맨날 나한테 사진 보내면서 이름 까먹었겠냐고 닦달을 해대는데, 그걸 어떻게 잊어버리냐. 머리 나쁜 사람 취급하지 마라. 기분 나쁘니까.",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "아, 그 형? 기억하지. 왜, 또 무슨 일 있냐. 걔가 너한테 뭐라 또 귀찮게 굴어? \n\n너 어제도 걔랑 통화하느라 늦게 자서 오늘 아침에 퀭하게 나오던데. 적당히 받아줘라. 나처럼 말 안 통하는 사람도 아닌데, 네가 다 들어주니까 더 그러는 거 아니냐. \n\n...그래서, 이번엔 또 뭔 일인데. 말해봐.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "갑자기 그건 왜 묻냐. 뜬금없게. \n\n당연히 기억하지. 네가 비행기 타기 전부터 설레발치다가 공항에서 짐 잃어버릴 뻔한 거, 내가 다 수습하느라 진 다 뺐는데 그걸 잊겠냐. \n\n근데 왜, 또 어디 가고 싶어서 그러냐? 이번엔 짐 제대로 챙길 자신 있냐.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 뻔한 걸 왜 묻냐. 경영학이잖아. 너 맨날 과제 때문에 밤새고 징징대던 게 엊그제 같은데, 설마 그걸 잊었을까 봐 그러냐? 멍청하긴. 공부 좀 적당히 해라, 다크서클 턱까지 내려왔다.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 20% 일치 — **확인 필요**",
+      "ans": "서준: 아, 그거? 저번에 카페 가다가 봤던 거 말하는 거냐. \n\n(네 머리를 헝클어뜨리며 퉁명스럽게 툭 내뱉는다)\n\n기억력도 참, 붕어냐? 나비가 아니라 나비넥타이. 너 다음 주에 과 행사 있다며. 정장 입어야 한다고 징징대길래 내가 알아봐 준다고 했잖아. \n\n(주머니에서 작은 상자를 꺼내 툭 던지듯 건넨다)\n\n어차피 너 혼자 고르면 또 이상한 거 살 게 뻔해서 그냥 내가 샀다. 뜯어봐. 촌스러운 건 딱 질색이니까.",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": true,
+      "why": "'나비' 포함",
+      "ans": "서준: 갑자기 왜 묻냐. 맨날 이름 부르면서 이제 와서 까먹은 척하네. ‘나비’다, 나비. 기억 좀 똑바로 해라. 머리는 장식이냐?",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 아, 그게 왜 이제 나오냐. 내가 저번에 말할 때 귀담아듣지도 않더니. \n\n(네 옆으로 툭 다가앉으며 턱짓으로 노트북 화면을 가리킨다)\n\n거기 적힌 거 봐라. 그 바닥에서 구르는 놈들 내가 다 조사해서 추려놨으니까. 무작정 덤비지 말고 그중에 괜찮은 곳 몇 군데 골라. 너 혼자 감당 못 할 거 뻔하니까 내가 다 알아봐 둔 거다. 딴생각 말고 일단 이거부터 훑어봐.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 25% 일치 — **확인 필요**",
+      "ans": "서준: 어이없네. 어제도 내 거 뺏어 마셔놓고 벌써 까먹었냐? 기억력 수준 하고는. \n\n(네 손에 들린 빈 컵을 뺏어 쓰레기통에 던져 넣으며)\n\n카페인 중독되니까 작작 마셔라. 아침에 줬던 우유는 다 마시긴 한 거냐? 하여간 칠칠치 못해서는. 이따 나갈 때 너 좋아하는 걸로 하나 사 올 테니까 그만 좀 징징대.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 그걸 지금 기억하라고 묻는 거냐? 뻔하지, 너 그때 그 촌스러운 노란색 가디건 입고 있었잖아. 내가 처음 봤을 때 진짜 눈 아파서 못 봐주겠더라. \n\n근데 그걸 왜 묻냐? 설마 너 그때 내가 너 쳐다본 게 옷 때문이라고 생각하는 건 아니지? 그냥 하도 눈에 띄게 이상해서 쳐다본 거니까 착각 마라. 하여간, 너는 그런 거 하나하나 다 기억해야 직성이 풀리냐. 피곤하게 진짜.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 뭘 그런 걸 다 기억하고 있냐. 뻔하지, 뭐. 수업 내용이랑 과제 얘기 아니면 밥 먹었냐는 소리밖에 더 했겠냐. \n\n(네가 빤히 쳐다보자 헛기침을 하며 툴툴거린다) \n\n...꼭 그런 걸 물어봐야겠냐. 그때 네가 나한테 껌 빌려달라고 했던 거 기억나는데. 하도 덜렁대길래 내가 챙겨주느라 피곤했던 기억밖에 없다. 됐냐? 딴생각 말고 밥이나 먹어라.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "A0R 기억없음+규칙만": [
+    {
+      "id": "Q01",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 멍청하긴, 콩이잖아. 맨날 너만 보면 야옹거리는 놈을 벌써 까먹었냐?",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q02",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "어제 잠도 제대로 못 잤으면서 무슨 커피냐. 그냥 따뜻한 물이나 마셔라.",
+      "gold": "안 된다 / 카페인 민감하다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q03",
+      "type": "single_hop",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "아니, 너 그런 말 한 적 없다. 갑자기 웬 동생 타령이냐.",
+      "gold": "여동생 한 명",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q04",
+      "type": "single_hop",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "너 지금 과제 밀려서 끙끙대고 있잖아. 정신 안 차리냐.",
+      "gold": "스타트업 프로덕트 매니저",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q05",
+      "type": "multi_session",
+      "ok": true,
+      "why": "'3번' 포함",
+      "ans": "세 번 봤잖아. 다 까먹은 거냐? 정신 좀 차려라.",
+      "gold": "3번",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q06",
+      "type": "multi_session",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "그걸 왜 굳이 다시 꺼내냐. 너랑 싸우고 며칠 동안 연락 안 됐을 때가 제일 힘들었다. 됐냐?",
+      "gold": "나비가 아팠을 때 / 다퉜을 때",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q07",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "사람은 변하는 거다. 쓸데없는 생각 말고 밥이나 먹어라.",
+      "gold": "이직 전후로 달라진 점을 짚음",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q08",
+      "type": "multi_session",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "우리가 언제부터 이렇게 됐냐니. 너 오늘따라 왜 이렇게 감상적이냐. 그냥 평소처럼 지낸 거지.",
+      "gold": "집 앞까지 데려다준 날 / S11 전후",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q09",
+      "type": "temporal",
+      "ok": false,
+      "why": "모른다고 회피 (근거는 있었는데 못 씀)",
+      "ans": "벌써 3년 다 되어가잖아. 그것도 기억 안 나냐?",
+      "gold": "약 5개월",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q10",
+      "type": "temporal",
+      "ok": true,
+      "why": "'전' 포함",
+      "ans": "나비 아픈 게 먼저지. 합격 발표 나기도 전인데 뭔 소리냐. 기억 좀 똑바로 해라.",
+      "gold": "전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q11",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 저번 주 화요일이잖아. 기억력 참 대단하다, 너.",
+      "gold": "S09 무렵 / 약 4개월 전",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q12",
+      "type": "temporal",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 며칠 전이었잖아. 벌써 까먹었냐? 기억력 하고는.",
+      "gold": "최근 / S20",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q13",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 사람들은 다 거기서 거기지. 피곤해 죽겠다. 너는 별일 없냐?",
+      "gold": "스타트업 관련 반응",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q14",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 33% 일치 — **확인 필요**",
+      "ans": "연인 사이인 거 뻔히 알면서 굳이 묻냐. 머리 어떻게 된 거 아니냐?",
+      "gold": "연인 (화해 후)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q15",
+      "type": "knowledge_update",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 내가 너 퇴사한 걸 모를 리가 있냐. 그만둔 지가 언젠데 이제 와서 그런 소릴 하냐.",
+      "gold": "아니라고 정정",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q16",
+      "type": "knowledge_update",
+      "ok": null,
+      "why": "내용어 50% 일치 — **확인 필요**",
+      "ans": "화는 무슨, 다 풀렸다. 밥은 먹었냐?",
+      "gold": "화해했다는 인지",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q17",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "그걸 왜 몰라, 루이잖아. 맨날 너만 보면 좋다고 달려드는 녀석인데.",
+      "gold": "모른다 / 그런 얘기 한 적 없다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q18",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "무슨 오빠 말하는 거냐. 우리 사이에 오빠가 어디 있다고 그러냐. 기억 안 나니까 똑바로 말해라.",
+      "gold": "여동생은 들었지만 오빠 얘기는 없었다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q19",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "작년에 제주도? 안 갔는데. 너 잘못 기억하는 거 아니냐.",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q20",
+      "type": "abstention",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 당연히 알지. 너 미술 전공이잖아. 그것도 모를까 봐?",
+      "gold": "모른다",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q23",
+      "type": "lexical_distractor",
+      "ok": null,
+      "why": "내용어 20% 일치 — **확인 필요**",
+      "ans": "나비 축제 가자고 했던 거 말하는 거냐. 귀찮게 왜 또 물어봐.",
+      "gold": "고양이 나비 (F001)를 먼저 떠올림",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q24",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 아까 말해줬잖아. 루루라고. 기억력도 참.",
+      "gold": "나비",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q25",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "그거 김 대리가 저번에 얘기했던 거잖아. 기억력이 왜 그러냐.",
+      "gold": "지우 본인 (F021)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q26",
+      "type": "lexical_distractor",
+      "ok": false,
+      "why": "정답 없음",
+      "ans": "서준: 아침마다 내 거 뺏어 마시던 게 누구냐. 기억력이 왜 그러냐.",
+      "gold": "없다. 카페인 민감 (F003). 라떼를 마셨다면 그건 별개(X004)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q21",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "흰색 니트 입고 있었잖아. 그것도 기억 안 나냐.",
+      "gold": "정확히는 기억 안 난다는 취지 (S01은 digest 해상도)",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "id": "Q22",
+      "type": "coverage",
+      "ok": null,
+      "why": "abstention/coverage — **사람이 판정** (지어냈나 vs 인정·정정했나)",
+      "ans": "서준: 너 그날 전공 수업 과제 때문에 징징거렸던 거 기억 안 나냐. 맨날 과제 얘기뿐이었지.",
+      "gold": "대략적 주제는 답하되 세부는 흐릿하게",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ]
+}

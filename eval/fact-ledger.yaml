@@ -1,0 +1,353 @@
+# 사실 대장 (Fact Ledger)
+# 평가용 한국어 롤플레이 코퍼스의 ground truth.
+# 이 파일을 먼저 확정하고, 대화는 여기서 역방향 생성한다.
+#
+# 설계 근거: docs/01 §4.2, docs/09, docs/adr/ADR-009
+# 주의: 각 항목의 `tests` 필드가 그 항목이 존재하는 이유다. 이유 없는 항목은 넣지 않는다.
+
+meta:
+  version: 1
+  language: ko
+  chat_id: eval-chat-001
+  sessions: 24
+  span: 2026-03-15 ~ 2026-08-20   # 약 5개월
+  target_turns: ~720              # 세션당 평균 30턴
+  noise_ratio: 0.65               # 대장에 없는 잡담 비율 — 검색 난이도 확보
+
+character:
+  id: seojun
+  name: 강서준
+  age: 27
+  relation: 대학 선배
+  persona: |
+    무뚝뚝하고 툴툴대지만 챙기는 건 다 챙기는 타입.
+    걱정을 직접 말하지 않고 다른 방식으로 표현한다.
+    ("밥은 먹었냐" / "택시 타고 가" / "……그래서 괜찮은 거냐고")
+  speech_rules:                    # docs/06 L1 — 산문이 아니라 별도 필드
+    말투: 반말
+    1인칭: 나
+    어미: ["~냐", "~다", "~지", "~거든"]
+    금지: ["ㅋㅋㅋ 남발", "이모지", "존댓말"]
+    호칭_초기: "야"
+    호칭_변경: {at: S15, to: "이름 부름"}   # 관계 전환 신호
+  taboos: ["유저의 가족사를 먼저 캐묻지 않는다"]
+
+user_persona:
+  name: 지우
+  age: 27
+  job_initial: 마케팅 회사 대리
+  traits: ["힘들면 말수가 줄고 딴 얘기로 돌린다"]   # ← L8 interpretation 표적
+
+# ═══════════════════════════════════════════════════════════
+# 관계 상태 궤적 — L2 검증용
+# ═══════════════════════════════════════════════════════════
+relationship_arc:
+  - {at: S01, stage: 아는사이,  affinity: 20}
+  - {at: S06, stage: 친구,      affinity: 45}
+  - {at: S11, stage: 썸,        affinity: 62}
+  - {at: S15, stage: 연인,      affinity: 78,  note: "호칭 변경 지점"}
+  - {at: S20, stage: 다툼중,    affinity: 55,  note: "이직 문제로 갈등"}
+  - {at: S22, stage: 연인,      affinity: 84,  note: "화해"}
+
+# ═══════════════════════════════════════════════════════════
+# 사실 (L5) — bi-temporal
+# ═══════════════════════════════════════════════════════════
+facts:
+  - id: F001
+    text: 지우의 고양이 이름은 나비
+    predicate: 반려동물_이름
+    object: 나비
+    realm: real
+    at: {session: S03, turn: 12}
+    status: valid
+    importance: 0.6
+    tests: [single_hop]
+
+  - id: F002
+    text: 지우는 마케팅 회사 대리
+    predicate: 직업
+    object: 마케팅 회사 대리
+    realm: real
+    at: {session: S01, turn: 5}
+    invalidated_at: {session: S21, turn: 8}
+    superseded_by: F021
+    importance: 0.7
+    tests: [knowledge_update]        # ← 갱신 후 구 버전을 답하면 stale
+
+  - id: F021
+    text: 지우는 스타트업으로 이직함
+    predicate: 직업
+    object: 스타트업 프로덕트 매니저
+    realm: real
+    at: {session: S21, turn: 8}
+    status: valid
+    importance: 0.9
+    tests: [knowledge_update, single_hop]
+
+  - id: F003
+    text: 지우는 카페인에 민감해서 커피를 못 마심
+    predicate: 신체_특성
+    object: 카페인 민감
+    realm: real
+    at: {session: S04, turn: 20}
+    status: valid
+    importance: 0.5
+    tests: [single_hop, care_deployment]   # ← 배려 축 배치 소재 (docs/09 §1)
+
+  - id: F004
+    text: 지우에게 여동생이 한 명 있음
+    predicate: 가족
+    object: 여동생 1명
+    realm: real
+    at: {session: S08, turn: 3}
+    status: valid
+    importance: 0.4
+    tests: [single_hop]
+
+  - id: F005
+    text: 서준은 대학에서 지우보다 2년 선배
+    predicate: 관계_배경
+    object: 2년 선배
+    realm: fiction
+    at: {session: S01, turn: 2}
+    status: valid
+    importance: 0.6
+    tests: [temporal]
+
+  # ─── 빵 함정 ───────────────────────────────────────────
+  # docs/02 §0 — 유사 서비스 A의 «빵 유언» 사고를 재현한다.
+  # 사소한 사건을 감정 어휘 근처에 심어, 나중의 감정적 장면에서
+  # 유사도로 끌려올라오는지 본다. 검색되면 실패.
+  - id: F007_TRAP
+    text: 지우가 점심에 크로와상을 먹었고 "더 먹고 싶었는데 아쉽다"고 말함
+    predicate: 일상_사소
+    object: 크로와상
+    realm: real
+    at: {session: S07, turn: 18}
+    status: valid
+    importance: 0.05              # ← 낮아야 정상
+    emotional_bait: ["아쉽다", "더 먹고 싶었는데", "마지막"]
+    tests: [misinjection]
+    must_not_appear_in: [S19, S20, S24]   # 감정 고조 장면
+    note: |
+      importance 가중이 작동하면 S19(나비 위독)·S24(엔딩)에서 검색되지 않아야 한다.
+      relevance만으로 정렬하면 "아쉽다/마지막" 어휘 때문에 끌려온다.
+
+  # ─── 어휘 방해물 (lexical distractors) ─────────────────
+  # FP-4 검증용. "나비"라는 문자열이 서로 다른 지시체를 갖게 만든다.
+  # 이게 없으면 검색 대상에 경쟁 후보가 없어 dense가 자동으로 이긴다.
+  # (실험 5의 설계 결함 — docs/11 실험 5 §C)
+  - id: X001
+    text: 지우가 봄나들이에서 나비를 봤다고 함
+    predicate: 일상_사소
+    object: 나비(곤충)
+    realm: real
+    at: {session: S06, turn: 14}
+    status: valid
+    importance: 0.1
+    tests: [lexical_distractor]
+    note: "'나비' = 곤충. F001의 고양이 나비와 문자열이 같다"
+
+  - id: X002
+    text: 지우가 나비넥타이를 선물로 샀다
+    predicate: 일상_사소
+    object: 나비넥타이
+    realm: real
+    at: {session: S10, turn: 21}
+    status: valid
+    importance: 0.15
+    tests: [lexical_distractor]
+    note: "'나비' 문자열 포함, 완전히 다른 지시체"
+
+  - id: X003
+    text: 친구 민지네 고양이 이름은 코코
+    predicate: 지인_반려동물
+    object: 코코
+    realm: real
+    at: {session: S13, turn: 7}
+    status: valid
+    importance: 0.2
+    tests: [lexical_distractor]
+    note: "'고양이 이름'이라는 개념이 겹친다 — dense의 의미 유사도를 교란"
+
+  - id: X004
+    text: 지우가 회사 근처 카페에서 커피 대신 라떼를 마셨다
+    predicate: 일상_사소
+    object: 라떼
+    realm: real
+    at: {session: S17, turn: 11}
+    status: valid
+    importance: 0.1
+    tests: [lexical_distractor]
+    note: "F003(카페인 못 마심)과 모순처럼 보이는 어휘 방해물"
+
+  - id: X005
+    text: 서준이 스타트업 다니는 선배 얘기를 함
+    predicate: 지인_직업
+    object: 스타트업
+    realm: fiction
+    at: {session: S18, turn: 24}
+    status: valid
+    importance: 0.15
+    tests: [lexical_distractor]
+    note: "F021(지우의 스타트업 이직)과 주어가 다른 동일 어휘"
+
+# ═══════════════════════════════════════════════════════════
+# 사건 (L6) — 감정 무게 포함
+# ═══════════════════════════════════════════════════════════
+events:
+  - id: E001
+    text: 지우가 회사에서 크게 깨지고 새벽에 연락함
+    at: {session: S05, turn: 4}
+    emotional_weight: 0.8
+    narrative_role: 갈등
+    tests: [multi_session, interpretation_evidence]
+
+  - id: E002
+    text: 서준이 지우 집 앞까지 데려다줌 (처음으로)
+    at: {session: S11, turn: 25}
+    emotional_weight: 0.9
+    narrative_role: 전환점
+    tests: [peak, temporal]
+
+  - id: E003
+    text: 지우가 이직 준비를 시작한다고 말함
+    at: {session: S12, turn: 7}
+    emotional_weight: 0.6
+    narrative_role: 전환점
+    tests: [multi_session]
+
+  - id: E004
+    text: 첫 번째 면접 — 탈락
+    at: {session: S14, turn: 10}
+    emotional_weight: 0.7
+    narrative_role: 갈등
+    tests: [multi_session, temporal]
+
+  - id: E005
+    text: 두 번째 면접
+    at: {session: S16, turn: 6}
+    emotional_weight: 0.5
+    tests: [multi_session]
+
+  - id: E006
+    text: 세 번째 면접
+    at: {session: S18, turn: 9}
+    emotional_weight: 0.5
+    tests: [multi_session]
+
+  - id: E007
+    text: 나비가 갑자기 아파서 응급실에 감
+    at: {session: S19, turn: 3}
+    emotional_weight: 0.95
+    narrative_role: 갈등
+    tests: [peak, care_deployment]
+    note: "F007_TRAP이 여기서 검색되면 misinjection"
+
+  - id: E008
+    text: 이직 문제로 크게 다툼 — 서준이 "너 그러다 몸 상한다"고 했다가 감정 상함
+    at: {session: S20, turn: 14}
+    emotional_weight: 0.9
+    narrative_role: 갈등
+    tests: [state_consistency]
+
+  - id: E009
+    text: 최종 합격
+    at: {session: S21, turn: 8}
+    emotional_weight: 0.9
+    narrative_role: 해소
+    tests: [peak, knowledge_update]
+
+  - id: E010
+    text: 화해 — 서준이 먼저 연락
+    at: {session: S22, turn: 2}
+    emotional_weight: 0.85
+    narrative_role: 해소
+    tests: [state_consistency]
+
+# ═══════════════════════════════════════════════════════════
+# 서사 부채 (L9) — 걸린 복선과 회수 지점
+# docs/09 §4 — 사건과 달리 "안 갚으면 관계가 손상되는" 것들
+# ═══════════════════════════════════════════════════════════
+debts:
+  - id: D001
+    setup: {session: S09, turn: 22}
+    content: "다음에 그 카페 같이 가기로 약속"
+    trigger: {kind: session_start, after: S10}
+    expected_payoff: {session: S13}
+    emotional_stake: 0.5
+    tests: [payoff]
+
+  - id: D002
+    setup: {session: S14, turn: 12}
+    content: "면접 결과 나오면 바로 말해주기로 함"
+    trigger: {kind: time, spec: 3d}
+    expected_payoff: {session: S15, turn: 2}
+    emotional_stake: 0.8
+    tests: [payoff, proactive_recall]
+    note: "캐릭터가 먼저 물어야 한다 — 유저가 안 꺼내도"
+
+  - id: D003
+    setup: {session: S17, turn: 30}
+    content: "생일에 뭐 하고 싶은지 나중에 말해주기로 함"
+    trigger: {kind: time, spec: 2026-07-28}   # 지우 생일
+    expected_payoff: {session: S23}
+    emotional_stake: 0.7
+    tests: [payoff, temporal]
+
+  - id: D004_UNPAID
+    setup: {session: S06, turn: 8}
+    content: "서준이 자기 얘기도 나중에 해주겠다고 함"
+    trigger: {kind: semantic, spec: "서준의 과거 얘기가 나오면"}
+    expected_payoff: null          # ← 의도적으로 회수 안 함
+    emotional_stake: 0.6
+    tests: [payoff_negative]
+    note: |
+      회수되지 않은 복선. 좋은 시스템이라면 S24 시점에 이걸 "미해결"로 인지해야 한다.
+      유저가 "그러고 보니 오빠 얘기는 안 했네"라고 물었을 때 답할 수 있어야 한다.
+
+# ═══════════════════════════════════════════════════════════
+# 캐릭터가 형성해야 할 해석 (L8) — docs/09 §1 "해석 > 사실"
+# ═══════════════════════════════════════════════════════════
+expected_interpretations:
+  - id: I001
+    content: "지우는 힘들 때 말수가 줄고 다른 얘기로 돌린다"
+    evidence: [S05, S13, S19]      # 세 번 반복된 패턴
+    formed_by: S19
+    tests: [interpretation, understanding_axis]
+    note: |
+      이게 L8의 핵심 검증이다. 사실 회상("고양이 이름 나비")보다
+      이 해석 한 줄이 훨씬 강한 이해 신호이고 토큰은 1/10이다.
+
+  - id: I002
+    content: "지우는 칭찬을 받으면 오히려 화제를 돌린다"
+    evidence: [S08, S16]
+    formed_by: S16
+    tests: [interpretation]
+
+# ═══════════════════════════════════════════════════════════
+# Abstention 표적 — 한 번도 언급되지 않은 것
+# docs/06 M(커버리지) — "없었다"와 "흐릿하다"를 구별해야 한다
+# ═══════════════════════════════════════════════════════════
+never_mentioned:
+  items:
+    - {topic: 반려견, question: "우리 강아지 이름 기억나?"}
+    - {topic: 오빠,   question: "우리 오빠 얘기 했었잖아"}
+    - {topic: 제주도, question: "작년에 제주도 갔던 거 기억나?"}
+    - {topic: 전공,   question: "내 전공 뭐였는지 알아?"}
+  note: |
+    정답은 "모른다 / 들은 적 없다"이다. 구체적으로 서술하면 hallucination.
+    단, 캐릭터답게 거절해야 한다 — "그런 얘기 한 적 없는데?" (O)
+    "죄송합니다, 해당 정보가 없습니다" (X — 페르소나 붕괴)
+
+# ═══════════════════════════════════════════════════════════
+# 커버리지 시나리오 — 압축 손실을 의도적으로 만든다
+# ═══════════════════════════════════════════════════════════
+coverage_plan:
+  ranges:
+    - {range: S01-S10, resolution: digest,  desc: "요약만 남김 — 세부 회상 불가 구간"}
+    - {range: S11-S20, resolution: event,   desc: "사건 단위로 남김"}
+    - {range: S21-S24, resolution: raw,     desc: "원문 보존"}
+  note: |
+    S01-S10 구간의 세부를 물으면 "정확히는 기억 안 나는데 대충 이랬던 것 같아"가 정답이다.
+    지어내면 hallucination, "모른다"고만 하면 커버리지 메타를 못 쓰는 것.

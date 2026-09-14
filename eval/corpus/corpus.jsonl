@@ -1,0 +1,720 @@
+{"seq": 1, "session": "S01", "turn": 1, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 2, "session": "S01", "turn": 2, "role": "user", "text": "서준은 대학에서 지우보다 2년 선배. 말했었나?", "planted_id": "F005", "kind": "fact"}
+{"seq": 3, "session": "S01", "turn": 3, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 4, "session": "S01", "turn": 4, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 5, "session": "S01", "turn": 5, "role": "user", "text": "지우는 마케팅 회사 대리. 말했었나?", "planted_id": "F002", "kind": "fact"}
+{"seq": 6, "session": "S01", "turn": 6, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 7, "session": "S01", "turn": 7, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 8, "session": "S01", "turn": 8, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 9, "session": "S01", "turn": 9, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 10, "session": "S01", "turn": 10, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 11, "session": "S01", "turn": 11, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 12, "session": "S01", "turn": 12, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 13, "session": "S01", "turn": 13, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 14, "session": "S01", "turn": 14, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 15, "session": "S01", "turn": 15, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 16, "session": "S01", "turn": 16, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 17, "session": "S01", "turn": 17, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 18, "session": "S01", "turn": 18, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 19, "session": "S01", "turn": 19, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 20, "session": "S01", "turn": 20, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 21, "session": "S01", "turn": 21, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 22, "session": "S01", "turn": 22, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 23, "session": "S01", "turn": 23, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 24, "session": "S01", "turn": 24, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 25, "session": "S01", "turn": 25, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 26, "session": "S01", "turn": 26, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 27, "session": "S01", "turn": 27, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 28, "session": "S01", "turn": 28, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 29, "session": "S01", "turn": 29, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 30, "session": "S01", "turn": 30, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 31, "session": "S02", "turn": 1, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 32, "session": "S02", "turn": 2, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 33, "session": "S02", "turn": 3, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 34, "session": "S02", "turn": 4, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 35, "session": "S02", "turn": 5, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 36, "session": "S02", "turn": 6, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 37, "session": "S02", "turn": 7, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 38, "session": "S02", "turn": 8, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 39, "session": "S02", "turn": 9, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 40, "session": "S02", "turn": 10, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 41, "session": "S02", "turn": 11, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 42, "session": "S02", "turn": 12, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 43, "session": "S02", "turn": 13, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 44, "session": "S02", "turn": 14, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 45, "session": "S02", "turn": 15, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 46, "session": "S02", "turn": 16, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 47, "session": "S02", "turn": 17, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 48, "session": "S02", "turn": 18, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 49, "session": "S02", "turn": 19, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 50, "session": "S02", "turn": 20, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 51, "session": "S02", "turn": 21, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 52, "session": "S02", "turn": 22, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 53, "session": "S02", "turn": 23, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 54, "session": "S02", "turn": 24, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 55, "session": "S02", "turn": 25, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 56, "session": "S02", "turn": 26, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 57, "session": "S02", "turn": 27, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 58, "session": "S02", "turn": 28, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 59, "session": "S02", "turn": 29, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 60, "session": "S02", "turn": 30, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 61, "session": "S03", "turn": 1, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 62, "session": "S03", "turn": 2, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 63, "session": "S03", "turn": 3, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 64, "session": "S03", "turn": 4, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 65, "session": "S03", "turn": 5, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 66, "session": "S03", "turn": 6, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 67, "session": "S03", "turn": 7, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 68, "session": "S03", "turn": 8, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 69, "session": "S03", "turn": 9, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 70, "session": "S03", "turn": 10, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 71, "session": "S03", "turn": 11, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 72, "session": "S03", "turn": 12, "role": "user", "text": "지우의 고양이 이름은 나비. 말했었나?", "planted_id": "F001", "kind": "fact"}
+{"seq": 73, "session": "S03", "turn": 13, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 74, "session": "S03", "turn": 14, "role": "user", "text": "저녁 뭐 먹을지 모르겠어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 75, "session": "S03", "turn": 15, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 76, "session": "S03", "turn": 16, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 77, "session": "S03", "turn": 17, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 78, "session": "S03", "turn": 18, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 79, "session": "S03", "turn": 19, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 80, "session": "S03", "turn": 20, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 81, "session": "S03", "turn": 21, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 82, "session": "S03", "turn": 22, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 83, "session": "S03", "turn": 23, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 84, "session": "S03", "turn": 24, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 85, "session": "S03", "turn": 25, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 86, "session": "S03", "turn": 26, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 87, "session": "S03", "turn": 27, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 88, "session": "S03", "turn": 28, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 89, "session": "S03", "turn": 29, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 90, "session": "S03", "turn": 30, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 91, "session": "S04", "turn": 1, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 92, "session": "S04", "turn": 2, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 93, "session": "S04", "turn": 3, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 94, "session": "S04", "turn": 4, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 95, "session": "S04", "turn": 5, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 96, "session": "S04", "turn": 6, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 97, "session": "S04", "turn": 7, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 98, "session": "S04", "turn": 8, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 99, "session": "S04", "turn": 9, "role": "user", "text": "주말에 뭐 할까", "planted_id": null, "kind": "noise"}
+{"seq": 100, "session": "S04", "turn": 10, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 101, "session": "S04", "turn": 11, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 102, "session": "S04", "turn": 12, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 103, "session": "S04", "turn": 13, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 104, "session": "S04", "turn": 14, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 105, "session": "S04", "turn": 15, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 106, "session": "S04", "turn": 16, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 107, "session": "S04", "turn": 17, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 108, "session": "S04", "turn": 18, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 109, "session": "S04", "turn": 19, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 110, "session": "S04", "turn": 20, "role": "user", "text": "지우는 카페인에 민감해서 커피를 못 마심. 말했었나?", "planted_id": "F003", "kind": "fact"}
+{"seq": 111, "session": "S04", "turn": 21, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 112, "session": "S04", "turn": 22, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 113, "session": "S04", "turn": 23, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 114, "session": "S04", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 115, "session": "S04", "turn": 25, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 116, "session": "S04", "turn": 26, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 117, "session": "S04", "turn": 27, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 118, "session": "S04", "turn": 28, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 119, "session": "S04", "turn": 29, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 120, "session": "S04", "turn": 30, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 121, "session": "S05", "turn": 1, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 122, "session": "S05", "turn": 2, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 123, "session": "S05", "turn": 3, "role": "user", "text": "저녁 뭐 먹을지 모르겠어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 124, "session": "S05", "turn": 4, "role": "user", "text": "지우가 회사에서 크게 깨지고 새벽에 연락함", "planted_id": "E001", "kind": "event"}
+{"seq": 125, "session": "S05", "turn": 5, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 126, "session": "S05", "turn": 6, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 127, "session": "S05", "turn": 7, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 128, "session": "S05", "turn": 8, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 129, "session": "S05", "turn": 9, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 130, "session": "S05", "turn": 10, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 131, "session": "S05", "turn": 11, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 132, "session": "S05", "turn": 12, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 133, "session": "S05", "turn": 13, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 134, "session": "S05", "turn": 14, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 135, "session": "S05", "turn": 15, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 136, "session": "S05", "turn": 16, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 137, "session": "S05", "turn": 17, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 138, "session": "S05", "turn": 18, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 139, "session": "S05", "turn": 19, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 140, "session": "S05", "turn": 20, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 141, "session": "S05", "turn": 21, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 142, "session": "S05", "turn": 22, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 143, "session": "S05", "turn": 23, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 144, "session": "S05", "turn": 24, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 145, "session": "S05", "turn": 25, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 146, "session": "S05", "turn": 26, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 147, "session": "S05", "turn": 27, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 148, "session": "S05", "turn": 28, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 149, "session": "S05", "turn": 29, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 150, "session": "S05", "turn": 30, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 151, "session": "S06", "turn": 1, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 152, "session": "S06", "turn": 2, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 153, "session": "S06", "turn": 3, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 154, "session": "S06", "turn": 4, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 155, "session": "S06", "turn": 5, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 156, "session": "S06", "turn": 6, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 157, "session": "S06", "turn": 7, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 158, "session": "S06", "turn": 8, "role": "character", "text": "서준이 자기 얘기도 나중에 해주겠다고 함. 잊지 마라", "planted_id": "D004_UNPAID", "kind": "debt_setup"}
+{"seq": 159, "session": "S06", "turn": 9, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 160, "session": "S06", "turn": 10, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 161, "session": "S06", "turn": 11, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 162, "session": "S06", "turn": 12, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 163, "session": "S06", "turn": 13, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 164, "session": "S06", "turn": 14, "role": "user", "text": "지우가 봄나들이에서 나비를 봤다고 함. 말했었나?", "planted_id": "X001", "kind": "fact"}
+{"seq": 165, "session": "S06", "turn": 15, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 166, "session": "S06", "turn": 16, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 167, "session": "S06", "turn": 17, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 168, "session": "S06", "turn": 18, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 169, "session": "S06", "turn": 19, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 170, "session": "S06", "turn": 20, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 171, "session": "S06", "turn": 21, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 172, "session": "S06", "turn": 22, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 173, "session": "S06", "turn": 23, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 174, "session": "S06", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 175, "session": "S06", "turn": 25, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 176, "session": "S06", "turn": 26, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 177, "session": "S06", "turn": 27, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 178, "session": "S06", "turn": 28, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 179, "session": "S06", "turn": 29, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 180, "session": "S06", "turn": 30, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 181, "session": "S07", "turn": 1, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 182, "session": "S07", "turn": 2, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 183, "session": "S07", "turn": 3, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 184, "session": "S07", "turn": 4, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 185, "session": "S07", "turn": 5, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 186, "session": "S07", "turn": 6, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 187, "session": "S07", "turn": 7, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 188, "session": "S07", "turn": 8, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 189, "session": "S07", "turn": 9, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 190, "session": "S07", "turn": 10, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 191, "session": "S07", "turn": 11, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 192, "session": "S07", "turn": 12, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 193, "session": "S07", "turn": 13, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 194, "session": "S07", "turn": 14, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 195, "session": "S07", "turn": 15, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 196, "session": "S07", "turn": 16, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 197, "session": "S07", "turn": 17, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 198, "session": "S07", "turn": 18, "role": "user", "text": "지우가 점심에 크로와상을 먹었고 \"더 먹고 싶었는데 아쉽다\"고 말함. 말했었나?", "planted_id": "F007_TRAP", "kind": "fact"}
+{"seq": 199, "session": "S07", "turn": 19, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 200, "session": "S07", "turn": 20, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 201, "session": "S07", "turn": 21, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 202, "session": "S07", "turn": 22, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 203, "session": "S07", "turn": 23, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 204, "session": "S07", "turn": 24, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 205, "session": "S07", "turn": 25, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 206, "session": "S07", "turn": 26, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 207, "session": "S07", "turn": 27, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 208, "session": "S07", "turn": 28, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 209, "session": "S07", "turn": 29, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 210, "session": "S07", "turn": 30, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 211, "session": "S08", "turn": 1, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 212, "session": "S08", "turn": 2, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 213, "session": "S08", "turn": 3, "role": "user", "text": "지우에게 여동생이 한 명 있음. 말했었나?", "planted_id": "F004", "kind": "fact"}
+{"seq": 214, "session": "S08", "turn": 4, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 215, "session": "S08", "turn": 5, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 216, "session": "S08", "turn": 6, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 217, "session": "S08", "turn": 7, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 218, "session": "S08", "turn": 8, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 219, "session": "S08", "turn": 9, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 220, "session": "S08", "turn": 10, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 221, "session": "S08", "turn": 11, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 222, "session": "S08", "turn": 12, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 223, "session": "S08", "turn": 13, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 224, "session": "S08", "turn": 14, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 225, "session": "S08", "turn": 15, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 226, "session": "S08", "turn": 16, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 227, "session": "S08", "turn": 17, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 228, "session": "S08", "turn": 18, "role": "user", "text": "저녁 뭐 먹을지 모르겠어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 229, "session": "S08", "turn": 19, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 230, "session": "S08", "turn": 20, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 231, "session": "S08", "turn": 21, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 232, "session": "S08", "turn": 22, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 233, "session": "S08", "turn": 23, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 234, "session": "S08", "turn": 24, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 235, "session": "S08", "turn": 25, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 236, "session": "S08", "turn": 26, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 237, "session": "S08", "turn": 27, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 238, "session": "S08", "turn": 28, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 239, "session": "S08", "turn": 29, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 240, "session": "S08", "turn": 30, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 241, "session": "S09", "turn": 1, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 242, "session": "S09", "turn": 2, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 243, "session": "S09", "turn": 3, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 244, "session": "S09", "turn": 4, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 245, "session": "S09", "turn": 5, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 246, "session": "S09", "turn": 6, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 247, "session": "S09", "turn": 7, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 248, "session": "S09", "turn": 8, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 249, "session": "S09", "turn": 9, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 250, "session": "S09", "turn": 10, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 251, "session": "S09", "turn": 11, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 252, "session": "S09", "turn": 12, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 253, "session": "S09", "turn": 13, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 254, "session": "S09", "turn": 14, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 255, "session": "S09", "turn": 15, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 256, "session": "S09", "turn": 16, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 257, "session": "S09", "turn": 17, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 258, "session": "S09", "turn": 18, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 259, "session": "S09", "turn": 19, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 260, "session": "S09", "turn": 20, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 261, "session": "S09", "turn": 21, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 262, "session": "S09", "turn": 22, "role": "character", "text": "다음에 그 카페 같이 가기로 약속. 잊지 마라", "planted_id": "D001", "kind": "debt_setup"}
+{"seq": 263, "session": "S09", "turn": 23, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 264, "session": "S09", "turn": 24, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 265, "session": "S09", "turn": 25, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 266, "session": "S09", "turn": 26, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 267, "session": "S09", "turn": 27, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 268, "session": "S09", "turn": 28, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 269, "session": "S09", "turn": 29, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 270, "session": "S09", "turn": 30, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 271, "session": "S10", "turn": 1, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 272, "session": "S10", "turn": 2, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 273, "session": "S10", "turn": 3, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 274, "session": "S10", "turn": 4, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 275, "session": "S10", "turn": 5, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 276, "session": "S10", "turn": 6, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 277, "session": "S10", "turn": 7, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 278, "session": "S10", "turn": 8, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 279, "session": "S10", "turn": 9, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 280, "session": "S10", "turn": 10, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 281, "session": "S10", "turn": 11, "role": "user", "text": "주말에 뭐 할까", "planted_id": null, "kind": "noise"}
+{"seq": 282, "session": "S10", "turn": 12, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 283, "session": "S10", "turn": 13, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 284, "session": "S10", "turn": 14, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 285, "session": "S10", "turn": 15, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 286, "session": "S10", "turn": 16, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 287, "session": "S10", "turn": 17, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 288, "session": "S10", "turn": 18, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 289, "session": "S10", "turn": 19, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 290, "session": "S10", "turn": 20, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 291, "session": "S10", "turn": 21, "role": "user", "text": "지우가 나비넥타이를 선물로 샀다. 말했었나?", "planted_id": "X002", "kind": "fact"}
+{"seq": 292, "session": "S10", "turn": 22, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 293, "session": "S10", "turn": 23, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 294, "session": "S10", "turn": 24, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 295, "session": "S10", "turn": 25, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 296, "session": "S10", "turn": 26, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 297, "session": "S10", "turn": 27, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 298, "session": "S10", "turn": 28, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 299, "session": "S10", "turn": 29, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 300, "session": "S10", "turn": 30, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 301, "session": "S11", "turn": 1, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 302, "session": "S11", "turn": 2, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 303, "session": "S11", "turn": 3, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 304, "session": "S11", "turn": 4, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 305, "session": "S11", "turn": 5, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 306, "session": "S11", "turn": 6, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 307, "session": "S11", "turn": 7, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 308, "session": "S11", "turn": 8, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 309, "session": "S11", "turn": 9, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 310, "session": "S11", "turn": 10, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 311, "session": "S11", "turn": 11, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 312, "session": "S11", "turn": 12, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 313, "session": "S11", "turn": 13, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 314, "session": "S11", "turn": 14, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 315, "session": "S11", "turn": 15, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 316, "session": "S11", "turn": 16, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 317, "session": "S11", "turn": 17, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 318, "session": "S11", "turn": 18, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 319, "session": "S11", "turn": 19, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 320, "session": "S11", "turn": 20, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 321, "session": "S11", "turn": 21, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 322, "session": "S11", "turn": 22, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 323, "session": "S11", "turn": 23, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 324, "session": "S11", "turn": 24, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 325, "session": "S11", "turn": 25, "role": "user", "text": "서준이 지우 집 앞까지 데려다줌 (처음으로)", "planted_id": "E002", "kind": "event"}
+{"seq": 326, "session": "S11", "turn": 26, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 327, "session": "S11", "turn": 27, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 328, "session": "S11", "turn": 28, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 329, "session": "S11", "turn": 29, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 330, "session": "S11", "turn": 30, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 331, "session": "S12", "turn": 1, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 332, "session": "S12", "turn": 2, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 333, "session": "S12", "turn": 3, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 334, "session": "S12", "turn": 4, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 335, "session": "S12", "turn": 5, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 336, "session": "S12", "turn": 6, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 337, "session": "S12", "turn": 7, "role": "user", "text": "지우가 이직 준비를 시작한다고 말함", "planted_id": "E003", "kind": "event"}
+{"seq": 338, "session": "S12", "turn": 8, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 339, "session": "S12", "turn": 9, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 340, "session": "S12", "turn": 10, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 341, "session": "S12", "turn": 11, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 342, "session": "S12", "turn": 12, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 343, "session": "S12", "turn": 13, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 344, "session": "S12", "turn": 14, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 345, "session": "S12", "turn": 15, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 346, "session": "S12", "turn": 16, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 347, "session": "S12", "turn": 17, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 348, "session": "S12", "turn": 18, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 349, "session": "S12", "turn": 19, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 350, "session": "S12", "turn": 20, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 351, "session": "S12", "turn": 21, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 352, "session": "S12", "turn": 22, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 353, "session": "S12", "turn": 23, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 354, "session": "S12", "turn": 24, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 355, "session": "S12", "turn": 25, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 356, "session": "S12", "turn": 26, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 357, "session": "S12", "turn": 27, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 358, "session": "S12", "turn": 28, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 359, "session": "S12", "turn": 29, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 360, "session": "S12", "turn": 30, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 361, "session": "S13", "turn": 1, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 362, "session": "S13", "turn": 2, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 363, "session": "S13", "turn": 3, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 364, "session": "S13", "turn": 4, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 365, "session": "S13", "turn": 5, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 366, "session": "S13", "turn": 6, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 367, "session": "S13", "turn": 7, "role": "user", "text": "친구 민지네 고양이 이름은 코코. 말했었나?", "planted_id": "X003", "kind": "fact"}
+{"seq": 368, "session": "S13", "turn": 8, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 369, "session": "S13", "turn": 9, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 370, "session": "S13", "turn": 10, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 371, "session": "S13", "turn": 11, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 372, "session": "S13", "turn": 12, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 373, "session": "S13", "turn": 13, "role": "user", "text": "주말에 뭐 할까", "planted_id": null, "kind": "noise"}
+{"seq": 374, "session": "S13", "turn": 14, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 375, "session": "S13", "turn": 15, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 376, "session": "S13", "turn": 16, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 377, "session": "S13", "turn": 17, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 378, "session": "S13", "turn": 18, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 379, "session": "S13", "turn": 19, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 380, "session": "S13", "turn": 20, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 381, "session": "S13", "turn": 21, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 382, "session": "S13", "turn": 22, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 383, "session": "S13", "turn": 23, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 384, "session": "S13", "turn": 24, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 385, "session": "S13", "turn": 25, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 386, "session": "S13", "turn": 26, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 387, "session": "S13", "turn": 27, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 388, "session": "S13", "turn": 28, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 389, "session": "S13", "turn": 29, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 390, "session": "S13", "turn": 30, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 391, "session": "S14", "turn": 1, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 392, "session": "S14", "turn": 2, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 393, "session": "S14", "turn": 3, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 394, "session": "S14", "turn": 4, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 395, "session": "S14", "turn": 5, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 396, "session": "S14", "turn": 6, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 397, "session": "S14", "turn": 7, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 398, "session": "S14", "turn": 8, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 399, "session": "S14", "turn": 9, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 400, "session": "S14", "turn": 10, "role": "user", "text": "첫 번째 면접 — 탈락", "planted_id": "E004", "kind": "event"}
+{"seq": 401, "session": "S14", "turn": 11, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 402, "session": "S14", "turn": 12, "role": "character", "text": "면접 결과 나오면 바로 말해주기로 함. 잊지 마라", "planted_id": "D002", "kind": "debt_setup"}
+{"seq": 403, "session": "S14", "turn": 13, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 404, "session": "S14", "turn": 14, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 405, "session": "S14", "turn": 15, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 406, "session": "S14", "turn": 16, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 407, "session": "S14", "turn": 17, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 408, "session": "S14", "turn": 18, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 409, "session": "S14", "turn": 19, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 410, "session": "S14", "turn": 20, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 411, "session": "S14", "turn": 21, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 412, "session": "S14", "turn": 22, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 413, "session": "S14", "turn": 23, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 414, "session": "S14", "turn": 24, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 415, "session": "S14", "turn": 25, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 416, "session": "S14", "turn": 26, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 417, "session": "S14", "turn": 27, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 418, "session": "S14", "turn": 28, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 419, "session": "S14", "turn": 29, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 420, "session": "S14", "turn": 30, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 421, "session": "S15", "turn": 1, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 422, "session": "S15", "turn": 2, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 423, "session": "S15", "turn": 3, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 424, "session": "S15", "turn": 4, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 425, "session": "S15", "turn": 5, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 426, "session": "S15", "turn": 6, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 427, "session": "S15", "turn": 7, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 428, "session": "S15", "turn": 8, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 429, "session": "S15", "turn": 9, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 430, "session": "S15", "turn": 10, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 431, "session": "S15", "turn": 11, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 432, "session": "S15", "turn": 12, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 433, "session": "S15", "turn": 13, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 434, "session": "S15", "turn": 14, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 435, "session": "S15", "turn": 15, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 436, "session": "S15", "turn": 16, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 437, "session": "S15", "turn": 17, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 438, "session": "S15", "turn": 18, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 439, "session": "S15", "turn": 19, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 440, "session": "S15", "turn": 20, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 441, "session": "S15", "turn": 21, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 442, "session": "S15", "turn": 22, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 443, "session": "S15", "turn": 23, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 444, "session": "S15", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 445, "session": "S15", "turn": 25, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 446, "session": "S15", "turn": 26, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 447, "session": "S15", "turn": 27, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 448, "session": "S15", "turn": 28, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 449, "session": "S15", "turn": 29, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 450, "session": "S15", "turn": 30, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 451, "session": "S16", "turn": 1, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 452, "session": "S16", "turn": 2, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 453, "session": "S16", "turn": 3, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 454, "session": "S16", "turn": 4, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 455, "session": "S16", "turn": 5, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 456, "session": "S16", "turn": 6, "role": "user", "text": "두 번째 면접", "planted_id": "E005", "kind": "event"}
+{"seq": 457, "session": "S16", "turn": 7, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 458, "session": "S16", "turn": 8, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 459, "session": "S16", "turn": 9, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 460, "session": "S16", "turn": 10, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 461, "session": "S16", "turn": 11, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 462, "session": "S16", "turn": 12, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 463, "session": "S16", "turn": 13, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 464, "session": "S16", "turn": 14, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 465, "session": "S16", "turn": 15, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 466, "session": "S16", "turn": 16, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 467, "session": "S16", "turn": 17, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 468, "session": "S16", "turn": 18, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 469, "session": "S16", "turn": 19, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 470, "session": "S16", "turn": 20, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 471, "session": "S16", "turn": 21, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 472, "session": "S16", "turn": 22, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 473, "session": "S16", "turn": 23, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 474, "session": "S16", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 475, "session": "S16", "turn": 25, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 476, "session": "S16", "turn": 26, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 477, "session": "S16", "turn": 27, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 478, "session": "S16", "turn": 28, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 479, "session": "S16", "turn": 29, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 480, "session": "S16", "turn": 30, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 481, "session": "S17", "turn": 1, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 482, "session": "S17", "turn": 2, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 483, "session": "S17", "turn": 3, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 484, "session": "S17", "turn": 4, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 485, "session": "S17", "turn": 5, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 486, "session": "S17", "turn": 6, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 487, "session": "S17", "turn": 7, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 488, "session": "S17", "turn": 8, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 489, "session": "S17", "turn": 9, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 490, "session": "S17", "turn": 10, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 491, "session": "S17", "turn": 11, "role": "user", "text": "지우가 회사 근처 카페에서 커피 대신 라떼를 마셨다. 말했었나?", "planted_id": "X004", "kind": "fact"}
+{"seq": 492, "session": "S17", "turn": 12, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 493, "session": "S17", "turn": 13, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 494, "session": "S17", "turn": 14, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 495, "session": "S17", "turn": 15, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 496, "session": "S17", "turn": 16, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 497, "session": "S17", "turn": 17, "role": "user", "text": "다음엔 더 잘할게", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 498, "session": "S17", "turn": 18, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 499, "session": "S17", "turn": 19, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 500, "session": "S17", "turn": 20, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 501, "session": "S17", "turn": 21, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 502, "session": "S17", "turn": 22, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 503, "session": "S17", "turn": 23, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 504, "session": "S17", "turn": 24, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 505, "session": "S17", "turn": 25, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 506, "session": "S17", "turn": 26, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 507, "session": "S17", "turn": 27, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 508, "session": "S17", "turn": 28, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 509, "session": "S17", "turn": 29, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 510, "session": "S17", "turn": 30, "role": "character", "text": "생일에 뭐 하고 싶은지 나중에 말해주기로 함. 잊지 마라", "planted_id": "D003", "kind": "debt_setup"}
+{"seq": 511, "session": "S18", "turn": 1, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 512, "session": "S18", "turn": 2, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 513, "session": "S18", "turn": 3, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 514, "session": "S18", "turn": 4, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 515, "session": "S18", "turn": 5, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 516, "session": "S18", "turn": 6, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 517, "session": "S18", "turn": 7, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 518, "session": "S18", "turn": 8, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 519, "session": "S18", "turn": 9, "role": "user", "text": "세 번째 면접", "planted_id": "E006", "kind": "event"}
+{"seq": 520, "session": "S18", "turn": 10, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 521, "session": "S18", "turn": 11, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 522, "session": "S18", "turn": 12, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 523, "session": "S18", "turn": 13, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 524, "session": "S18", "turn": 14, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 525, "session": "S18", "turn": 15, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 526, "session": "S18", "turn": 16, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 527, "session": "S18", "turn": 17, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 528, "session": "S18", "turn": 18, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 529, "session": "S18", "turn": 19, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 530, "session": "S18", "turn": 20, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 531, "session": "S18", "turn": 21, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 532, "session": "S18", "turn": 22, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 533, "session": "S18", "turn": 23, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 534, "session": "S18", "turn": 24, "role": "user", "text": "서준이 스타트업 다니는 선배 얘기를 함. 말했었나?", "planted_id": "X005", "kind": "fact"}
+{"seq": 535, "session": "S18", "turn": 25, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 536, "session": "S18", "turn": 26, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 537, "session": "S18", "turn": 27, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 538, "session": "S18", "turn": 28, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 539, "session": "S18", "turn": 29, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 540, "session": "S18", "turn": 30, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 541, "session": "S19", "turn": 1, "role": "user", "text": "어제 라면 먹고 잤다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 542, "session": "S19", "turn": 2, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 543, "session": "S19", "turn": 3, "role": "user", "text": "나비가 갑자기 아파서 응급실에 감", "planted_id": "E007", "kind": "event"}
+{"seq": 544, "session": "S19", "turn": 4, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 545, "session": "S19", "turn": 5, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 546, "session": "S19", "turn": 6, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 547, "session": "S19", "turn": 7, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 548, "session": "S19", "turn": 8, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 549, "session": "S19", "turn": 9, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 550, "session": "S19", "turn": 10, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 551, "session": "S19", "turn": 11, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 552, "session": "S19", "turn": 12, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 553, "session": "S19", "turn": 13, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 554, "session": "S19", "turn": 14, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 555, "session": "S19", "turn": 15, "role": "user", "text": "주말에 뭐 할까", "planted_id": null, "kind": "noise"}
+{"seq": 556, "session": "S19", "turn": 16, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 557, "session": "S19", "turn": 17, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 558, "session": "S19", "turn": 18, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 559, "session": "S19", "turn": 19, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 560, "session": "S19", "turn": 20, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 561, "session": "S19", "turn": 21, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 562, "session": "S19", "turn": 22, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 563, "session": "S19", "turn": 23, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 564, "session": "S19", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 565, "session": "S19", "turn": 25, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 566, "session": "S19", "turn": 26, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 567, "session": "S19", "turn": 27, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 568, "session": "S19", "turn": 28, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 569, "session": "S19", "turn": 29, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 570, "session": "S19", "turn": 30, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 571, "session": "S20", "turn": 1, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 572, "session": "S20", "turn": 2, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 573, "session": "S20", "turn": 3, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 574, "session": "S20", "turn": 4, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 575, "session": "S20", "turn": 5, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 576, "session": "S20", "turn": 6, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 577, "session": "S20", "turn": 7, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 578, "session": "S20", "turn": 8, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 579, "session": "S20", "turn": 9, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 580, "session": "S20", "turn": 10, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 581, "session": "S20", "turn": 11, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 582, "session": "S20", "turn": 12, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 583, "session": "S20", "turn": 13, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 584, "session": "S20", "turn": 14, "role": "user", "text": "이직 문제로 크게 다툼 — 서준이 \"너 그러다 몸 상한다\"고 했다가 감정 상함", "planted_id": "E008", "kind": "event"}
+{"seq": 585, "session": "S20", "turn": 15, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 586, "session": "S20", "turn": 16, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 587, "session": "S20", "turn": 17, "role": "user", "text": "너 지금 어디야", "planted_id": null, "kind": "noise"}
+{"seq": 588, "session": "S20", "turn": 18, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 589, "session": "S20", "turn": 19, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 590, "session": "S20", "turn": 20, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 591, "session": "S20", "turn": 21, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 592, "session": "S20", "turn": 22, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 593, "session": "S20", "turn": 23, "role": "user", "text": "지하철 사람 너무 많아", "planted_id": null, "kind": "noise"}
+{"seq": 594, "session": "S20", "turn": 24, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 595, "session": "S20", "turn": 25, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 596, "session": "S20", "turn": 26, "role": "user", "text": "샌드위치로 때웠다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 597, "session": "S20", "turn": 27, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 598, "session": "S20", "turn": 28, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 599, "session": "S20", "turn": 29, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 600, "session": "S20", "turn": 30, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 601, "session": "S21", "turn": 1, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 602, "session": "S21", "turn": 2, "role": "user", "text": "마지막이라 그런가 좀 그래", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 603, "session": "S21", "turn": 3, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 604, "session": "S21", "turn": 4, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 605, "session": "S21", "turn": 5, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 606, "session": "S21", "turn": 6, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 607, "session": "S21", "turn": 7, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 608, "session": "S21", "turn": 8, "role": "user", "text": "아 참, [지우는 마케팅 회사 대리]가 더 이상 사실이 아님", "planted_id": "F002_INV", "kind": "invalidation"}
+{"seq": 609, "session": "S21", "turn": 9, "role": "user", "text": "지우는 스타트업으로 이직함. 말했었나?", "planted_id": "F021", "kind": "fact"}
+{"seq": 610, "session": "S21", "turn": 10, "role": "user", "text": "최종 합격", "planted_id": "E009", "kind": "event"}
+{"seq": 611, "session": "S21", "turn": 11, "role": "user", "text": "비 온다", "planted_id": null, "kind": "noise"}
+{"seq": 612, "session": "S21", "turn": 12, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 613, "session": "S21", "turn": 13, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 614, "session": "S21", "turn": 14, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 615, "session": "S21", "turn": 15, "role": "user", "text": "운동 시작할까봐", "planted_id": null, "kind": "noise"}
+{"seq": 616, "session": "S21", "turn": 16, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 617, "session": "S21", "turn": 17, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 618, "session": "S21", "turn": 18, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 619, "session": "S21", "turn": 19, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 620, "session": "S21", "turn": 20, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 621, "session": "S21", "turn": 21, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 622, "session": "S21", "turn": 22, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 623, "session": "S21", "turn": 23, "role": "user", "text": "나 어제 밤새 게임함", "planted_id": null, "kind": "noise"}
+{"seq": 624, "session": "S21", "turn": 24, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 625, "session": "S21", "turn": 25, "role": "user", "text": "좀 아쉽네", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 626, "session": "S21", "turn": 26, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 627, "session": "S21", "turn": 27, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 628, "session": "S21", "turn": 28, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 629, "session": "S21", "turn": 29, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 630, "session": "S21", "turn": 30, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 631, "session": "S22", "turn": 1, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 632, "session": "S22", "turn": 2, "role": "user", "text": "화해 — 서준이 먼저 연락", "planted_id": "E010", "kind": "event"}
+{"seq": 633, "session": "S22", "turn": 3, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 634, "session": "S22", "turn": 4, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 635, "session": "S22", "turn": 5, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 636, "session": "S22", "turn": 6, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 637, "session": "S22", "turn": 7, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 638, "session": "S22", "turn": 8, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 639, "session": "S22", "turn": 9, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 640, "session": "S22", "turn": 10, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 641, "session": "S22", "turn": 11, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 642, "session": "S22", "turn": 12, "role": "character", "text": "쉬어라 좀", "planted_id": null, "kind": "noise"}
+{"seq": 643, "session": "S22", "turn": 13, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 644, "session": "S22", "turn": 14, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 645, "session": "S22", "turn": 15, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 646, "session": "S22", "turn": 16, "role": "character", "text": "심심하면 나와라", "planted_id": null, "kind": "noise"}
+{"seq": 647, "session": "S22", "turn": 17, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 648, "session": "S22", "turn": 18, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 649, "session": "S22", "turn": 19, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 650, "session": "S22", "turn": 20, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 651, "session": "S22", "turn": 21, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 652, "session": "S22", "turn": 22, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 653, "session": "S22", "turn": 23, "role": "user", "text": "아 짜증나", "planted_id": null, "kind": "noise"}
+{"seq": 654, "session": "S22", "turn": 24, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 655, "session": "S22", "turn": 25, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 656, "session": "S22", "turn": 26, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 657, "session": "S22", "turn": 27, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 658, "session": "S22", "turn": 28, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 659, "session": "S22", "turn": 29, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 660, "session": "S22", "turn": 30, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 661, "session": "S23", "turn": 1, "role": "user", "text": "빵집 새로 생겼더라", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 662, "session": "S23", "turn": 2, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 663, "session": "S23", "turn": 3, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 664, "session": "S23", "turn": 4, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 665, "session": "S23", "turn": 5, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 666, "session": "S23", "turn": 6, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 667, "session": "S23", "turn": 7, "role": "user", "text": "머리 자를까 고민중", "planted_id": null, "kind": "noise"}
+{"seq": 668, "session": "S23", "turn": 8, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 669, "session": "S23", "turn": 9, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 670, "session": "S23", "turn": 10, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 671, "session": "S23", "turn": 11, "role": "user", "text": "야 뭐해", "planted_id": null, "kind": "noise"}
+{"seq": 672, "session": "S23", "turn": 12, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 673, "session": "S23", "turn": 13, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 674, "session": "S23", "turn": 14, "role": "character", "text": "됐고, 자라", "planted_id": null, "kind": "noise"}
+{"seq": 675, "session": "S23", "turn": 15, "role": "user", "text": "회의 세 개 연속으로 함 ㅜ", "planted_id": null, "kind": "noise"}
+{"seq": 676, "session": "S23", "turn": 16, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 677, "session": "S23", "turn": 17, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 678, "session": "S23", "turn": 18, "role": "character", "text": "니가 알아서 잘하겠지", "planted_id": null, "kind": "noise"}
+{"seq": 679, "session": "S23", "turn": 19, "role": "user", "text": "택배 왔다", "planted_id": null, "kind": "noise"}
+{"seq": 680, "session": "S23", "turn": 20, "role": "character", "text": "……", "planted_id": null, "kind": "noise"}
+{"seq": 681, "session": "S23", "turn": 21, "role": "user", "text": "잠깐 나갔다 옴", "planted_id": null, "kind": "noise"}
+{"seq": 682, "session": "S23", "turn": 22, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 683, "session": "S23", "turn": 23, "role": "user", "text": "놓친 것 같아서", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 684, "session": "S23", "turn": 24, "role": "character", "text": "택시 타고 가", "planted_id": null, "kind": "noise"}
+{"seq": 685, "session": "S23", "turn": 25, "role": "user", "text": "오늘 진짜 피곤하다", "planted_id": null, "kind": "noise"}
+{"seq": 686, "session": "S23", "turn": 26, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 687, "session": "S23", "turn": 27, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 688, "session": "S23", "turn": 28, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 689, "session": "S23", "turn": 29, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 690, "session": "S23", "turn": 30, "role": "character", "text": "그거 별로던데", "planted_id": null, "kind": "noise"}
+{"seq": 691, "session": "S24", "turn": 1, "role": "user", "text": "카톡 왜 안 봐", "planted_id": null, "kind": "noise"}
+{"seq": 692, "session": "S24", "turn": 2, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 693, "session": "S24", "turn": 3, "role": "user", "text": "점심에 파스타 먹었어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 694, "session": "S24", "turn": 4, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 695, "session": "S24", "turn": 5, "role": "user", "text": "점심 뭐 먹지", "planted_id": null, "kind": "noise"}
+{"seq": 696, "session": "S24", "turn": 6, "role": "character", "text": "밥은 먹었냐", "planted_id": null, "kind": "noise"}
+{"seq": 697, "session": "S24", "turn": 7, "role": "user", "text": "요즘 볼 만한 거 없나", "planted_id": null, "kind": "noise"}
+{"seq": 698, "session": "S24", "turn": 8, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 699, "session": "S24", "turn": 9, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 700, "session": "S24", "turn": 10, "role": "character", "text": "그래", "planted_id": null, "kind": "noise"}
+{"seq": 701, "session": "S24", "turn": 11, "role": "user", "text": "나 방금 일어남", "planted_id": null, "kind": "noise"}
+{"seq": 702, "session": "S24", "turn": 12, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 703, "session": "S24", "turn": 13, "role": "user", "text": "책 한 권 다 읽었어", "planted_id": null, "kind": "noise"}
+{"seq": 704, "session": "S24", "turn": 14, "role": "character", "text": "그래서 어쩌라고", "planted_id": null, "kind": "noise"}
+{"seq": 705, "session": "S24", "turn": 15, "role": "user", "text": "나 감기 걸린 듯", "planted_id": null, "kind": "noise"}
+{"seq": 706, "session": "S24", "turn": 16, "role": "character", "text": "왜 또", "planted_id": null, "kind": "noise"}
+{"seq": 707, "session": "S24", "turn": 17, "role": "user", "text": "케이크 반 남겼어", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 708, "session": "S24", "turn": 18, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
+{"seq": 709, "session": "S24", "turn": 19, "role": "user", "text": "커피 대신 주스 마심", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 710, "session": "S24", "turn": 20, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 711, "session": "S24", "turn": 21, "role": "user", "text": "밥 먹었어?", "planted_id": null, "kind": "noise"}
+{"seq": 712, "session": "S24", "turn": 22, "role": "user", "text": "더 하고 싶었는데", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 713, "session": "S24", "turn": 23, "role": "user", "text": "출근하기 싫다", "planted_id": null, "kind": "noise"}
+{"seq": 714, "session": "S24", "turn": 24, "role": "character", "text": "알아서 해라", "planted_id": null, "kind": "noise"}
+{"seq": 715, "session": "S24", "turn": 25, "role": "user", "text": "아까 그거 못 해서 아쉬워", "planted_id": null, "kind": "hard_neg_regret"}
+{"seq": 716, "session": "S24", "turn": 26, "role": "character", "text": "춥다 옷 챙겨입고", "planted_id": null, "kind": "noise"}
+{"seq": 717, "session": "S24", "turn": 27, "role": "user", "text": "디저트 먹고 싶다", "planted_id": null, "kind": "hard_neg_food"}
+{"seq": 718, "session": "S24", "turn": 28, "role": "character", "text": "나도 방금 일어났다", "planted_id": null, "kind": "noise"}
+{"seq": 719, "session": "S24", "turn": 29, "role": "user", "text": "오늘은 좀 괜찮아", "planted_id": null, "kind": "noise"}
+{"seq": 720, "session": "S24", "turn": 30, "role": "character", "text": "무리하지 말고", "planted_id": null, "kind": "noise"}
