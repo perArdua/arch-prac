@@ -4,13 +4,13 @@
 핵심은 **provenance 출력**이다. 무엇이 왜 들어갔고, 무엇이 왜 걸러졌는지.
 docs/05 §5에서 "provenance를 1급 요구사항으로"라고 한 것의 구현.
 
-실행: python prototype/demo.py
+실행: python prototype/demos/demo.py
 """
 
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from memory import Memory, ntok, WINDOW_CHUNK  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):

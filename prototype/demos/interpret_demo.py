@@ -8,13 +8,13 @@ docs/06 L8에 최소 근거 수 정책을 넣었다. 그런데 **핵심 질문�
 
 3회를 세려면 무엇을 3회 셀지 정해야 한다. 구현하면 이게 바로 드러난다.
 
-실행: python prototype/interpret_demo.py
+실행: python prototype/demos/interpret_demo.py
 """
 
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from memory import bigrams  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
