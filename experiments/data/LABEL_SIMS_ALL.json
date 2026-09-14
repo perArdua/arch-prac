@@ -1,0 +1,226 @@
+{
+  "P20": {
+    "event_id": "E002",
+    "session": "S01",
+    "kind": "boundary",
+    "sim": 0.493504,
+    "pair_id": "P20"
+  },
+  "P06": {
+    "event_id": "E002",
+    "session": "S03",
+    "kind": "far_control",
+    "sim": 0.294863,
+    "pair_id": "P06"
+  },
+  "P05": {
+    "event_id": "E003",
+    "session": "S05",
+    "kind": "boundary",
+    "sim": 0.559277,
+    "pair_id": "P05"
+  },
+  "P17": {
+    "event_id": "E001",
+    "session": "S05",
+    "kind": "natural_positive",
+    "sim": 0.705345,
+    "pair_id": "P17"
+  },
+  "P08": {
+    "event_id": "E002",
+    "session": "S11",
+    "kind": "natural_positive",
+    "sim": 0.55024,
+    "pair_id": "P08"
+  },
+  "P10": {
+    "event_id": "E008",
+    "session": "S11",
+    "kind": "boundary",
+    "sim": 0.583161,
+    "pair_id": "P10"
+  },
+  "P19": {
+    "event_id": "E010",
+    "session": "S11",
+    "kind": "boundary",
+    "sim": 0.516472,
+    "pair_id": "P19"
+  },
+  "P22": {
+    "event_id": "E003",
+    "session": "S12",
+    "kind": "natural_positive",
+    "sim": 0.597128,
+    "pair_id": "P22"
+  },
+  "P24": {
+    "event_id": "E004",
+    "session": "S14",
+    "kind": "natural_positive",
+    "sim": 0.582399,
+    "pair_id": "P24"
+  },
+  "P03": {
+    "event_id": "E005",
+    "session": "S16",
+    "kind": "natural_positive",
+    "sim": 0.529452,
+    "pair_id": "P03"
+  },
+  "P14": {
+    "event_id": "E005",
+    "session": "S18",
+    "kind": "boundary",
+    "sim": 0.520038,
+    "pair_id": "P14"
+  },
+  "P16": {
+    "event_id": "E007",
+    "session": "S18",
+    "kind": "far_control",
+    "sim": 0.312067,
+    "pair_id": "P16"
+  },
+  "P02": {
+    "pair_id": "P02",
+    "event_id": "E001",
+    "session": "S01",
+    "kind": "boundary",
+    "sim": 0.576619
+  },
+  "P26": {
+    "pair_id": "P26",
+    "event_id": "E009",
+    "session": "S03",
+    "kind": "random",
+    "sim": 0.332592
+  },
+  "P27": {
+    "pair_id": "P27",
+    "event_id": "E006",
+    "session": "S04",
+    "kind": "random",
+    "sim": 0.411379
+  },
+  "P09": {
+    "pair_id": "P09",
+    "event_id": "E002",
+    "session": "S06",
+    "kind": "far_control",
+    "sim": 0.293001
+  },
+  "P32": {
+    "pair_id": "P32",
+    "event_id": "E009",
+    "session": "S08",
+    "kind": "random",
+    "sim": 0.32305
+  },
+  "P01": {
+    "pair_id": "P01",
+    "event_id": "E007",
+    "session": "S10",
+    "kind": "boundary",
+    "sim": 0.463585
+  },
+  "P30": {
+    "pair_id": "P30",
+    "event_id": "E001",
+    "session": "S10",
+    "kind": "random",
+    "sim": 0.571667
+  },
+  "P31": {
+    "pair_id": "P31",
+    "event_id": "E008",
+    "session": "S10",
+    "kind": "random",
+    "sim": 0.47395
+  },
+  "P29": {
+    "pair_id": "P29",
+    "event_id": "E002",
+    "session": "S13",
+    "kind": "random",
+    "sim": 0.327641
+  },
+  "P13": {
+    "pair_id": "P13",
+    "event_id": "E009",
+    "session": "S14",
+    "kind": "boundary",
+    "sim": 0.380555
+  },
+  "P18": {
+    "pair_id": "P18",
+    "event_id": "E002",
+    "session": "S14",
+    "kind": "far_control",
+    "sim": 0.286624
+  },
+  "P12": {
+    "pair_id": "P12",
+    "event_id": "E004",
+    "session": "S16",
+    "kind": "boundary",
+    "sim": 0.525227
+  },
+  "P15": {
+    "pair_id": "P15",
+    "event_id": "E006",
+    "session": "S16",
+    "kind": "boundary",
+    "sim": 0.558662
+  },
+  "P28": {
+    "pair_id": "P28",
+    "event_id": "E003",
+    "session": "S16",
+    "kind": "random",
+    "sim": 0.419681
+  },
+  "P21": {
+    "pair_id": "P21",
+    "event_id": "E006",
+    "session": "S18",
+    "kind": "natural_positive",
+    "sim": 0.587099
+  },
+  "P25": {
+    "pair_id": "P25",
+    "event_id": "E001",
+    "session": "S18",
+    "kind": "random",
+    "sim": 0.487814
+  },
+  "P11": {
+    "pair_id": "P11",
+    "event_id": "E007",
+    "session": "S19",
+    "kind": "natural_positive",
+    "sim": 0.61405
+  },
+  "P04": {
+    "pair_id": "P04",
+    "event_id": "E008",
+    "session": "S20",
+    "kind": "natural_positive",
+    "sim": 0.596593
+  },
+  "P23": {
+    "pair_id": "P23",
+    "event_id": "E009",
+    "session": "S21",
+    "kind": "natural_positive",
+    "sim": 0.406522
+  },
+  "P07": {
+    "pair_id": "P07",
+    "event_id": "E010",
+    "session": "S22",
+    "kind": "natural_positive",
+    "sim": 0.496286
+  }
+}

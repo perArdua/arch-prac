@@ -110,6 +110,13 @@ def usd(tin, tout):
     return tin * IN_RATE + tout * OUT_RATE
 
 
+# 🔄 라운드 2 단계 0 (F33) — 소크 실측이 210B에서 **290B**로 옮겨졌다
+# (스키마 v4의 빈 테이블 4개가 페이지를 먹는다 — `baseline/after-step2/G2-soak.txt`).
+# ⚠️ 이 상수는 **코드가 계산에 쓴다.** 문서의 210B는 감사기가 잡았지만
+#    여기는 `.md`가 아니라 감사 대상 밖이었다 — 실행되는 낡은 숫자가 더 위험하다.
+BYTES_PER_TURN = 290
+
+
 def main():
     print("=" * W)
     print("장기 지평 시뮬레이션 — \"아주 오랫동안\"이 실제로 얼마인가")
@@ -163,7 +170,7 @@ def main():
     for s in (24, 100, 400, 1000):
         ev = s * EVENTS_PER_SESSION
         fa = s * FACTS_PER_SESSION
-        mb = s * TURNS_PER_SESSION * 210 / 1024 / 1024      # 소크 실측 210B/턴
+        mb = s * TURNS_PER_SESSION * BYTES_PER_TURN / 1024 / 1024
         print(f"  {s:>6}{s*TURNS_PER_SESSION:>8}{ev:>8}{fa:>7}"
               f"{mb:>9.1f}{ev+fa:>9}")
     print("\n  저장은 문제가 아니다 — 1,000세션에서도 원본 10MB 수준이다.")

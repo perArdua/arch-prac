@@ -1,0 +1,303 @@
+{
+ "runtime": {
+  "ollama": "0.33.3",
+  "model": "qwen3:8b",
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+ },
+ "host": "http://127.0.0.1:11434",
+ "options": {
+  "temperature": 0,
+  "seed": 20260908,
+  "num_ctx": 8192
+ },
+ "plan": [
+  [
+   "B1",
+   "unload",
+   "session:S01"
+  ],
+  [
+   "A1",
+   null,
+   "session:S01"
+  ],
+  [
+   "A2",
+   null,
+   "session:S01"
+  ],
+  [
+   "A3",
+   null,
+   "session:S01"
+  ],
+  [
+   "C1",
+   "other",
+   "session:S01"
+  ],
+  [
+   "B2",
+   "unload",
+   "session:S01"
+  ],
+  [
+   "B3",
+   "unload",
+   "session:S01"
+  ],
+  [
+   "B1′",
+   "unload",
+   "session:S12"
+  ],
+  [
+   "B2′",
+   "unload",
+   "session:S12"
+  ],
+  [
+   "B3′",
+   "unload",
+   "session:S12"
+  ],
+  [
+   "A1′",
+   null,
+   "session:S12"
+  ]
+ ],
+ "calls": [
+  {
+   "label": "B1",
+   "pre": "unload",
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "unload_ms": 29,
+   "wall_ms": 9713,
+   "body": "1. 사용자는 피로와 3회 연속 회의로 인해 지친 상태이며, 감기 증상도 보이고 있다.  \n2. 지우는 마케팅 회사 대리로, 서준과 대학 시절 2년 차 선배 관계를 유지하고 있다.  \n3. 대화 중 캐릭터는 택시 타고 가라는 조언을 반복하며 사용자의 상황에 무관심한 태도를 보인다.",
+   "body_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "raw_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 472,
+    "done_reason": "stop",
+    "load_duration": 2672811200,
+    "prompt_eval_duration": 222907000,
+    "eval_duration": 6784203000,
+    "total_duration": 9683404900
+   }
+  },
+  {
+   "label": "A1",
+   "pre": null,
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "wall_ms": 9710,
+   "body": "1. 사용자는 회의 세 차례와 감기로 피로를 호소하며 정보를 요청했으나, 캐릭터는 무관심한 태도로 대응했다.  \n2. 캐릭터는 사용자의 요청에 대해 반복적으로 \"알아서 해라\"며 도움을 거부하며 관계가 단절된 듯한 분위기를 보였다.  \n3. 사용자는 지하철 혼잡과 일상의 지루함을 언급하며, 캐릭터와의 소통이 제한적임을 드러냈다.",
+   "body_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "raw_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 493,
+    "eval_count": 672,
+    "done_reason": "stop",
+    "load_duration": 3755400,
+    "prompt_eval_duration": 16218000,
+    "eval_duration": 9669189000,
+    "total_duration": 9692782700
+   }
+  },
+  {
+   "label": "A2",
+   "pre": null,
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "wall_ms": 9750,
+   "body": "1. 사용자는 회의 세 차례와 감기로 피로를 호소하며 정보를 요청했으나, 캐릭터는 무관심한 태도로 대응했다.  \n2. 캐릭터는 사용자의 요청에 대해 반복적으로 \"알아서 해라\"며 도움을 거부하며 관계가 단절된 듯한 분위기를 보였다.  \n3. 사용자는 지하철 혼잡과 일상의 지루함을 언급하며, 캐릭터와의 소통이 제한적임을 드러냈다.",
+   "body_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "raw_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 493,
+    "eval_count": 672,
+    "done_reason": "stop",
+    "load_duration": 4277700,
+    "prompt_eval_duration": 17078000,
+    "eval_duration": 9651290000,
+    "total_duration": 9728258000
+   }
+  },
+  {
+   "label": "A3",
+   "pre": null,
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "wall_ms": 9752,
+   "body": "1. 사용자는 회의 세 차례와 감기로 피로를 호소하며 정보를 요청했으나, 캐릭터는 무관심한 태도로 대응했다.  \n2. 캐릭터는 사용자의 요청에 대해 반복적으로 \"알아서 해라\"며 도움을 거부하며 관계가 단절된 듯한 분위기를 보였다.  \n3. 사용자는 지하철 혼잡과 일상의 지루함을 언급하며, 캐릭터와의 소통이 제한적임을 드러냈다.",
+   "body_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "raw_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 493,
+    "eval_count": 672,
+    "done_reason": "stop",
+    "load_duration": 3679500,
+    "prompt_eval_duration": 17085000,
+    "eval_duration": 9702595000,
+    "total_duration": 9726833300
+   }
+  },
+  {
+   "label": "C1",
+   "pre": "other",
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "other_usage": {
+    "prompt_eval_count": 3202,
+    "prompt_eval_cached_count": 3
+   },
+   "wall_ms": 9877,
+   "body": "1. 사용자는 회의 세 차례와 감기로 피로를 호소하며 정보를 요청했으나, 캐릭터는 무관심한 태도로 대응했다.  \n2. 캐릭터는 사용자의 요청에 대해 반복적으로 \"알아서 해라\"며 도움을 거부하며 관계가 단절된 듯한 분위기를 보였다.  \n3. 사용자는 지하철 혼잡과 일상의 지루함을 언급하며, 캐릭터와의 소통이 제한적임을 드러냈다.",
+   "body_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "raw_sha": "d02851dd3a8cbfaa9810a597e7d0cca3cf0002cbfe64987c4b75d511eb4e7a2f",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 493,
+    "eval_count": 672,
+    "done_reason": "stop",
+    "load_duration": 4014900,
+    "prompt_eval_duration": 16765999,
+    "eval_duration": 9680928000,
+    "total_duration": 9855778400
+   }
+  },
+  {
+   "label": "B2",
+   "pre": "unload",
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "unload_ms": 114,
+   "wall_ms": 9469,
+   "body": "1. 사용자는 피로와 3회 연속 회의로 인해 지친 상태이며, 감기 증상도 보이고 있다.  \n2. 지우는 마케팅 회사 대리로, 서준과 대학 시절 2년 차 선배 관계를 유지하고 있다.  \n3. 대화 중 캐릭터는 택시 타고 가라는 조언을 반복하며 사용자의 상황에 무관심한 태도를 보인다.",
+   "body_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "raw_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 472,
+    "done_reason": "stop",
+    "load_duration": 2427541700,
+    "prompt_eval_duration": 223622000,
+    "eval_duration": 6786519000,
+    "total_duration": 9440918700
+   }
+  },
+  {
+   "label": "B3",
+   "pre": "unload",
+   "key": "session:S01",
+   "prompt_sha": "5263a007b25d10df7c71008129e6f85ce9f82a96641a0fa93a02202c906697f2",
+   "unload_ms": 95,
+   "wall_ms": 9433,
+   "body": "1. 사용자는 피로와 3회 연속 회의로 인해 지친 상태이며, 감기 증상도 보이고 있다.  \n2. 지우는 마케팅 회사 대리로, 서준과 대학 시절 2년 차 선배 관계를 유지하고 있다.  \n3. 대화 중 캐릭터는 택시 타고 가라는 조언을 반복하며 사용자의 상황에 무관심한 태도를 보인다.",
+   "body_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "raw_sha": "49e84b7491e9c9e47d1646b89e1e3d69e84e8a9a4e0f172ca1e591c8468cf8b0",
+   "usage": {
+    "prompt_eval_count": 494,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 472,
+    "done_reason": "stop",
+    "load_duration": 2413427900,
+    "prompt_eval_duration": 225102000,
+    "eval_duration": 6776199000,
+    "total_duration": 9418881600
+   }
+  },
+  {
+   "label": "B1′",
+   "pre": "unload",
+   "key": "session:S12",
+   "prompt_sha": "2f5b82caa9f737688af42c2272380ddbe24cdf6fc7b7b14af420c8db591de4b3",
+   "unload_ms": 98,
+   "wall_ms": 12485,
+   "body": "1. 사용자가 라면을 먹고 잤고, 책을 읽었으며 지우의 이직 준비를 언급했다.  \n2. 점심 메뉴 선택과 머리 자르기 고민, 디저트 욕구 등 개인적 상황을 언급하며 감정적 불만을 표현했다.  \n3. 대화 상대방의 반응이 일관되게 부정적일 뿐이어 관계 변화는 명확하지 않다.",
+   "body_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "raw_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "usage": {
+    "prompt_eval_count": 535,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 679,
+    "done_reason": "stop",
+    "load_duration": 2410074800,
+    "prompt_eval_duration": 243217000,
+    "eval_duration": 9802358000,
+    "total_duration": 12459383800
+   }
+  },
+  {
+   "label": "B2′",
+   "pre": "unload",
+   "key": "session:S12",
+   "prompt_sha": "2f5b82caa9f737688af42c2272380ddbe24cdf6fc7b7b14af420c8db591de4b3",
+   "unload_ms": 102,
+   "wall_ms": 12445,
+   "body": "1. 사용자가 라면을 먹고 잤고, 책을 읽었으며 지우의 이직 준비를 언급했다.  \n2. 점심 메뉴 선택과 머리 자르기 고민, 디저트 욕구 등 개인적 상황을 언급하며 감정적 불만을 표현했다.  \n3. 대화 상대방의 반응이 일관되게 부정적일 뿐이어 관계 변화는 명확하지 않다.",
+   "body_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "raw_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "usage": {
+    "prompt_eval_count": 535,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 679,
+    "done_reason": "stop",
+    "load_duration": 2409530000,
+    "prompt_eval_duration": 235237000,
+    "eval_duration": 9779868000,
+    "total_duration": 12428025400
+   }
+  },
+  {
+   "label": "B3′",
+   "pre": "unload",
+   "key": "session:S12",
+   "prompt_sha": "2f5b82caa9f737688af42c2272380ddbe24cdf6fc7b7b14af420c8db591de4b3",
+   "unload_ms": 102,
+   "wall_ms": 12450,
+   "body": "1. 사용자가 라면을 먹고 잤고, 책을 읽었으며 지우의 이직 준비를 언급했다.  \n2. 점심 메뉴 선택과 머리 자르기 고민, 디저트 욕구 등 개인적 상황을 언급하며 감정적 불만을 표현했다.  \n3. 대화 상대방의 반응이 일관되게 부정적일 뿐이어 관계 변화는 명확하지 않다.",
+   "body_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "raw_sha": "bfcc26f5b97dab80674661819ace9c6c9289c485a69b96ae3f82de8c9f4b6283",
+   "usage": {
+    "prompt_eval_count": 535,
+    "prompt_eval_cached_count": 0,
+    "eval_count": 679,
+    "done_reason": "stop",
+    "load_duration": 2413407100,
+    "prompt_eval_duration": 236299000,
+    "eval_duration": 9773100000,
+    "total_duration": 12426591400
+   }
+  },
+  {
+   "label": "A1′",
+   "pre": null,
+   "key": "session:S12",
+   "prompt_sha": "2f5b82caa9f737688af42c2272380ddbe24cdf6fc7b7b14af420c8db591de4b3",
+   "wall_ms": 8451,
+   "body": "1. 지우가 이직 준비를 시작했다.  \n2. 사용자는 라면으로 잤고, 점심에 파스타를 먹었으나 아쉬움을 표현했다.  \n3. 대화 중 사용자의 짜증과 캐릭터의 무관심이 관계 변화로 이어졌다.",
+   "body_sha": "96738fb72f49c2d97455b1ab93454fca81d54a76606688a8b732e58923f6c399",
+   "raw_sha": "96738fb72f49c2d97455b1ab93454fca81d54a76606688a8b732e58923f6c399",
+   "usage": {
+    "prompt_eval_count": 535,
+    "prompt_eval_cached_count": 534,
+    "eval_count": 578,
+    "done_reason": "stop",
+    "load_duration": 4100100,
+    "prompt_eval_duration": 16488000,
+    "eval_duration": 8349565000,
+    "total_duration": 8426614900
+   }
+  }
+ ],
+ "measured_at": "2026-09-10 16:30:44"
+}

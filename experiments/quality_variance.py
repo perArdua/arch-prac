@@ -29,7 +29,7 @@ W = 78
 
 
 def main():
-    with open(f"{ROOT}/experiments/QUALITY_RESULTS.json", encoding="utf-8") as f:
+    with open(f"{ROOT}/experiments/data/QUALITY_RESULTS.json", encoding="utf-8") as f:
         res = json.load(f)
 
     # "<arm> #rN" 형태만 모은다
@@ -101,6 +101,8 @@ def main():
     print("  ① **문항을 늘린다.** 26문항에서 2문항 차는 원리적으로 안 갈린다")
     print("  ② **temperature를 낮춘다.** 롤플레이 품질과 재현성이 상충하므로,")
     print("     평가용은 0, 서비스용은 0.7처럼 나눠야 한다")
+    print("     🔄 F39(wave3): 0은 **필요조건이지 충분조건이 아니다** — 로컬 ollama에서는")
+    print("        서버 캐시 상태까지 같아야 같은 답이 온다(docs/12 §3). 반복을 체크포인트로 남길 것")
     print("  ③ **반복 실행을 기본값으로 한다.** 1회 실행 숫자를 표에 넣으면")
     print("     읽는 사람이 그걸 확정값으로 받아들인다")
 

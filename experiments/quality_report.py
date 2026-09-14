@@ -16,9 +16,9 @@ ORACLE, PROP = "A1 Oracle (상한)", "C  제안안 (프로토타입)"
 
 
 def main():
-    with open(f"{ROOT}/experiments/QUALITY_RESULTS.json", encoding="utf-8") as f:
+    with open(f"{ROOT}/experiments/data/QUALITY_RESULTS.json", encoding="utf-8") as f:
         res = json.load(f)
-    with open(f"{ROOT}/experiments/QUALITY_ADJUDICATION.yaml", encoding="utf-8") as f:
+    with open(f"{ROOT}/experiments/data/QUALITY_ADJUDICATION.yaml", encoding="utf-8") as f:
         adj = yaml.safe_load(f)
 
     final, why = {}, {}

@@ -428,7 +428,7 @@ def main():
         # 저장된 응답을 **다시 채점**한다. API 호출이 없으므로 공짜이고,
         # 쿼터가 소진돼도 채점 규칙을 얼마든지 고쳐 다시 돌릴 수 있다.
         # -> 응답 원문을 저장해둔 것이 여기서 값을 한다.
-        ck = f"{ROOT}/experiments/QUALITY_RESULTS.json"
+        ck = f"{ROOT}/experiments/data/QUALITY_RESULTS.json"
         with open(ck, encoding="utf-8") as f:
             res = json.load(f)
         changed = 0
@@ -487,7 +487,7 @@ def main():
     #    첫 실행에서 7콜 만에 429가 났고 크래시하면서 **진행분을 통째로 잃었다.**
     #    -> 매 콜마다 체크포인트에 쌓고, 재실행하면 **이미 받은 응답은 건너뛴다.**
     #       쿼터가 죽어도 진행분은 남고, 내일 이어서 채울 수 있다.
-    ckpt = f"{ROOT}/experiments/QUALITY_RESULTS.json"
+    ckpt = f"{ROOT}/experiments/data/QUALITY_RESULTS.json"
     done = {}
     if os.path.exists(ckpt) and not args.dry_run:
         try:
@@ -613,7 +613,7 @@ def main():
     print("  L2가 크면 → 메모리 구조 개선의 여지가 실제로 크다")
     print("  A1과 C의 격차가 곧 **구조 개선으로 얻을 수 있는 최대치**다")
 
-    out = f"{ROOT}/experiments/QUALITY_RESULTS.json"
+    out = f"{ROOT}/experiments/data/QUALITY_RESULTS.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n  원본 응답 저장: {out}")

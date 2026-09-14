@@ -109,7 +109,10 @@ def main():
     with open(f"{ROOT}/eval/fact-ledger.yaml", encoding="utf-8") as f:
         ledger = yaml.safe_load(f)
 
-    def gate_open(self, u):
+    # ⚠️ 서명은 `Memory.gate`와 같아야 한다 — 이 함수는 `Memory.gate = gate_open`으로
+    #    **꽂히고**, `build_context`가 그 자리에서 `self.gate(utterance, chat_id)`를
+    #    부른다. `gate_sweep.g_*` 넷과 같은 이유다(2026-09-10 A2).
+    def gate_open(self, u, chat_id=None):
         return True, "열림"
 
     configs = [
