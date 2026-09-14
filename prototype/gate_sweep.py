@@ -30,8 +30,27 @@ PAST_REF = re.compile(r"(기억|그때|저번|예전|아까|전에|했잖아|말
 RITUAL = re.compile(r"^(응|ㅇㅇ|ㅋ+|어|그래|넵|왜|뭐)$")
 
 
-def g_current(self, u):
-    """G0 — 현행. 과거 참조 표현이 있어야 검색한다."""
+# 🔴 **네 정책의 서명은 `Memory.gate`와 글자 그대로 같아야 한다.**
+#
+#    이것들은 `Memory.gate = g_xxx`로 **꽂히는** 함수이고(`precision.py` ·
+#    `retrieval_sweep.py` · `response_quality.py` · `event_metrics.py`),
+#    `build_context`는 그 자리에서 `self.gate(utterance, chat_id)`를 부른다.
+#    A2가 `chat_id`를 더했을 때 여기를 안 따라가서 격자와 정밀도가 **`TypeError:
+#    takes 2 positional arguments but 3 were given`**으로 통째로 죽었다(실측).
+#
+#    ⚠️ 인자를 받되 **쓰지는 않는다.** 이 하니스들의 어휘는 `self._vocab`으로
+#       **밖에서 꽂히고**(그것이 스윕의 독립변수다), 그 어휘는 이미
+#       `build_vocab(m, CHAT)`이 방으로 잘라 구운 것이다. 여기서 `chat_id`로
+#       다시 조회하면 스윕이 «꽂은 어휘»가 아니라 «DB의 어휘»를 재는 것이 되어
+#       독립변수가 사라진다.
+def g_current(self, u, chat_id=None):
+    """G0 — **4부 이전**의 정책. 과거 참조 표현이 있어야 검색한다.
+
+    🔄 단계 0 (라운드 2) — 이 게이트를 가리키던 낱말 하나를 뺐다. 이 파일의 4부가
+    권고한 것도, `memory.py:1007-1026`의 `Memory.gate`도 **G3**이기 때문이다(F21).
+    낱말의 소유자는 `GATES` 위 주석에 적었다 — 한 파일이 같은 낱말을 두 구성에
+    쓰면 **모순된 두 주장**이 된다(G15).
+    """
     if PAST_REF.search(u):
         return True, "과거 참조 표현"
     if len(u) < 8:
@@ -41,19 +60,19 @@ def g_current(self, u):
     return False, "과거 참조 신호 없음"
 
 
-def g_always(self, u):
+def g_always(self, u, chat_id=None):
     """G1 — 게이트 없음. 항상 검색 (상한 확인용)."""
     return True, "게이트 없음"
 
 
-def g_ritual_only(self, u):
+def g_ritual_only(self, u, chat_id=None):
     """G2 — 의례적 발화만 막는다. 나머지는 검색."""
     if RITUAL.match(u.strip()) or len(u) < 8:
         return False, "의례적/짧음"
     return True, "실질 발화"
 
 
-def g_content(self, u):
+def g_content(self, u, chat_id=None):
     """
     G3 — 내용어 게이트.
 
@@ -72,28 +91,45 @@ def g_content(self, u):
     return False, "접점 없음"
 
 
+# 🔄 단계 0 (라운드 2) — **라벨을 사실에 맞춘다** (F21-b).
+#   G0은 이 파일의 4부 **이전**에 쓰던 정책이고, 지금 `memory.py:1007-1026`의
+#   `Memory.gate`는 **G3(내용어 접점)**이다 — 462개 발화에서 `g_content`와
+#   판정이 100% 일치한다. 그래서 *"현행"*은 G0이 아니라 G3에 붙는다.
+#   ⚠️ **폭 제약:** `:208`이 `{name:<24}`, `:402`이 `{gname:<24}`로 찍는다. 라벨이 24자를 넘으면
+#   6개 행의 모든 열이 오른쪽으로 밀린다. 상세 설명은 라벨이 아니라 이 주석에 둔다.
 GATES = [
-    ("G0. 현행 (과거참조 표현)", g_current),
+    ("G0. 과거참조 (4부 이전)", g_current),
     ("G1. 게이트 없음 (상한)", g_always),
     ("G2. 의례적 발화만 차단", g_ritual_only),
-    ("G3. 내용어 접점", g_content),
+    ("G3. 내용어 접점 (현행)", g_content),
 ]
 
 
-def build_vocab(m):
-    """저장된 event 요약의 앞 2글자 집합 — G3의 접점 판정용."""
-    v = set()
-    for r in m.db.execute("SELECT summary FROM event WHERE chat_id=?", (CHAT,)):
-        for w in re.findall(r"[가-힣]{2,}", r["summary"]):
-            v.add(w[:2])
-    return v
+def build_vocab(m, chat_id=CHAT):
+    """
+    저장된 event 요약의 앞 2글자 집합 — G3의 접점 판정용.
+
+    🔵 **정본에 위임한다** (F12 · A2 · 2026-09-10). 여기 있던 것은
+    `SELECT summary FROM event WHERE chat_id=?` — 즉 방은 걸고 **`user_deleted`는
+    안 봤다.** 프로덕션 게이트(`Memory._recall_vocab`)는 **정확히 반대로**
+    `user_deleted=0`만 걸고 방을 안 봤다. 두 «G3 현행»이 서로 다른 집합을
+    뜻하는 상태였고, 그러면 이 스윕의 판정은 프로덕션의 판정이 아니다(F21).
+
+    ⚠️ 이 저장소의 소크 DB는 방이 하나이고 삭제가 0건이라 **두 정의가 같은
+    62개를 낸다** — 통일이 이 파일의 출력을 바꾸지 않는다는 뜻이고, 그것을
+    착수 전에 코드로 확인했다(레인 노트 «사전 등록 전제 2»).
+    """
+    return m._recall_vocab_for(chat_id)
 
 
 def measure(m, corpus, qs, ledger, key_of):
     """436개 user 턴을 재생하며 검색 호출·주입·오주입을 센다."""
     calls = inj = noise = 0
     toks = []
-    gold = set(key_of.values())
+    # key_of의 값이 **집합**이므로 평탄화해서 gold를 만든다.
+    # 예전엔 `set(key_of.values())`가 항목당 문자열 하나만 담았고,
+    # 그 하나가 `object`라서 `text`로 색인된 사실이 전부 '대장에 없는 것'이 됐다.
+    gold = {s for v in key_of.values() for s in v}
     for row in corpus:
         if row["role"] != "user":
             continue
@@ -118,8 +154,15 @@ def main():
         ledger = yaml.safe_load(f)
     with open(f"{ROOT}/eval/questions.yaml", encoding="utf-8") as f:
         qs = yaml.safe_load(f)["qa_questions"]
-    key_of = {f["id"]: f.get("object") or f["text"] for f in ledger["facts"]}
-    key_of.update({e["id"]: e["text"] for e in ledger["events"]})
+    # 🔴 오주입 지표 수리 — `soak.qa_eval`(`soak.py:127`)의 `key_of`(`soak.py:142-146`)와 **같은 허용 문자열 집합**을 쓴다.
+    #    `soak.py`가 이미 옳게 하고 있었다. 두 곳이 같은 대장을 다르게 읽고 있었다.
+    #    여기는 근거 하나를 `object` 한 문자열로만 봤는데, 검색 경로는 사실을
+    #    `text`로 색인한다(`soak.py:91-94`). 그래서 `object != text`인 사실 12개가
+    #    검색될 때마다 '대장에 없는 것'으로 세어졌다 — 그 합이 실험 12의 "오주입 49"다.
+    #    오주입이 아니라 **지표가 자기 자신을 못 알아본 횟수**였다.
+    key_of = {f["id"]: {k for k in (f.get("object"), f.get("text")) if k}
+              for f in ledger["facts"]}
+    key_of.update({e["id"]: {e["text"]} for e in ledger["events"]})
 
     n_user = sum(1 for r in corpus if r["role"] == "user")
     orig = Memory.gate
@@ -369,12 +412,14 @@ def main():
     # 회상이 최대인 것들 중 오주입이 가장 적고, 동률이면 호출이 적은 것
     best = min((g for g in grid if g["ok"] == top),
                key=lambda g: (g["noise"], g["calls"]))
+    # 🔄 단계 0 (라운드 2) — 이 행은 **4부 이전**의 조합(G0 · θ=0.15)이다.
+    #   아래 출력 낱말을 `4부 이전`으로 바꾼 이유다(F21-b · G15).
     cur = next(g for g in grid if g["g"].startswith("G0") and g["t"] == 0.15)
 
     print("\n" + "-" * W)
     print("권고 조합")
     print("-" * W)
-    print(f"  현행   {cur['g']} θ={cur['t']:.2f}  "
+    print(f"  4부 이전   {cur['g']} θ={cur['t']:.2f}  "
           f"회상 {cur['ok']}/{cur['n']} · 호출 {cur['calls']} · 오주입 {cur['noise']}")
     print(f"  권고   {best['g']} θ={best['t']:.2f}  "
           f"회상 {best['ok']}/{best['n']} · 호출 {best['calls']} · 오주입 {best['noise']}")
